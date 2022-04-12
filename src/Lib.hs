@@ -48,5 +48,3 @@ anachronicTheme config = docTypeHtml $ do
       ul $ forM_ (phoneNumbers . contactInformation . personalInformation $ config) (p . toHtml)
       ul $ forM_ (emails . contactInformation . personalInformation $ config) (p . toHtml)
       ul $ forM_ (websites . contactInformation . personalInformation $ config) (p . toHtml)
-    H.div $ do
-      ul
