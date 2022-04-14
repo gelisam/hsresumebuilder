@@ -2,18 +2,11 @@
 appearancePreferences: 
   theme: anachronic
   themeSections: 
+    shortIntroSectionBody: |-
+        I am a Software Engineer with DevOps experience that is always eager to learn while perfecting my skills and projects and taking on challenges. Living in The Netherlands since 2019, born 23/12/1996 in Spain.
+        I love to make software solutions, improving and automating workflows, creating fast and reliable programs, helping others understand computers better and to express myself via my creations. 
+        I love the Ops side of the projects and platforms too. I am a UNIX guy and can work comfortably with Linux, BSDs and macOS, in that order of preference. I like distributed tracing and understand observability might be critical for corporations.
     shortIntroSectionTitle: "Who am I?"
-    shortIntroSectionBody: |
-        I am a Software Engineer with DevOps experience that is always eager to learn while perfecting my skills and projects and taking
-        on challenges. Living in The Netherlands since 2019, born 23/12/1996 in Spain.
-
-        I love to make software solutions, improving and automating workflows, creating fast and reliable
-        programs, helping others understand computers better and to express myself via my creations. 
-
-        I love the Ops side of the projects and platforms too. I am a
-        UNIX guy and can work comfortably with Linux, BSDs and macOS, in that order of preference. I like
-        distributed tracing and understand observability might be critical for corporations.
-    
 personalInformation: 
   addressLines: 
     - "Hugo de Grootstraat 19"
@@ -28,3 +21,34 @@ personalInformation:
       - averageflow.github.io
   displayName: "Josep Bigorra"
   jobTitle: "Software Engineer"
+workExperienceInformation: 
+  - 
+    employerName: "Pro Warehouse, Amsterdam, Netherlands"
+    experiencePoints: 
+      - "Extensive experience with Go (standard library & Gin) and PHP (Laravel)."
+      - "MySQL-based applications, with complex queries and multiple joins."
+      - "Database design, normalization, migration, maintenance, and backup."
+      - "REST API design, implementation and automatic documentation generation."
+      - "Server Side Rendering Frontend applications, communicating with several APIs."
+      - "Secure-by-design practices."
+      - "Jenkins Groovy scripted pipelines with unit tests."
+      - "FreeBSD server experience with jails and pf Firewall."
+    positionName: "Lead Software Engineer, Scrum Master"
+    timeWorked: "November 2019 - December 2021"
+  - 
+    employerName: "Liderlink Business Solutions, Parchal, Portugal"
+    experiencePoints: 
+      - "Several projects with PHP and MySQL, CRUD operations, in several real-estate, hotel and personnel management software."
+      - "Client-side scripting with JavaScript and jQuery."
+      - "Android development."
+      - "Ubuntu server experience."
+    positionName: "Software Developer Internship"
+    timeWorked: "February 2019 – July 2019"
+  - 
+    employerName: "Freelancer.com.br, Online Remote"
+    positionName: "CMS Admin & Customer Support"
+    timeWorked: "June 2018 – January 2019"
+  - 
+    employerName: Self-employed
+    positionName: "System Administrator & Hardware Repair"
+    timeWorked: "June 2018 – January 2019"
