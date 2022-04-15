@@ -13,7 +13,19 @@ import GHC.Generics (Generic)
 data Preferences = Preferences
   { personalInformation :: PersonalInfo,
     appearancePreferences :: AppearancePreferences,
-    workExperienceInformation :: [WorkExperienceInformationItem]
+    workExperienceInformation :: [WorkExperienceInformationItem],
+    educationInformation :: [WorkExperienceInformationItem],
+    interestsHobbiesInformation :: [String],
+    driverLicenseInformation :: [String],
+    languagesInformation :: [LanguageLevelInformation]
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data LanguageLevelInformation = LanguageLevelInformation
+  { languageName :: String,
+    speakingProficiency :: Int,
+    writingProficiency :: Int,
+    readingProficiency :: Int
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
@@ -35,21 +47,26 @@ data PersonalInfoContactInfo = PersonalInfoContactInfo
 
 data AppearancePreferences = AppearancePreferences
   { theme :: String,
-    themeSections :: AnachronicThemeSections
+    documentTitles :: DocumentTitles
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
 data WorkExperienceInformationItem = WorkExperienceInformationItem
-  { employerName :: String,
+  { entityName :: String,
     experiencePoints :: [String],
     positionName :: String,
     timeWorked :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
-data AnachronicThemeSections = AnachronicThemeSections
+data DocumentTitles = DocumentTitles
   { shortIntroSectionTitle :: String,
-    workExperienceSectionTitle :: String
+    workExperienceSectionTitle :: String,
+    educationSectionTitle :: String,
+    interestsHobbiesInformationTitle :: String,
+    driverLicenseInformationTitle :: String,
+    languagesInformationTitle :: String,
+    seeMyWebsitesSectionTitle :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 

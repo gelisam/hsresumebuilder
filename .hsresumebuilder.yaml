@@ -1,9 +1,14 @@
 --- 
 appearancePreferences: 
   theme: anachronic
-  themeSections: 
-    shortIntroSectionTitle: "Who am I?"
-    workExperienceSectionTitle: "Work experience"
+  documentTitles: 
+    shortIntroSectionTitle: "WHO AM I?"
+    workExperienceSectionTitle: "WORK EXPERIENCE"
+    educationSectionTitle: "EDUCATION"
+    interestsHobbiesInformationTitle: "MY INTERESTS"
+    driverLicenseInformationTitle: "DRIVING"
+    languagesInformationTitle: "LANGUAGES"
+    seeMyWebsitesSectionTitle: "ME ON THE INTERNET"
 
 personalInformation: 
   addressLines: 
@@ -12,9 +17,9 @@ personalInformation:
     - "The Netherlands"
   contactInformation: 
     emails: 
-      - jjbigorra@gmail.com
+      - "E-mail: jjbigorra@gmail.com"
     phoneNumbers: 
-      - "+31 639825138"
+      - "Phone: +31 639825138"
     websites: 
       - "averageflow.github.io"
       - "github.com/averageflow"
@@ -27,7 +32,7 @@ personalInformation:
 
 workExperienceInformation: 
   - 
-    employerName: "Pro Warehouse, Amsterdam, Netherlands"
+    entityName: "Pro Warehouse, Amsterdam, Netherlands"
     experiencePoints: 
       - "Extensive experience with Go (standard & Gin) and PHP (Laravel)."
       - "Relational MySQL-based applications, with complex queries and multiple joins."
@@ -40,7 +45,7 @@ workExperienceInformation:
     positionName: "Lead Software Engineer, Scrum Master"
     timeWorked: "November 2019 - December 2021"
   - 
-    employerName: "Liderlink Business Solutions, Parchal, Portugal"
+    entityName: "Liderlink Business Solutions, Parchal, Portugal"
     experiencePoints: 
       - "Several projects with PHP and MySQL, CRUD operations, in several real-estate, hotel and personnel management software."
       - "Client-side scripting with JavaScript and jQuery."
@@ -49,12 +54,52 @@ workExperienceInformation:
     positionName: "Software Developer Internship"
     timeWorked: "February 2019 to July 2019"
   - 
-    employerName: "Freelancer.com.br, Online Remote"
+    entityName: "Freelancer.com.br, Online Remote"
     experiencePoints: []
     positionName: "CMS Admin & Customer Support"
     timeWorked: "June 2018 to January 2019"
+
+educationInformation:
   - 
-    employerName: Self-employed
-    experiencePoints: []
-    positionName: "System Administrator & Hardware Repair"
-    timeWorked: "June 2018 to January 2019"
+    entityName: "UAlg, Faro, Portugal"
+    experiencePoints:
+      - "Graduated with 190/200 score. Maximum score for the software developer internship."
+    positionName: "Information Systems & Technologies degree"
+    timeWorked: "September 2017 to September 2019"
+
+languagesInformation:
+
+  - 
+    languageName: "Catalan"
+    speakingProficiency: 4
+    writingProficiency: 4
+    readingProficiency: 4
+  - 
+    languageName: "Spanish"
+    speakingProficiency: 4
+    writingProficiency: 4
+    readingProficiency: 4
+  - 
+    languageName: "Portuguese"
+    speakingProficiency: 4
+    writingProficiency: 4
+    readingProficiency: 4
+  - 
+    languageName: "English"
+    speakingProficiency: 3
+    writingProficiency: 3
+    readingProficiency: 3
+  - 
+    languageName: "Dutch"
+    speakingProficiency: 2
+    writingProficiency: 2
+    readingProficiency: 2
+
+driverLicenseInformation:
+  - "B driver's license, for (automobile) vehicles up to 3,5 ton"
+
+
+interestsHobbiesInformation:
+  - "I love playing guitar and creating some loops in Logic Pro. I have a secret passion for building computers and recycling them, as well as modding operating systems and tinkering with bootloaders, making my own servers and playing with FreeBSD and other Linux distributions."
+  - "I like to blog about my tech opinions and like to play strategy games sometimes."
+  - "I love natural wood and stone and you might find me sanding furniture down, oiling wood, or removing weeds from the garden."
