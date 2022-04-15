@@ -67,14 +67,26 @@ anachronicTheme config = docTypeHtml $ do
         h3 . toHtml $ (educationSectionTitle . documentTitles . appearancePreferences $ config)
         forM_ (educationInformation config) renderWorkExperienceItemComponent
 
+      -- languagesSection
+      H.div $ do
+        if simpleMode . languagesInformation $ config
+          then do
+            h3 . toHtml $ (languagesInformationTitle . documentTitles . appearancePreferences $ config)
+            p . toHtml $ simpleModeContent . languagesInformation $ config
+          else do
+            H.div $ do
+              table $ do
+                tr $ do
+                  th ""
+                  th "SPEAKING"
+                  th "WRITING"
+                  th "READING"
+                forM_ (complexModeContent . languagesInformation $ config) (tr . renderLanguageLevelInformationComponent)
+
       -- driverLicenseSection
       H.div $ do
         h3 . toHtml $ (driverLicenseInformationTitle . documentTitles . appearancePreferences $ config)
         ul $ forM_ (driverLicenseInformation config) (li . toHtml)
-
-      -- languagesSection
-      H.div $ do
-        h3 . toHtml $ (languagesInformationTitle . documentTitles . appearancePreferences $ config)
 
       -- interestsHobbiesSection
       H.div $ do
@@ -83,7 +95,6 @@ anachronicTheme config = docTypeHtml $ do
         h5 . toHtml $ (seeMyWebsitesSectionTitle . documentTitles . appearancePreferences $ config)
         forM_ (websites . contactInformation . personalInformation $ config) (p . toHtml)
 
--- (p ! A.style "text-align: justify") . toHtml $ (shortIntroSectionBody . documentTitles . appearancePreferences $ config)
 renderWorkExperienceItemComponent :: WorkExperienceInformationItem -> Html
 renderWorkExperienceItemComponent item = do
   H.div $ do
@@ -91,3 +102,20 @@ renderWorkExperienceItemComponent item = do
     (strong ! A.style "color: grey") . toHtml . entityName $ item
     p . toHtml . timeWorked $ item
     ul $ forM_ (experiencePoints item) (li . toHtml)
+
+renderLanguageLevelInformationComponent :: LanguageLevelInformation -> Html
+renderLanguageLevelInformationComponent item = do
+  td . toHtml . languageName $ item
+  td . toHtml . languageLevelRatingToString . speakingProficiency $ item
+  td . toHtml . languageLevelRatingToString . writingProficiency $ item
+  td . toHtml . languageLevelRatingToString . readingProficiency $ item
+
+languageLevelRatingToString :: Int -> String
+languageLevelRatingToString rating =
+  case rating of
+    0 -> "limited proficiency"
+    1 -> "limited proficiency +"
+    2 -> "high proficiency"
+    3 -> "almost native"
+    4 -> "native"
+    _ -> ""

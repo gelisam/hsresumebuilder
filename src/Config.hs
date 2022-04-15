@@ -17,7 +17,14 @@ data Preferences = Preferences
     educationInformation :: [WorkExperienceInformationItem],
     interestsHobbiesInformation :: [String],
     driverLicenseInformation :: [String],
-    languagesInformation :: [LanguageLevelInformation]
+    languagesInformation :: LanguagesInformation
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data LanguagesInformation = LanguagesInformation
+  { complexModeContent :: [LanguageLevelInformation],
+    simpleMode :: Bool,
+    simpleModeContent :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
