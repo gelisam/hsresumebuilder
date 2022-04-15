@@ -6,7 +6,6 @@ module Lib
 where
 
 import Config
-import Config (AnachronicThemeSections (shortIntroSectionBody))
 import Control.Monad (forM_)
 import System.Exit (exitFailure)
 import System.IO
@@ -54,6 +53,21 @@ anachronicTheme config = docTypeHtml $ do
         H.div ! A.style "padding: 1em;" $ do
           forM_ (addressLines . personalInformation $ config) (p . toHtml)
 
+      -- shortIntroSection
       H.div $ do
         h3 . toHtml $ (shortIntroSectionTitle . themeSections . appearancePreferences $ config)
-        (p ! A.style "text-align: justify") . toHtml $ (shortIntroSectionBody . themeSections . appearancePreferences $ config)
+        forM_ (shortIntro . personalInformation $ config) ((p ! A.style "text-align: justify") . toHtml)
+
+      -- workExperienceSection
+      H.div $ do
+        h3 . toHtml $ (workExperienceSectionTitle . themeSections . appearancePreferences $ config)
+        forM_ (workExperienceInformation config) renderWorkExperienceItemComponent
+
+-- (p ! A.style "text-align: justify") . toHtml $ (shortIntroSectionBody . themeSections . appearancePreferences $ config)
+renderWorkExperienceItemComponent :: WorkExperienceInformationItem -> Html
+renderWorkExperienceItemComponent item = do
+  H.div $ do
+    strong . toHtml . positionName $ item
+    (strong ! A.style "color: grey") . toHtml . employerName $ item
+    p . toHtml . timeWorked $ item
+    ul $ forM_ (experiencePoints item) (li . toHtml)
