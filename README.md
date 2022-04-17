@@ -22,4 +22,4 @@ See the YAML that I use for creating my own CV [here](.hsresumebuilder.yaml).
 
 ## Preview
 
-<iframe src="https://raw.githubusercontent.com/averageflow/hsresumebuilder/master/output.html"></iframe>
+<script src="http://gist-it.appspot.com/https://raw.githubusercontent.com/averageflow/hsresumebuilder/master/output.html"></script>
