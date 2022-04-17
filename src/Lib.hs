@@ -7,7 +7,6 @@ where
 
 import Config
 import Control.Monad (forM_)
-import Data.String
 import JoeTheme (joeTheme)
 import System.Exit (exitFailure)
 import System.IO
@@ -17,8 +16,6 @@ import System.IO
     openFile,
   )
 import Text.Blaze.Html.Renderer.Pretty (renderHtml)
-import Text.Blaze.Html5 as H
-import Text.Blaze.Html5.Attributes as A
 
 someFunc :: IO ()
 someFunc = do
@@ -30,6 +27,7 @@ beginRendering config = do
   let generatedContent = renderHtml . joeTheme $ config
   saveContentToFile generatedContent
   putStrLn generatedContent
+  putStrLn "SUCCESSFULLY GENERATED RESUME! SEE THE FILE NAMED output.html IN THIS CURRENT DIRECTORY!"
 
 saveContentToFile :: String -> IO ()
 saveContentToFile content = do

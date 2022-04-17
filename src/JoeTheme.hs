@@ -19,49 +19,54 @@ import Text.Blaze.Html5.Attributes as A
 attributeCSSColor :: String -> String
 attributeCSSColor colorValue = "color: " ++ colorValue ++ ";"
 
+attributeBodyFontFamily :: String -> String
+attributeBodyFontFamily font = "font-family: " ++ font ++ ";"
+
+attributeTitleFontFamily :: String -> String
+attributeTitleFontFamily font = "font-family: " ++ font ++ ";"
+
 componentSectHeader :: ToMarkup a => String -> a -> Html
 componentSectHeader color = (h3 ! A.style (fromString $ attributeCSSColor color)) . toHtml
 
-componentPersonNameHeader :: ToMarkup a => Preferences -> a -> Html
-componentPersonNameHeader config = (h1 ! A.style (fromString $ attributeCSSColor (sectionTitlesColor . themeSettings . appearancePreferences $ config))) . toHtml
+componentPersonNameHeader :: ToMarkup a => String -> a -> Html
+componentPersonNameHeader color = (h1 ! A.style (fromString $ attributeCSSColor color)) . toHtml
 
-componentJobTitleHeader :: ToMarkup a => Preferences -> a -> Html
-componentJobTitleHeader config = (h2 ! A.style (fromString $ attributeCSSColor (sectionTitlesColor . themeSettings . appearancePreferences $ config))) . toHtml
+componentJobTitleHeader :: ToMarkup a => String -> a -> Html
+componentJobTitleHeader color = (h2 ! A.style (fromString $ attributeCSSColor color)) . toHtml
 
-componentBodyText :: ToMarkup a => Preferences -> a -> Html
-componentBodyText config = (p ! A.style (fromString $ attributeCSSColor (bodyColor . themeSettings . appearancePreferences $ config))) . toHtml
+componentBodyText :: ToMarkup a => String -> a -> Html
+componentBodyText color = (p ! A.style (fromString $ attributeCSSColor color)) . toHtml
 
-componentSmallBodyText :: ToMarkup a => Preferences -> a -> Html
-componentSmallBodyText config = (small ! A.style (fromString $ attributeCSSColor (bodyColor . themeSettings . appearancePreferences $ config))) . toHtml
+componentSmallBodyText :: ToMarkup a => String -> a -> Html
+componentSmallBodyText color = (small ! A.style (fromString $ attributeCSSColor color)) . toHtml
 
-componentJustifiedBodyText :: ToMarkup a => Preferences -> a -> Html
-componentJustifiedBodyText config = (p ! A.style (fromString $ "text-align: justify;" ++ attributeCSSColor (bodyColor . themeSettings . appearancePreferences $ config))) . toHtml
+componentJustifiedBodyText :: ToMarkup a => String -> a -> Html
+componentJustifiedBodyText color = (p ! A.style (fromString $ "text-align: justify;" ++ attributeCSSColor color)) . toHtml
 
-componentBodyLink :: ToMarkup a => Preferences -> a -> Html
-componentBodyLink config = do
-  let linkStyle = attributeCSSColor (linkColor . themeSettings . appearancePreferences $ config) ++ "padding: 1em;"
+componentBodyLink :: ToMarkup a => String -> a -> Html
+componentBodyLink color = do
+  let linkStyle = attributeCSSColor color ++ "padding: 1em;"
   (a ! A.style (fromString linkStyle) ! A.href "") . toHtml
 
-componentBodyListItem :: ToMarkup a => Preferences -> a -> Html
-componentBodyListItem config = (li ! A.style (fromString $ attributeCSSColor (bodyColor . themeSettings . appearancePreferences $ config))) . toHtml
+componentBodyListItem :: ToMarkup a => String -> a -> Html
+componentBodyListItem color = (li ! A.style (fromString $ attributeCSSColor color)) . toHtml
 
-getBodyFontFamily :: Preferences -> String
-getBodyFontFamily config = "font-family: " ++ (bodyFontFamily . themeSettings . appearancePreferences $ config) ++ ";"
+componentWorkExperienceItem :: JoeThemeSettings -> WorkExperienceInformationItem -> Html
+componentWorkExperienceItem themeSettings item = H.div $ do
+  let bodyColor' = bodyColor themeSettings
+  let entityNameColor' = workExperienceInformationEntityNameColor themeSettings
+  let positionNameColor' = workExperienceInformationPositionNameColor themeSettings
+  let timeWorkedColor' = workExperienceInformationPositionNameColor themeSettings
 
-getTitleFontFamily :: Preferences -> String
-getTitleFontFamily config = "font-family: " ++ (bodyFontFamily . themeSettings . appearancePreferences $ config) ++ ";"
-
-renderWorkExperienceItemComponent :: Preferences -> WorkExperienceInformationItem -> Html
-renderWorkExperienceItemComponent config item = H.div $ do
   H.div ! A.style "display: flex;" $ do
-    (strong ! A.style (fromString $ attributeCSSColor . workExperienceInformationPositionNameColor . themeSettings . appearancePreferences $ config)) . toHtml . positionName $ item
-    (H.span ! (A.style . fromString $ "margin-left: 0.4em; margin-right: 0.4em; color: " ++ (bodyColor . themeSettings . appearancePreferences $ config) ++ ";")) " - "
-    (strong ! A.style (fromString (attributeCSSColor . workExperienceInformationEntityNameColor . themeSettings . appearancePreferences $ config))) . toHtml . entityName $ item
-  componentSmallBodyText config $ timeWorked item
-  ul $ forM_ (experiencePoints item) (componentBodyListItem config)
+    (strong ! A.style (fromString $ attributeCSSColor positionNameColor')) . toHtml . positionName $ item
+    (H.span ! (A.style . fromString $ "margin-left: 0.4em; margin-right: 0.4em; color: " ++ bodyColor' ++ ";")) " - "
+    (strong ! A.style (fromString (attributeCSSColor entityNameColor'))) . toHtml . entityName $ item
+  componentSmallBodyText timeWorkedColor' $ timeWorked item
+  ul $ forM_ (experiencePoints item) (componentBodyListItem bodyColor')
 
-renderLanguageLevelInformationComponent :: LanguageLevelInformation -> Html
-renderLanguageLevelInformationComponent item = do
+componentLanguageLevelItem :: LanguageLevelInformation -> Html
+componentLanguageLevelItem item = do
   td . strong . toHtml . languageName $ item
   td . toHtml . languageLevelRatingString . speakingProficiency $ item
   td . toHtml . languageLevelRatingString . writingProficiency $ item
@@ -77,44 +82,49 @@ languageLevelRatingString rating =
     4 -> "native"
     _ -> ""
 
-sectionContactDetails :: Preferences -> Html
-sectionContactDetails config = do
-  H.div ! A.style "display: flex" $ do
-    H.div ! A.style "padding: 1em;" $ forM_ (addressLines . personalInformation $ config) (componentBodyText config)
-    H.div ! A.style "padding: 1em;" $ do
-      forM_ (phoneNumbers . contactInformation . personalInformation $ config) (componentBodyText config)
-      forM_ (emails . contactInformation . personalInformation $ config) (componentBodyText config)
-
 joeTheme :: Preferences -> Html
 joeTheme config = docTypeHtml $ do
-  let sectionTitlesColor' = sectionTitlesColor . themeSettings . appearancePreferences $ config
   let documentTitles' = documentTitles . appearancePreferences $ config
-  let jobTitleColor' = jobTitleColor . themeSettings . appearancePreferences $ config
+  let themeSettings' = themeSettings . appearancePreferences $ config
+  let personalInformation' = personalInformation config
+  let bodyColor' = bodyColor themeSettings'
+  let linkColor' = linkColor themeSettings'
+  let sectionTitlesColor' = sectionTitlesColor themeSettings'
+  let bodyFontFamily' = bodyFontFamily themeSettings'
+
   H.head $ do
     H.title . toHtml $ "Resume of " ++ (displayName . personalInformation $ config)
     link ! rel "stylesheet" ! href "https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"
   body $
-    main ! (A.style . fromString . getBodyFontFamily $ config) $ do
-      componentPersonNameHeader config $ displayName . personalInformation $ config
+    main ! (A.style . fromString . attributeBodyFontFamily $ bodyFontFamily') $ do
+      componentPersonNameHeader
+        (nameColor themeSettings')
+        $ displayName personalInformation'
 
-      componentJobTitleHeader config $ jobTitle . personalInformation $ config
+      componentJobTitleHeader
+        (jobTitleColor themeSettings')
+        $ jobTitle personalInformation'
 
       -- Contact details section
-      sectionContactDetails config
+      H.div ! A.style "display: flex" $ do
+        H.div ! A.style "padding: 1em;" $ forM_ (addressLines personalInformation') (componentBodyText bodyColor')
+        H.div ! A.style "padding: 1em;" $ do
+          forM_ (phoneNumbers . contactInformation $ personalInformation') (componentBodyText bodyColor')
+          forM_ (emails . contactInformation $ personalInformation') (componentBodyText bodyColor')
 
       -- Short introduction section
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
           $ shortIntroSectionTitle documentTitles'
-        forM_ (shortIntro . personalInformation $ config) (componentJustifiedBodyText config)
+        forM_ (shortIntro personalInformation') (componentJustifiedBodyText bodyColor')
 
       -- Work experience section
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
           $ workExperienceSectionTitle documentTitles'
-        forM_ (workExperienceInformation config) (renderWorkExperienceItemComponent config)
+        forM_ (workExperienceInformation config) (componentWorkExperienceItem themeSettings')
 
       br
 
@@ -123,7 +133,7 @@ joeTheme config = docTypeHtml $ do
         componentSectHeader
           sectionTitlesColor'
           $ educationSectionTitle documentTitles'
-        forM_ (educationInformation config) (renderWorkExperienceItemComponent config)
+        forM_ (educationInformation config) (componentWorkExperienceItem themeSettings')
 
       -- Languages section
       H.div $ do
@@ -141,25 +151,25 @@ joeTheme config = docTypeHtml $ do
                 th "READING"
               forM_
                 (complexModeContent . languagesInformation $ config)
-                (tr . renderLanguageLevelInformationComponent)
+                (tr . componentLanguageLevelItem)
 
       -- Driver license section
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
           $ driverLicenseInformationTitle documentTitles'
-        ul $ forM_ (driverLicenseInformation config) (componentBodyListItem config)
+        ul $ forM_ (driverLicenseInformation config) (componentBodyListItem bodyColor')
 
       -- Interests hobbies section
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
           $ interestsHobbiesInformationTitle documentTitles'
-        forM_ (interestsHobbiesInformation config) (componentJustifiedBodyText config)
+        forM_ (interestsHobbiesInformation config) (componentJustifiedBodyText bodyColor')
 
       -- Websites section
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
           $ seeMyWebsitesSectionTitle documentTitles'
-        forM_ (websites . contactInformation . personalInformation $ config) (componentBodyLink config)
+        forM_ (websites . contactInformation $ personalInformation') (componentBodyLink linkColor')

@@ -9,6 +9,20 @@ appearancePreferences:
     workExperienceSectionTitle: "WORK EXPERIENCE"
   theme: "joe"
   themeSettings:
+    # TEST!
+    # bodyColor: "orange"
+    # jobTitleColor: "orange"
+    # nameColor: "orange"
+    # sectionTitlesColor: "orange"
+    # workExperienceInformationEntityNameColor: "orange"
+    # workExperienceInformationPositionNameColor: "orange"
+    # workExperienceInformationTimeWorkedColor: "orange"
+    # linkColor: "orange"
+    # bodyFontFamily: "Cantarell"
+    #
+    #
+    #
+    # defaults for Joe theme
     bodyColor: "#111"
     jobTitleColor: "green"
     nameColor: "black"
