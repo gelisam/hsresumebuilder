@@ -19,3 +19,7 @@ For the language levels, please categorize them from 0, lowest, to 4, highest le
 ## Create your own
 
 See the YAML that I use for creating my own CV [here](.hsresumebuilder.yaml).
+
+## Preview
+
+<iframe src="https://raw.githubusercontent.com/averageflow/hsresumebuilder/master/output.html"></iframe>
