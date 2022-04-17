@@ -1,13 +1,24 @@
 appearancePreferences:
   documentTitles:
-    driverLicenseInformationTitle: DRIVING
-    educationSectionTitle: EDUCATION
+    driverLicenseInformationTitle: "DRIVING"
+    educationSectionTitle: "EDUCATION"
     interestsHobbiesInformationTitle: "MY INTERESTS"
-    languagesInformationTitle: LANGUAGES
+    languagesInformationTitle: "LANGUAGES"
     seeMyWebsitesSectionTitle: "ME ON THE INTERNET"
     shortIntroSectionTitle: "WHO AM I?"
     workExperienceSectionTitle: "WORK EXPERIENCE"
-  theme: anachronic
+  theme: "joe"
+  themeSettings:
+    bodyColor: "#111"
+    jobTitleColor: "green"
+    nameColor: "black"
+    sectionTitlesColor: "#222"
+    workExperienceInformationEntityNameColor: "#787878"
+    workExperienceInformationPositionNameColor: "#333"
+    workExperienceInformationTimeWorkedColor: "black"
+    linkColor: "#0091c1"
+    bodyFontFamily: "Cantarell"
+
 driverLicenseInformation:
   - "B driver's license, for (automobile) vehicles up to 3,5 ton"
 educationInformation:
@@ -17,33 +28,33 @@ educationInformation:
     positionName: "Information Systems & Technologies degree"
     timeWorked: "September 2017 to September 2019"
 interestsHobbiesInformation:
-  - "I love playing guitar and creating some loops in Logic Pro. I have a secret passion for building computers and recycling them, as well as modding operating systems and tinkering with bootloaders, making my own servers and playing with FreeBSD and other Linux distributions."
-  - "I like to blog about my tech opinions and like to play strategy games sometimes."
-  - "I love natural wood and stone and you might find me sanding furniture down, oiling wood, or removing weeds from the garden."
+  - "I love playing classical and electric guitar."
+  - "I like building computers out of wood and other materials, blogging about my tech opinions and discoveries and playing strategy games sometimes."
+  - "I love wood and you might find me sanding furniture down, oiling wood, removing weeds from the garden, or improving my house."
 languagesInformation:
   complexModeContent:
-    - languageName: Catalan
+    - languageName: "Catalan"
       readingProficiency: 4
       speakingProficiency: 4
       writingProficiency: 4
-    - languageName: Spanish
+    - languageName: "Spanish"
       readingProficiency: 4
       speakingProficiency: 4
       writingProficiency: 4
-    - languageName: Portuguese
+    - languageName: "Portuguese"
       readingProficiency: 4
       speakingProficiency: 4
       writingProficiency: 4
-    - languageName: English
+    - languageName: "English"
       readingProficiency: 3
       speakingProficiency: 3
       writingProficiency: 3
-    - languageName: Dutch
+    - languageName: "Dutch"
       readingProficiency: 2
       speakingProficiency: 2
       writingProficiency: 2
   simpleMode: false
-  simpleModeContent: test
+  simpleModeContent: "test"
 personalInformation:
   addressLines:
     - "Hugo de Grootstraat 19"
@@ -55,14 +66,14 @@ personalInformation:
     phoneNumbers:
       - "Phone: +31 639825138"
     websites:
-      - averageflow.github.io
-      - github.com/averageflow
+      - "averageflow.github.io"
+      - "github.com/averageflow"
   displayName: "Josep Bigorra"
   jobTitle: "Software Engineer"
   shortIntro:
     - "I am a Software Engineer with DevOps experience that is always eager to learn while perfecting my skills and projects and taking on challenges. Living in The Netherlands since 2019, born 23/12/1996 in Spain."
     - "I love to create solutions, improving, automating workflows, creating fast and reliable programs, helping and teaching others and to express myself via my creations."
-    - "I love the Ops side of the projects and platforms too. I am a UNIX guy and can work comfortably with Linux, BSDs and macOS, in that order of preference. I like distributed tracing, infrastructure-as-code, CI/CD, and type-safe languages."
+    - "I love the Ops side of the projects and platforms too. I am a UNIX guy at home with Linux, BSDs, macOS, etc. I like distributed tracing, infrastructure-as-code, CI/CD, and type-safe languages."
 workExperienceInformation:
   - entityName: "IKEA, Amsterdam, Netherlands"
     experiencePoints:
@@ -85,7 +96,7 @@ workExperienceInformation:
       - "Secure-by-design practices."
       - "Jenkins Groovy scripted pipelines with unit tests."
       - "FreeBSD & Linux server experience, jails and pf Firewall."
-    positionName: "Lead Software Engineer, Scrum Master"
+    positionName: "Software Engineer, Scrum Master"
     timeWorked: "November 2019 - December 2021"
   - entityName: "Liderlink Business Solutions, Parchal, Portugal"
     experiencePoints:

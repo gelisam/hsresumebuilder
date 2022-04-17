@@ -54,7 +54,21 @@ data PersonalInfoContactInfo = PersonalInfoContactInfo
 
 data AppearancePreferences = AppearancePreferences
   { theme :: String,
-    documentTitles :: DocumentTitles
+    documentTitles :: DocumentTitles,
+    themeSettings :: JoeThemeSettings
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data JoeThemeSettings = JoeThemeSettings
+  { bodyColor :: String,
+    jobTitleColor :: String,
+    nameColor :: String,
+    sectionTitlesColor :: String,
+    workExperienceInformationEntityNameColor :: String,
+    workExperienceInformationPositionNameColor :: String,
+    workExperienceInformationTimeWorkedColor :: String,
+    linkColor :: String,
+    bodyFontFamily :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
