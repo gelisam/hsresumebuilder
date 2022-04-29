@@ -1,13 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module Lib
+module ResumeBuilder.Lib
   ( someFunc,
   )
 where
 
-import Config
+import ResumeBuilder.Config
 import Control.Monad (forM_)
-import JoeTheme (joeTheme)
+import ResumeBuilder.JoeTheme (joeTheme)
 import System.Exit (exitFailure)
 import System.IO
   ( IOMode (ReadWriteMode),

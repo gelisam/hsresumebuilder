@@ -1,20 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module JoeTheme where
+module ResumeBuilder.JoeTheme where
 
-import Config
+import ResumeBuilder.Config
 import Control.Monad (forM_)
-import Data.String
 import System.Exit (exitFailure)
-import System.IO
-  ( IOMode (ReadWriteMode),
-    hClose,
-    hGetContents,
-    openFile,
-  )
 import Text.Blaze.Html.Renderer.Pretty (renderHtml)
 import Text.Blaze.Html5 as H
 import Text.Blaze.Html5.Attributes as A
+import Data.String (fromString)
 
 attributeCSSColor :: String -> String
 attributeCSSColor colorValue = "color: " ++ colorValue ++ ";"
@@ -95,6 +89,7 @@ joeTheme config = docTypeHtml $ do
   H.head $ do
     H.title . toHtml $ "Resume of " ++ (displayName . personalInformation $ config)
     link ! rel "stylesheet" ! href "https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"
+    link ! rel "stylesheet" ! href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
   body $
     main ! (A.style . fromString . attributeBodyFontFamily $ bodyFontFamily') $ do
       componentPersonNameHeader
@@ -109,8 +104,12 @@ joeTheme config = docTypeHtml $ do
       H.div ! A.style "display: flex" $ do
         H.div ! A.style "padding: 1em;" $ forM_ (addressLines personalInformation') (componentBodyText bodyColor')
         H.div ! A.style "padding: 1em;" $ do
-          forM_ (phoneNumbers . contactInformation $ personalInformation') (componentBodyText bodyColor')
-          forM_ (emails . contactInformation $ personalInformation') (componentBodyText bodyColor')
+          forM_ (phoneNumbers . contactInformation $ personalInformation') $ do 
+            componentBodyText bodyColor'
+            
+          forM_ (emails . contactInformation $ personalInformation') $ do
+            componentBodyText bodyColor'
+            -- H.i ! (A.class_ . fromString "fa-solid fa-envelope")
 
       -- Short introduction section
       H.div $ do

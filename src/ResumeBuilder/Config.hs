@@ -1,7 +1,7 @@
 {-# LANGUAGE DeriveAnyClass #-}
 {-# LANGUAGE DeriveGeneric #-}
 
-module Config where
+module ResumeBuilder.Config where
 
 import qualified Data.ByteString
 import Data.Map (Map)
