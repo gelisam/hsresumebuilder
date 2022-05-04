@@ -1,6 +1,6 @@
 module Main where
 
-import ResumeBuilder.Lib
+import ResumeBuilder.Lib (someFunc)
 
 main :: IO ()
 main = someFunc

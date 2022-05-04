@@ -2,13 +2,13 @@
 
 module ResumeBuilder.JoeTheme where
 
-import ResumeBuilder.Config
 import Control.Monad (forM_)
+import Data.String (fromString)
+import ResumeBuilder.Config
 import System.Exit (exitFailure)
 import Text.Blaze.Html.Renderer.Pretty (renderHtml)
 import Text.Blaze.Html5 as H
 import Text.Blaze.Html5.Attributes as A
-import Data.String (fromString)
 
 attributeCSSColor :: String -> String
 attributeCSSColor colorValue = "color: " ++ colorValue ++ ";"
@@ -104,12 +104,12 @@ joeTheme config = docTypeHtml $ do
       H.div ! A.style "display: flex" $ do
         H.div ! A.style "padding: 1em;" $ forM_ (addressLines personalInformation') (componentBodyText bodyColor')
         H.div ! A.style "padding: 1em;" $ do
-          forM_ (phoneNumbers . contactInformation $ personalInformation') $ do 
+          forM_ (phoneNumbers . contactInformation $ personalInformation') $ do
             componentBodyText bodyColor'
-            
+
           forM_ (emails . contactInformation $ personalInformation') $ do
             componentBodyText bodyColor'
-            -- H.i ! (A.class_ . fromString "fa-solid fa-envelope")
+      -- H.i ! (A.class_ . fromString "fa-solid fa-envelope")
 
       -- Short introduction section
       H.div $ do

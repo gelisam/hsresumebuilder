@@ -5,8 +5,8 @@ module ResumeBuilder.Lib
   )
 where
 
-import ResumeBuilder.Config
 import Control.Monad (forM_)
+import ResumeBuilder.Config (Preferences, getConfig)
 import ResumeBuilder.JoeTheme (joeTheme)
 import System.Exit (exitFailure)
 import System.IO

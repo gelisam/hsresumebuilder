@@ -1,4 +1,4 @@
-cabal-version: 2.4
+cabal-version: 3.6
 
 name:           hsresumebuilder
 version:        0.1.0.0
@@ -39,7 +39,7 @@ executable hsresumebuilder
   main-is: Main.hs
   hs-source-dirs:
       app
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Weverything
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall
   build-depends:
       base >=4.7 && <5
     , blaze-html >=0.9.1.2
@@ -57,7 +57,7 @@ test-suite hsresumebuilder-test
       Paths_hsresumebuilder
   hs-source-dirs:
       test
-  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Weverything
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall
   build-depends:
       base >=4.7 && <5
     , blaze-html >=0.9.1.2
