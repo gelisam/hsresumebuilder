@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 module ResumeBuilder.Lib
-  ( someFunc,
+  ( resumeBuilder,
   )
 where
 
@@ -17,8 +17,8 @@ import System.IO
   )
 import Text.Blaze.Html.Renderer.Pretty (renderHtml)
 
-someFunc :: IO ()
-someFunc = do
+resumeBuilder :: IO ()
+resumeBuilder = do
   maybeParsedConfig <- getConfig
   maybe exitFailure beginRendering maybeParsedConfig
 
@@ -26,7 +26,6 @@ beginRendering :: Preferences -> IO ()
 beginRendering config = do
   let generatedContent = renderHtml . joeTheme $ config
   saveContentToFile generatedContent
-  putStrLn generatedContent
   putStrLn "SUCCESSFULLY GENERATED RESUME! SEE THE FILE NAMED output.html IN THIS CURRENT DIRECTORY!"
 
 saveContentToFile :: String -> IO ()

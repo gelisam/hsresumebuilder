@@ -31,6 +31,9 @@ componentJobTitleHeader color = (h2 ! A.style (fromString $ attributeCSSColor co
 componentBodyText :: ToMarkup a => String -> a -> Html
 componentBodyText color = (p ! A.style (fromString $ attributeCSSColor color)) . toHtml
 
+componentStandaloneIcon :: String -> Html
+componentStandaloneIcon classValue = (i ! A.class_ (fromString classValue)) ""
+
 componentSmallBodyText :: ToMarkup a => String -> a -> Html
 componentSmallBodyText color = (small ! A.style (fromString $ attributeCSSColor color)) . toHtml
 
@@ -76,6 +79,16 @@ languageLevelRatingString rating =
     4 -> "native"
     _ -> ""
 
+componentPhoneNumber :: ToMarkup a => String -> a -> Html
+componentPhoneNumber bodyColor item = (H.div ! A.style "display: flex; align-items: center; gap: 0.5em;") $ do
+  componentStandaloneIcon "fa-solid fa-phone"
+  componentBodyText bodyColor item
+
+componentEmailAddress :: String -> String -> Html
+componentEmailAddress bodyColor item = (H.div ! A.style "display: flex; align-items: center; gap: 0.5em;") $ do
+  componentStandaloneIcon "fa-solid fa-envelope"
+  componentBodyText bodyColor item
+
 joeTheme :: Preferences -> Html
 joeTheme config = docTypeHtml $ do
   let documentTitles' = documentTitles . appearancePreferences $ config
@@ -104,12 +117,8 @@ joeTheme config = docTypeHtml $ do
       H.div ! A.style "display: flex" $ do
         H.div ! A.style "padding: 1em;" $ forM_ (addressLines personalInformation') (componentBodyText bodyColor')
         H.div ! A.style "padding: 1em;" $ do
-          forM_ (phoneNumbers . contactInformation $ personalInformation') $ do
-            componentBodyText bodyColor'
-
-          forM_ (emails . contactInformation $ personalInformation') $ do
-            componentBodyText bodyColor'
-      -- H.i ! (A.class_ . fromString "fa-solid fa-envelope")
+          forM_ (phoneNumbers . contactInformation $ personalInformation') (componentPhoneNumber bodyColor')
+          forM_ (emails . contactInformation $ personalInformation') (componentEmailAddress bodyColor')
 
       -- Short introduction section
       H.div $ do
