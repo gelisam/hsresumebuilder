@@ -80,8 +80,12 @@ personalInformation:
     phoneNumbers:
       - "+31 639825138"
     websites:
-      - "averageflow.github.io"
-      - "github.com/averageflow"
+      blogs:
+        - "averageflow.github.io"
+      github:
+        - "github.com/averageflow"
+      linkedIn:
+        - "linkedin.com/josepjba"
   displayName: "Josep Bigorra"
   jobTitle: "Software Engineer"
   shortIntro:

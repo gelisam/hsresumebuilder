@@ -48,7 +48,14 @@ data PersonalInfo = PersonalInfo
 data PersonalInfoContactInfo = PersonalInfoContactInfo
   { phoneNumbers :: [String],
     emails :: [String],
-    websites :: [String]
+    websites :: PersonalInfoWebsites
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data PersonalInfoWebsites = PersonalInfoWebsites
+  { blogs :: [String],
+    github :: [String],
+    linkedIn :: [String]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 

@@ -79,14 +79,15 @@ languageLevelRatingString rating =
     4 -> "native"
     _ -> ""
 
-componentPhoneNumber :: ToMarkup a => String -> a -> Html
-componentPhoneNumber bodyColor item = (H.div ! A.style "display: flex; align-items: center; gap: 0.5em;") $ do
-  componentStandaloneIcon "fa-solid fa-phone"
-  componentBodyText bodyColor item
+componentIconPrecedingTextContainer :: Html -> Html
+componentIconPrecedingTextContainer = H.div ! A.style "display: flex; align-items: center; gap: 0.5em;"
 
-componentEmailAddress :: String -> String -> Html
-componentEmailAddress bodyColor item = (H.div ! A.style "display: flex; align-items: center; gap: 0.5em;") $ do
-  componentStandaloneIcon "fa-solid fa-envelope"
+componentIconPrecedingTextContainer' :: Html -> Html
+componentIconPrecedingTextContainer' = H.div ! A.style "display: flex; align-items: center; gap: 1em;"
+
+componentIconPrecedingText :: ToMarkup a => String -> String -> a -> Html
+componentIconPrecedingText bodyColor iconClass item = componentIconPrecedingTextContainer $ do
+  componentStandaloneIcon iconClass
   componentBodyText bodyColor item
 
 joeTheme :: Preferences -> Html
@@ -117,8 +118,8 @@ joeTheme config = docTypeHtml $ do
       H.div ! A.style "display: flex" $ do
         H.div ! A.style "padding: 1em;" $ forM_ (addressLines personalInformation') (componentBodyText bodyColor')
         H.div ! A.style "padding: 1em;" $ do
-          forM_ (phoneNumbers . contactInformation $ personalInformation') (componentPhoneNumber bodyColor')
-          forM_ (emails . contactInformation $ personalInformation') (componentEmailAddress bodyColor')
+          forM_ (phoneNumbers . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-solid fa-phone")
+          forM_ (emails . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-solid fa-envelope")
 
       -- Short introduction section
       H.div $ do
@@ -180,4 +181,7 @@ joeTheme config = docTypeHtml $ do
         componentSectHeader
           sectionTitlesColor'
           $ seeMyWebsitesSectionTitle documentTitles'
-        forM_ (websites . contactInformation $ personalInformation') (componentBodyLink linkColor')
+        componentIconPrecedingTextContainer' $ do
+          forM_ (blogs . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-solid fa-rss")
+          forM_ (github . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-brands fa-github")
+          forM_ (linkedIn . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-brands fa-linkedin")

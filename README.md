@@ -24,7 +24,11 @@ For the language levels, please categorize them from 0, lowest, to 4, highest le
 
 ## Create your own
 
+All keys in the YAML file are required.
 See the YAML that I use for creating my own CV [here](.hsresumebuilder.yaml).
+
+Please note that on fields where a list of items is expected, it's also possible to provide `[]` as a value, in case you have nothing to place there.
+Failing to provide at least `[]` will result in program failure.
 
 ## Preview
 
