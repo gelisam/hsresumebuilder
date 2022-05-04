@@ -6,6 +6,12 @@ It will create or overwrite in the current directory a file named `output.html`.
 
 Of course you can always edit the HTML after generation if you feel like it. My goal is to futurely allow the usage of several themes and add customization options in each theme.
 
+You can run this tool if you have Cabal installed, from the root of the project, with:
+
+```
+cabal run hsresumebuilder
+```
+
 ## Language levels
 For the language levels, please categorize them from 0, lowest, to 4, highest levels of proficiency.
 
