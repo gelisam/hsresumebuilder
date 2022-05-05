@@ -15,7 +15,7 @@ import System.IO
     hGetContents,
     openFile,
   )
-import Text.Blaze.Html.Renderer.Pretty (renderHtml)
+import Text.Blaze.Html.Renderer.String (renderHtml)
 
 resumeBuilder :: IO ()
 resumeBuilder = do
