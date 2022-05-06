@@ -18,20 +18,22 @@ jobs:
           - ubuntu-latest
           - macos-latest
           - windows-latest
-        release-target-name:
-          - "Linux"
-          - "macOS"
-          - "Windows"
-        build-output-folder:
-          - x86_64-linux
-          - x86_64-darwin
-          - x86_64-windows
+        include:
+          - os: ubuntu-latest
+            RELEASE_TARGET_NAME: "Linux"
+            BUILD_OUTPUT_FOLDER: "x86_64-linux"
+          - os: macos-latest
+            RELEASE_TARGET_NAME: "macOS"
+            BUILD_OUTPUT_FOLDER: "x86_64-darwin"
+          - os: windows-latest
+            RELEASE_TARGET_NAME: "Windows"
+            BUILD_OUTPUT_FOLDER: "x86_64-windows"
 
     env:
       GHC_VERSION: "8.10.7"
       CABAL_VERSION: "3.6.2.0"
 
-    name: "Pre-release for ${{ matrix.release-target-name }}"
+    name: "Pre-release for ${{ matrix.RELEASE_TARGET_NAME }}"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -39,7 +41,7 @@ jobs:
         with:
           ghc-version: "${{ env.GHC_VERSION }}"
           cabal-version: "${{ env.CABAL_VERSION }}"
-      - name: Freeze Cabal plan
+      - name: Freeze Cabal plan>
         run: cabal freeze
 
       - name: Cache Cabal build artifacts
@@ -62,7 +64,7 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
           prerelease: true
-          title: "Dev build for ${{ matrix.release-target-name }}"
+          title: "Dev build for ${{ matrix.RELEASE_TARGET_NAME }}"
           files: |
             LICENSE
-            dist-newstyle/build/${{ matrix.build-output-folder }}/ghc-${{ env.GHC_VERSION }}/hsresumebuilder-0.1.0.0/x/hsresumebuilder/build/hsresumebuilder/hsresumebuilder
+            dist-newstyle/build/${{ matrix.BUILD_OUTPUT_FOLDER }}/ghc-${{ env.GHC_VERSION }}/hsresumebuilder-0.1.0.0/x/hsresumebuilder/build/hsresumebuilder/hsresumebuilder
