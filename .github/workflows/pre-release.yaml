@@ -24,7 +24,7 @@ jobs:
             BUILD_OUTPUT_FOLDER: "x86_64-linux"
           - os: macos-latest
             RELEASE_TARGET_NAME: "macOS"
-            BUILD_OUTPUT_FOLDER: "x86_64-darwin"
+            BUILD_OUTPUT_FOLDER: "x86_64-osx"
           - os: windows-latest
             RELEASE_TARGET_NAME: "Windows"
             BUILD_OUTPUT_FOLDER: "x86_64-windows"
