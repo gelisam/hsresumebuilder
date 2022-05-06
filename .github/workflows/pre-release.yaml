@@ -1,0 +1,36 @@
+---
+name: "pre-release"
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  pre-release:
+    strategy:
+      matrix:
+        #os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
+
+    name: "Pre Release for ${{ matrix.os }}"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: haskell/actions/setup@v2
+        with:
+          ghc-version: "8.10.7"
+          cabal-version: "3.6"
+      - name: "Build & test"
+        run: |
+          cabal build
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build for ${{ matrix.os }}"
+          files: |
+            LICENSE
+            dist-newstyle/build/x86_64-linux/ghc-8.10.7/hsresumebuilder-0.1.0.0/x/hsresumebuilder/build/hsresumebuilder/hsresumebuilder
