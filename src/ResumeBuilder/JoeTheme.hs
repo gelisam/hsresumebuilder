@@ -18,7 +18,7 @@ attributeFontFamily font = "font-family: " ++ font ++ ";"
 
 componentSectHeader :: ToMarkup a => String -> String -> a -> Html
 componentSectHeader color fontFamily item = do
-  let componentStyle = fromString (attributeCSSColor color) ++ fromString (attributeFontFamily fontFamily) ++ fromString "border-bottom:1px solid #575761"
+  let componentStyle = fromString (attributeCSSColor color) ++ fromString (attributeFontFamily fontFamily) ++ fromString "border-bottom:0.8px solid " ++ color
   (h3 ! A.style (fromString componentStyle)) . toHtml $ item
 
 componentPersonNameHeader :: ToMarkup a => String -> String -> a -> Html
@@ -122,22 +122,24 @@ joeTheme config = docTypeHtml $ do
     forM_ (customStylesheetsToLoad themeSettings') loadStylesheet
   body $
     main ! (A.style . fromString . attributeFontFamily $ bodyFontFamily') $ do
-      componentPersonNameHeader
-        (nameColor themeSettings')
-        (titleFontFamily themeSettings')
-        $ displayName personalInformation'
+      H.div ! A.style "display:flex;flex-direction:row;" $ do
+        H.div ! A.style "flex-grow: 1" $ do
+          componentPersonNameHeader
+            (nameColor themeSettings')
+            (titleFontFamily themeSettings')
+            $ displayName personalInformation'
 
-      componentJobTitleHeader
-        (jobTitleColor themeSettings')
-        (titleFontFamily themeSettings')
-        $ jobTitle personalInformation'
+          componentJobTitleHeader
+            (jobTitleColor themeSettings')
+            (titleFontFamily themeSettings')
+            $ jobTitle personalInformation'
 
-      -- Contact details section
-      H.div ! A.style "display: flex" $ do
-        H.div ! A.style "padding: 1em;" $ forM_ (addressLines personalInformation') (componentBodyText bodyColor')
-        H.div ! A.style "padding: 1em;" $ do
-          forM_ (phoneNumbers . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-solid fa-phone")
-          forM_ (emails . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-solid fa-envelope")
+        -- Contact details section
+        H.div ! A.style "flex-grow:0.6; display: flex" $ do
+          H.div ! A.style "padding: 1em;" $ forM_ (addressLines personalInformation') (componentBodyText bodyColor')
+          H.div ! A.style "padding: 1em;" $ do
+            forM_ (phoneNumbers . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-solid fa-phone")
+            forM_ (emails . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-solid fa-envelope")
 
       -- Short introduction section
       H.div $ do
