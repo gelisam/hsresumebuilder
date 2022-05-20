@@ -52,3 +52,61 @@ For the complex language levels, please categorize them from 0, lowest, to 4, hi
 - 3 : almost native
 - 4 : native
 
+## Some pre-made templates
+
+```yaml
+# Joe's choice
+bodyColor: "#292929"
+jobTitleColor: "#0F486C"
+nameColor: "#0A3048"
+sectionTitlesColor: "#0F486C"
+workExperienceInformationEntityNameColor: "#555"
+workExperienceInformationPositionNameColor: "#292929"
+workExperienceInformationTimeWorkedColor: "black"
+linkColor: "#0F486C"
+bodyFontFamily: "Crimson Pro"
+titleFontFamily: "Spectral"
+fontSize1: "2rem"
+fontSize2: "1.25rem"
+fontSize3: "1rem"
+customStylesheetsToLoad:
+    - "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+```
+
+```yaml
+# Dan's choice
+bodyColor: "#37474f"
+jobTitleColor: "#437f97"
+nameColor: "#1f5970"
+sectionTitlesColor: "#437f97"
+workExperienceInformationEntityNameColor: "#37474f"
+workExperienceInformationPositionNameColor: "#333"
+workExperienceInformationTimeWorkedColor: "#37474f"
+linkColor: "#0091c1"
+bodyFontFamily: "Lato"
+titleFontFamily: "Nunito"
+fontSize1: "2rem"
+fontSize2: "1.25rem"
+fontSize3: "1rem"
+customStylesheetsToLoad:
+  - "https://fonts.googleapis.com/css2?family=Josefins+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+```
+
+```yaml
+# Nicoletta's choice
+bodyColor: "#37474f"
+jobTitleColor: "#437f97"
+nameColor: "#1f5970"
+sectionTitlesColor: "#437f97"
+workExperienceInformationEntityNameColor: "#37474f"
+workExperienceInformationPositionNameColor: "#333"
+workExperienceInformationTimeWorkedColor: "#37474f"
+linkColor: "#0091c1"
+bodyFontFamily: "Source Sans Pro"
+titleFontFamily: "Josefins Sans"
+fontSize1: "2rem"
+fontSize2: "1.25rem"
+fontSize3: "1rem"
+customStylesheetsToLoad:
+  - "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+```

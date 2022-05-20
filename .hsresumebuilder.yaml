@@ -9,29 +9,21 @@ appearancePreferences:
     workExperienceSectionTitle: "WORK EXPERIENCE"
   theme: "joe"
   themeSettings:
-    # TEST!
-    # bodyColor: "orange"
-    # jobTitleColor: "orange"
-    # nameColor: "orange"
-    # sectionTitlesColor: "orange"
-    # workExperienceInformationEntityNameColor: "orange"
-    # workExperienceInformationPositionNameColor: "orange"
-    # workExperienceInformationTimeWorkedColor: "orange"
-    # linkColor: "orange"
-    # bodyFontFamily: "Cantarell"
-    #
-    #
-    #
-    # defaults for Joe theme
-    bodyColor: "#111"
-    jobTitleColor: "green"
-    nameColor: "black"
-    sectionTitlesColor: "#222"
-    workExperienceInformationEntityNameColor: "#787878"
-    workExperienceInformationPositionNameColor: "#333"
+    bodyColor: "#292929"
+    jobTitleColor: "#0F486C"
+    nameColor: "#0A3048"
+    sectionTitlesColor: "#0F486C"
+    workExperienceInformationEntityNameColor: "#555"
+    workExperienceInformationPositionNameColor: "#292929"
     workExperienceInformationTimeWorkedColor: "black"
-    linkColor: "#0091c1"
-    bodyFontFamily: "Cantarell"
+    linkColor: "#0F486C"
+    bodyFontFamily: "Crimson Pro"
+    titleFontFamily: "Spectral"
+    fontSize1: "2rem"
+    fontSize2: "1.25rem"
+    fontSize3: "1rem"
+    customStylesheetsToLoad:
+      - "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
 
 driverLicenseInformation:
   - "B driver's license, for (automobile) vehicles up to 3,5 ton"

@@ -75,7 +75,12 @@ data JoeThemeSettings = JoeThemeSettings
     workExperienceInformationPositionNameColor :: String,
     workExperienceInformationTimeWorkedColor :: String,
     linkColor :: String,
-    bodyFontFamily :: String
+    bodyFontFamily :: String,
+    titleFontFamily :: String,
+    fontSize1 :: String,
+    fontSize2 :: String,
+    fontSize3 :: String,
+    customStylesheetsToLoad :: [String]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 

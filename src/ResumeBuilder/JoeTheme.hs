@@ -13,20 +13,23 @@ import Text.Blaze.Html5.Attributes as A
 attributeCSSColor :: String -> String
 attributeCSSColor colorValue = "color: " ++ colorValue ++ ";"
 
-attributeBodyFontFamily :: String -> String
-attributeBodyFontFamily font = "font-family: " ++ font ++ ";"
+attributeFontFamily :: String -> String
+attributeFontFamily font = "font-family: " ++ font ++ ";"
 
-attributeTitleFontFamily :: String -> String
-attributeTitleFontFamily font = "font-family: " ++ font ++ ";"
+componentSectHeader :: ToMarkup a => String -> String -> a -> Html
+componentSectHeader color fontFamily item = do
+  let componentStyle = fromString (attributeCSSColor color) ++ fromString (attributeFontFamily fontFamily) ++ fromString "border-bottom:1px solid #575761"
+  (h3 ! A.style (fromString componentStyle)) . toHtml $ item
 
-componentSectHeader :: ToMarkup a => String -> a -> Html
-componentSectHeader color = (h3 ! A.style (fromString $ attributeCSSColor color)) . toHtml
+componentPersonNameHeader :: ToMarkup a => String -> String -> a -> Html
+componentPersonNameHeader color fontFamily item = do
+  let componentStyle = fromString (attributeCSSColor color) ++ fromString (attributeFontFamily fontFamily)
+  (h1 ! A.style (fromString componentStyle)) . toHtml $ item
 
-componentPersonNameHeader :: ToMarkup a => String -> a -> Html
-componentPersonNameHeader color = (h1 ! A.style (fromString $ attributeCSSColor color)) . toHtml
-
-componentJobTitleHeader :: ToMarkup a => String -> a -> Html
-componentJobTitleHeader color = (h2 ! A.style (fromString $ attributeCSSColor color)) . toHtml
+componentJobTitleHeader :: ToMarkup a => String -> String -> a -> Html
+componentJobTitleHeader color fontFamily item = do
+  let componentStyle = fromString (attributeCSSColor color) ++ fromString (attributeFontFamily fontFamily)
+  (h2 ! A.style (fromString componentStyle)) . toHtml $ item
 
 componentBodyText :: ToMarkup a => String -> a -> Html
 componentBodyText color = (p ! A.style (fromString $ attributeCSSColor color)) . toHtml
@@ -90,6 +93,17 @@ componentIconPrecedingText bodyColor iconClass item = componentIconPrecedingText
   componentStandaloneIcon iconClass
   componentBodyText bodyColor item
 
+loadStylesheet :: String -> Html
+loadStylesheet x = link ! rel "stylesheet" ! href (fromString x)
+
+internalThemeStylesheets :: [String]
+internalThemeStylesheets =
+  [ "https://cdn.jsdelivr.net/npm/water.css@2/out/light.css",
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
+    "https://fonts.googleapis.com",
+    "https://fonts.gstatic.com"
+  ]
+
 joeTheme :: Preferences -> Html
 joeTheme config = docTypeHtml $ do
   let documentTitles' = documentTitles . appearancePreferences $ config
@@ -102,16 +116,20 @@ joeTheme config = docTypeHtml $ do
 
   H.head $ do
     H.title . toHtml $ "Resume of " ++ (displayName . personalInformation $ config)
-    link ! rel "stylesheet" ! href "https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"
-    link ! rel "stylesheet" ! href "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    -- load internal theme stylesheets
+    forM_ internalThemeStylesheets loadStylesheet
+    -- load custom user stylesheets
+    forM_ (customStylesheetsToLoad themeSettings') loadStylesheet
   body $
-    main ! (A.style . fromString . attributeBodyFontFamily $ bodyFontFamily') $ do
+    main ! (A.style . fromString . attributeFontFamily $ bodyFontFamily') $ do
       componentPersonNameHeader
         (nameColor themeSettings')
+        (titleFontFamily themeSettings')
         $ displayName personalInformation'
 
       componentJobTitleHeader
         (jobTitleColor themeSettings')
+        (titleFontFamily themeSettings')
         $ jobTitle personalInformation'
 
       -- Contact details section
@@ -125,6 +143,7 @@ joeTheme config = docTypeHtml $ do
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
+          (titleFontFamily themeSettings')
           $ shortIntroSectionTitle documentTitles'
         forM_ (shortIntro personalInformation') (componentJustifiedBodyText bodyColor')
 
@@ -132,6 +151,7 @@ joeTheme config = docTypeHtml $ do
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
+          (titleFontFamily themeSettings')
           $ workExperienceSectionTitle documentTitles'
         forM_ (workExperienceInformation config) (componentWorkExperienceItem themeSettings')
 
@@ -141,6 +161,7 @@ joeTheme config = docTypeHtml $ do
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
+          (titleFontFamily themeSettings')
           $ educationSectionTitle documentTitles'
         forM_ (educationInformation config) (componentWorkExperienceItem themeSettings')
 
@@ -148,10 +169,11 @@ joeTheme config = docTypeHtml $ do
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
+          (titleFontFamily themeSettings')
           $ languagesInformationTitle documentTitles'
         if simpleMode . languagesInformation $ config
           then p . toHtml $ simpleModeContent . languagesInformation $ config
-          else H.div $ do
+          else H.div $
             table $ do
               tr $ do
                 th ""
@@ -166,6 +188,7 @@ joeTheme config = docTypeHtml $ do
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
+          (titleFontFamily themeSettings')
           $ driverLicenseInformationTitle documentTitles'
         ul $ forM_ (driverLicenseInformation config) (componentBodyListItem bodyColor')
 
@@ -173,6 +196,7 @@ joeTheme config = docTypeHtml $ do
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
+          (titleFontFamily themeSettings')
           $ interestsHobbiesInformationTitle documentTitles'
         forM_ (interestsHobbiesInformation config) (componentJustifiedBodyText bodyColor')
 
@@ -180,8 +204,14 @@ joeTheme config = docTypeHtml $ do
       H.div $ do
         componentSectHeader
           sectionTitlesColor'
+          (titleFontFamily themeSettings')
           $ seeMyWebsitesSectionTitle documentTitles'
         componentIconPrecedingTextContainer' $ do
           forM_ (blogs . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-solid fa-rss")
           forM_ (github . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-brands fa-github")
           forM_ (linkedIn . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' "fa-brands fa-linkedin")
+
+      H.div ! A.style "margin-top: 16px; text-align:center;" $ do
+        small $ do
+          (a ! href "https://github.com/averageflow/hsresumebuilder")
+            "λ This document has been proudly generated with my own Haskell code"
