@@ -22,8 +22,11 @@ source-repository head
 library
   exposed-modules:
       ResumeBuilder.Config
-      ResumeBuilder.JoeTheme
+      ResumeBuilder.ResumeBuilderPreferences
+      ResumeBuilder.Themes.JoeTheme.Template
+      ResumeBuilder.Themes.JoeTheme.Components
       ResumeBuilder.Lib
+      ResumeBuilder.Themes.JoeTheme.Styler
   hs-source-dirs:
       src
   build-depends:

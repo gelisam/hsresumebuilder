@@ -6,8 +6,9 @@ module ResumeBuilder.Lib
 where
 
 import Control.Monad (forM_)
-import ResumeBuilder.Config (Preferences, getConfig)
-import ResumeBuilder.JoeTheme (joeTheme)
+import ResumeBuilder.Config (getConfig)
+import ResumeBuilder.ResumeBuilderPreferences (Preferences)
+import ResumeBuilder.Themes.JoeTheme.Template (renderResume)
 import System.Exit (exitFailure)
 import System.IO
   ( IOMode (ReadWriteMode),
@@ -24,7 +25,7 @@ resumeBuilder = do
 
 beginRendering :: Preferences -> IO ()
 beginRendering config = do
-  let generatedContent = renderHtml . joeTheme $ config
+  let generatedContent = renderHtml . renderResume $ config
   saveContentToFile generatedContent
   putStrLn "SUCCESSFULLY GENERATED RESUME! SEE THE FILE NAMED output.html IN THIS CURRENT DIRECTORY!"
 
