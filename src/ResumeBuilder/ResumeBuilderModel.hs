@@ -1,7 +1,7 @@
 {-# LANGUAGE DeriveAnyClass #-}
 {-# LANGUAGE DeriveGeneric #-}
 
-module ResumeBuilder.ResumeBuilderPreferences where
+module ResumeBuilder.ResumeBuilderModel where
 
 import qualified Data.ByteString
 import Data.Map (Map)
@@ -10,25 +10,35 @@ import Data.Text.Encoding (encodeUtf8)
 import Data.Yaml (FromJSON, ToJSON, decodeFileThrow)
 import GHC.Generics (Generic)
 
-data Preferences = Preferences
-  { personalInformation :: PersonalInfo,
-    appearancePreferences :: AppearancePreferences,
-    workExperienceInformation :: [WorkExperienceInformationItem],
-    educationInformation :: [WorkExperienceInformationItem],
-    interestsHobbiesInformation :: [String],
-    driverLicenseInformation :: [String],
-    languagesInformation :: LanguagesInformation
+newtype HsResumeBuilder = HsResumeBuilder
+  { hsResumeBuilder :: HsResumeBuilderPreferences
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
-data LanguagesInformation = LanguagesInformation
-  { complexModeContent :: [LanguageLevelInformation],
+newtype HsResumeBuilderPreferences = HsResumeBuilderPreferences
+  { preferences :: Preferences
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data Preferences = Preferences
+  { personal :: PersonalInfo,
+    appearance :: AppearancePreferences,
+    experience :: [ExperienceItem],
+    education :: [ExperienceItem],
+    interestsHobbies :: [String],
+    driverLicense :: [String],
+    languages :: Languages
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data Languages = Languages
+  { complexModeContent :: [LanguageLevel],
     simpleMode :: Bool,
     simpleModeContent :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
-data LanguageLevelInformation = LanguageLevelInformation
+data LanguageLevel = LanguageLevel
   { languageName :: String,
     speakingProficiency :: Int,
     writingProficiency :: Int,
@@ -40,7 +50,7 @@ data PersonalInfo = PersonalInfo
   { displayName :: String,
     jobTitle :: String,
     addressLines :: [String],
-    contactInformation :: PersonalInfoContactInfo,
+    contact :: PersonalInfoContactInfo,
     shortIntro :: [String]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
@@ -71,9 +81,10 @@ data JoeThemeSettings = JoeThemeSettings
     jobTitleColor :: String,
     nameColor :: String,
     sectionTitlesColor :: String,
-    workExperienceInformationEntityNameColor :: String,
-    workExperienceInformationPositionNameColor :: String,
-    workExperienceInformationTimeWorkedColor :: String,
+    sectionTitleBorderEnabled :: Bool,
+    entityNameColor :: String,
+    positionNameColor :: String,
+    timeWorkedColor :: String,
     linkColor :: String,
     bodyFontFamily :: String,
     titleFontFamily :: String,
@@ -84,7 +95,7 @@ data JoeThemeSettings = JoeThemeSettings
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
-data WorkExperienceInformationItem = WorkExperienceInformationItem
+data ExperienceItem = ExperienceItem
   { entityName :: String,
     experiencePoints :: [String],
     positionName :: String,
@@ -93,12 +104,12 @@ data WorkExperienceInformationItem = WorkExperienceInformationItem
   deriving (Generic, Show, ToJSON, FromJSON)
 
 data DocumentTitles = DocumentTitles
-  { shortIntroSectionTitle :: String,
-    workExperienceSectionTitle :: String,
-    educationSectionTitle :: String,
-    interestsHobbiesInformationTitle :: String,
-    driverLicenseInformationTitle :: String,
-    languagesInformationTitle :: String,
-    seeMyWebsitesSectionTitle :: String
+  { shortIntroTitle :: String,
+    workExperienceTitle :: String,
+    educationTitle :: String,
+    interestsHobbiesTitle :: String,
+    driverLicenseTitle :: String,
+    languagesTitle :: String,
+    seeMyWebsitesTitle :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
