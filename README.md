@@ -37,4 +37,4 @@ cabal run hsresumebuilder
 ```
 
 
-### Visit the Wiki for more
+### Visit the [Wiki](https://github.com/averageflow/hsresumebuilder/wiki) for more
