@@ -4,7 +4,7 @@
 
 hsResumeBuilder is an attempt at a Curriculum Vitae / Resume generator written entirely in Haskell.
 
-See [my resume as an example](https://drive.google.com/file/d/1a_slYffLHkftaimTSmW1iWCTroNAiZC8/view?usp=sharing), made with this very tool or open the `output.html` file in your browser.
+See [my resume as an example](https://drive.google.com/file/d/1a_slYffLHkftaimTSmW1iWCTroNAiZC8/view?usp=sharing), made with this very tool or open the `docs/example-joes-choice.html` file in your browser.
 
 The concept is a highly-customizable theme-based resume generator, currently supporting one theme.
 
