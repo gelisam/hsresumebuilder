@@ -4,7 +4,7 @@
 
 hsResumeBuilder is an attempt at a Curriculum Vitae / Resume generator written entirely in Haskell.
 
-See [my resume as an example](https://drive.google.com/file/d/1a_slYffLHkftaimTSmW1iWCTroNAiZC8/view?usp=sharing), made with this very tool or open the `docs/index.html` file in your browser.
+See [my resume as an example](https://averageflow.github.io/hsresumebuilder/), made with this very tool.
 
 The concept is a highly-customizable theme-based resume generator, currently supporting one theme.
 
@@ -31,82 +31,4 @@ cabal run hsresumebuilder
 ```
 
 
-
-## Create your own
-
-All keys in the YAML file are required.
-See the YAML that I use for creating my own CV [here](.hsresumebuilder.yaml).
-
-Please note that on fields where a list of items is expected, it's also possible to provide `[]` as a value, in case you have nothing to place there.
-Failing to provide at least `[]` will result in program failure.
-
-**! Note about language levels in Joe's theme**
-
-If you choose for simple language level mode, it simply will take a string as input.
-
-For the complex language levels, please categorize them from 0, lowest, to 4, highest levels of proficiency.
-
-- 0 : limited proficiency
-- 1 : limited proficiency +
-- 2 : high proficiency
-- 3 : almost native
-- 4 : native
-
-## Some pre-made templates
-
-```yaml
-# Joe's choice
-bodyColor: "#292929"
-jobTitleColor: "#0F486C"
-nameColor: "#0A3048"
-sectionTitlesColor: "#0F486C"
-entityNameColor: "#555"
-positionNameColor: "#292929"
-timeWorkedColor: "black"
-linkColor: "#0F486C"
-bodyFontFamily: "Crimson Pro"
-titleFontFamily: "Spectral"
-fontSize1: "2rem"
-fontSize2: "1rem"
-fontSize3: "1rem"
-customStylesheetsToLoad:
-  - "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-```
-
-```yaml
-# Dan's choice
-bodyColor: "#37474f"
-jobTitleColor: "#437f97"
-nameColor: "#1f5970"
-sectionTitlesColor: "#437f97"
-entityNameColor: "#37474f"
-positionNameColor: "#333"
-timeWorkedColor: "#37474f"
-linkColor: "#0091c1"
-bodyFontFamily: "Lato"
-titleFontFamily: "Nunito"
-fontSize1: "2rem"
-fontSize2: "1.25rem"
-fontSize3: "1rem"
-customStylesheetsToLoad:
-  - "https://fonts.googleapis.com/css2?family=Josefins+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-```
-
-```yaml
-# Nicoletta's choice
-bodyColor: "#37474f"
-jobTitleColor: "#437f97"
-nameColor: "#1f5970"
-sectionTitlesColor: "#437f97"
-entityNameColor: "#37474f"
-positionNameColor: "#333"
-timeWorkedColor: "#37474f"
-linkColor: "#0091c1"
-bodyFontFamily: "Source Sans Pro"
-titleFontFamily: "Josefins Sans"
-fontSize1: "2rem"
-fontSize2: "1.25rem"
-fontSize3: "1rem"
-customStylesheetsToLoad:
-  - "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
-```
+### Visit the Wiki for more
