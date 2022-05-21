@@ -16,6 +16,12 @@ Any new theme is welcome in a pull request, and we gotta figure out the best way
 
 This CLI tool will read a YAML file named `hsresumebuilder.yaml` in the current directory and generate a resume from the preferences in the file.
 
+All keys in the YAML file are required.
+See the YAML that I use for creating my own CV [here](.hsresumebuilder.yaml).
+
+Please note that on fields where a list of items is expected, it's also possible to provide `[]` as a value, in case you have nothing to place there.
+Failing to provide at least `[]` will result in program failure.
+
 It will create or overwrite in the current directory a file named `output.html`. 
 
 After running the program successfully you can open this HTML file in your browser and print it as PDF. 
