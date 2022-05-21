@@ -14,7 +14,7 @@ Any new theme is welcome in a pull request, and we gotta figure out the best way
 
 ### Usage
 
-This CLI tool will read a YAML file named `.hsresumebuilder.yaml` in the current directory and generate a resume from the preferences in the file.
+This CLI tool will read a YAML file named `hsresumebuilder.yaml` in the current directory and generate a resume from the preferences in the file.
 
 It will create or overwrite in the current directory a file named `output.html`. 
 
@@ -60,17 +60,17 @@ bodyColor: "#292929"
 jobTitleColor: "#0F486C"
 nameColor: "#0A3048"
 sectionTitlesColor: "#0F486C"
-workExperienceInformationEntityNameColor: "#555"
-workExperienceInformationPositionNameColor: "#292929"
-workExperienceInformationTimeWorkedColor: "black"
+entityNameColor: "#555"
+positionNameColor: "#292929"
+timeWorkedColor: "black"
 linkColor: "#0F486C"
 bodyFontFamily: "Crimson Pro"
 titleFontFamily: "Spectral"
 fontSize1: "2rem"
-fontSize2: "1.25rem"
+fontSize2: "1rem"
 fontSize3: "1rem"
 customStylesheetsToLoad:
-    - "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+  - "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
 ```
 
 ```yaml
@@ -79,9 +79,9 @@ bodyColor: "#37474f"
 jobTitleColor: "#437f97"
 nameColor: "#1f5970"
 sectionTitlesColor: "#437f97"
-workExperienceInformationEntityNameColor: "#37474f"
-workExperienceInformationPositionNameColor: "#333"
-workExperienceInformationTimeWorkedColor: "#37474f"
+entityNameColor: "#37474f"
+positionNameColor: "#333"
+timeWorkedColor: "#37474f"
 linkColor: "#0091c1"
 bodyFontFamily: "Lato"
 titleFontFamily: "Nunito"
@@ -98,9 +98,9 @@ bodyColor: "#37474f"
 jobTitleColor: "#437f97"
 nameColor: "#1f5970"
 sectionTitlesColor: "#437f97"
-workExperienceInformationEntityNameColor: "#37474f"
-workExperienceInformationPositionNameColor: "#333"
-workExperienceInformationTimeWorkedColor: "#37474f"
+entityNameColor: "#37474f"
+positionNameColor: "#333"
+timeWorkedColor: "#37474f"
 linkColor: "#0091c1"
 bodyFontFamily: "Source Sans Pro"
 titleFontFamily: "Josefins Sans"

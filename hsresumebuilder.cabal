@@ -22,7 +22,7 @@ source-repository head
 library
   exposed-modules:
       ResumeBuilder.Config
-      ResumeBuilder.ResumeBuilderPreferences
+      ResumeBuilder.ResumeBuilderModel
       ResumeBuilder.Themes.JoeTheme.Template
       ResumeBuilder.Themes.JoeTheme.Components
       ResumeBuilder.Lib
