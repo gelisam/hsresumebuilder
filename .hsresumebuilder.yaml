@@ -20,7 +20,7 @@ appearancePreferences:
     bodyFontFamily: "Crimson Pro"
     titleFontFamily: "Spectral"
     fontSize1: "2rem"
-    fontSize2: "1.25rem"
+    fontSize2: "1rem"
     fontSize3: "1rem"
     customStylesheetsToLoad:
       - "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
@@ -79,20 +79,21 @@ personalInformation:
       linkedIn:
         - "linkedin.com/in/josepjba"
   displayName: "Josep Bigorra"
-  jobTitle: "Software Engineer"
+  jobTitle: "SOFTWARE ENGINEER"
   shortIntro:
-    - "I am a Software Engineer with DevOps experience that is always eager to learn while perfecting my skills and projects and taking on challenges. Living in The Netherlands since 2019, born 23/12/1996 in Spain."
-    - "I love to create solutions, improving, automating workflows, creating fast and reliable programs, helping and teaching others and to express myself via my creations."
+    - "I am a Software Engineer with DevOps experience that is always eager to learn, create solutions, perfecting my skills and taking on challenges. Living in The Netherlands since 2019, born 23/12/1996 in Spain."
+    - "I mostly program in Java, Haskell, Go, SQL, Shell and the occasional Rust and Python. Given the choice I prefer to design most software using the functional programming paradigm. My storage engine experience revolves around PostgreSQL MariaDB, OracleSQL, NoSQL DBs like BigTable, Redis, MongoDB, Firebase, ElasticSearch."
     - "I love the Ops side of the projects and platforms too. I am a UNIX guy at home with Linux, BSDs, macOS, etc. I like distributed tracing, infrastructure-as-code, CI/CD, and type-safe languages."
+    - "I love to create solutions, improving, automating workflows, creating fast and reliable programs, helping and teaching others and to express myself via my creations."
 workExperienceInformation:
   - entityName: "IKEA, Amsterdam, Netherlands"
     experiencePoints:
       - "Experience in Java, Spring Boot and Gradle"
       - "Apache Beam, Dataflow, data-pipelines"
-      - "Google Cloud Platform, Pub/Sub"
+      - "Google Cloud Platform, Pub/Sub, Serverless computing"
       - "Terraform, Infrastructure-as-code"
       - "Kubernetes and Docker"
-      - "PostgreSQL, BigTable, ElasticSearch"
+      - "PostgreSQL, BigTable, ElasticSearch, Redis, Firebase"
       - "Lots of unit and integration testing, mocking"
     positionName: "Software Engineer"
     timeWorked: "January 2022 - Present"

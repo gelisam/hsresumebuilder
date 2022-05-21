@@ -9,47 +9,48 @@ import ResumeBuilder.Themes.JoeTheme.Styler (Classes, Styles, applyClasses, appl
 import Text.Blaze.Html5 as H
 import Text.Blaze.Html5.Attributes as A
 
-componentPersonNameHeader :: ToMarkup a => String -> String -> a -> Html
-componentPersonNameHeader color fontFamily = (h1 ! applyStyles css) . toHtml
+componentPersonNameHeader :: ToMarkup a => String -> String -> String -> a -> Html
+componentPersonNameHeader color fontFamily fontSize = (h1 ! applyStyles css) . toHtml
   where
-    css = [("color", color), ("font-family", fontFamily)]
+    css = [("color", color), ("font-family", fontFamily), ("font-size", fontSize)]
 
-componentJobTitleHeader :: ToMarkup a => String -> String -> a -> Html
-componentJobTitleHeader color fontFamily = (h2 ! applyStyles css) . toHtml
+componentJobTitleHeader :: ToMarkup a => String -> String -> String -> a -> Html
+componentJobTitleHeader color fontFamily fontSize = (h2 ! applyStyles css) . toHtml
   where
-    css = [("color", color), ("font-family", fontFamily)]
+    css = [("color", color), ("font-family", fontFamily), ("font-size", fontSize)]
 
-componentBodyText :: ToMarkup a => String -> a -> Html
-componentBodyText color = (p ! applyStyles css) . toHtml
+componentBodyText :: ToMarkup a => String -> String -> a -> Html
+componentBodyText color fontSize = (p ! applyStyles css) . toHtml
   where
-    css = [("color", color)]
+    css = [("color", color), ("font-size", fontSize)]
 
-componentStandaloneIcon :: Classes -> Html
-componentStandaloneIcon classes = (i ! applyClasses classes) ""
+componentStandaloneIcon :: String -> Classes -> Html
+componentStandaloneIcon color classes = (i ! applyClasses classes ! applyStyles [("color", color)]) ""
 
 componentSmallBodyText :: ToMarkup a => String -> a -> Html
 componentSmallBodyText color = (small ! applyStyles css) . toHtml
   where
     css = [("color", color)]
 
-componentJustifiedBodyText :: ToMarkup a => String -> a -> Html
-componentJustifiedBodyText color = (p ! applyStyles css) . toHtml
+componentJustifiedBodyText :: ToMarkup a => String -> String -> a -> Html
+componentJustifiedBodyText color fontSize = (p ! applyStyles css) . toHtml
   where
-    css = [("color", color), ("text-align", "justify")]
+    css = [("color", color), ("text-align", "justify"), ("font-size", fontSize)]
 
-componentBodyLink :: ToMarkup a => String -> a -> Html
-componentBodyLink color = (a ! applyStyles css ! A.href "") . toHtml
+componentBodyLink :: ToMarkup a => String -> String -> a -> Html
+componentBodyLink color fontSize = (a ! applyStyles css ! A.href "") . toHtml
   where
-    css = [("color", color), ("padding", "1em")]
+    css = [("color", color), ("padding", "1em"), ("font-size", fontSize)]
 
-componentBodyListItem :: ToMarkup a => String -> a -> Html
-componentBodyListItem color = (li ! applyStyles css) . toHtml
+componentBodyListItem :: ToMarkup a => String -> String -> a -> Html
+componentBodyListItem color fontSize = (li ! applyStyles css) . toHtml
   where
     css = [("color", color)]
 
 componentWorkExperienceItem :: JoeThemeSettings -> WorkExperienceInformationItem -> Html
 componentWorkExperienceItem themeSettings item = H.div $ do
   let bodyColor' = bodyColor themeSettings
+  let bodyFontSize = fontSize3 themeSettings
   let entityNameColor' = workExperienceInformationEntityNameColor themeSettings
   let positionNameColor' = workExperienceInformationPositionNameColor themeSettings
   let timeWorkedColor' = workExperienceInformationPositionNameColor themeSettings
@@ -59,7 +60,7 @@ componentWorkExperienceItem themeSettings item = H.div $ do
     (H.span ! applyStyles [("margin-left", "0.4em"), ("margin-right", "0.4em"), ("color", bodyColor')]) " - "
     (strong ! applyStyles [("color", entityNameColor')]) . toHtml . entityName $ item
   componentSmallBodyText timeWorkedColor' $ timeWorked item
-  ul $ forM_ (experiencePoints item) (componentBodyListItem bodyColor')
+  ul $ forM_ (experiencePoints item) (componentBodyListItem bodyColor' bodyFontSize)
 
 componentLanguageLevelItem :: LanguageLevelInformation -> Html
 componentLanguageLevelItem item = do
@@ -86,10 +87,11 @@ componentIconPrecedingTextContainer' :: Html -> Html
 componentIconPrecedingTextContainer' = do
   H.div ! applyStyles [("display", "flex"), ("align-items", "center"), ("gap", "1em")]
 
-componentIconPrecedingText :: ToMarkup a => String -> Classes -> a -> Html
-componentIconPrecedingText bodyColor classes item = componentIconPrecedingTextContainer $ do
-  componentStandaloneIcon classes
-  componentBodyText bodyColor item
+componentIconPrecedingText :: ToMarkup a => String -> String -> String -> Classes -> a -> Html
+componentIconPrecedingText bodyColor iconColor fontSize classes item = do
+  componentIconPrecedingTextContainer $ do
+    componentStandaloneIcon iconColor classes
+    componentBodyText bodyColor fontSize item
 
 loadStylesheet :: String -> Html
 loadStylesheet x = link ! rel "stylesheet" ! href (fromString x)
@@ -102,7 +104,7 @@ internalThemeStylesheets =
     "https://fonts.gstatic.com"
   ]
 
-componentSectHeader :: ToMarkup a => String -> String -> a -> Html
-componentSectHeader color fontFamily = do
-  let css = [("color", color), ("font-family", fontFamily), ("border-bottom", "0.8px solid" ++ color)]
-  (h3 ! applyStyles css) . toHtml
+componentSectHeader :: ToMarkup a => String -> String -> String -> a -> Html
+componentSectHeader color fontFamily fontSize = (h3 ! applyStyles css) . toHtml
+  where
+    css = [("color", color), ("font-family", fontFamily), ("border-bottom", "0.8px solid" ++ color), ("font-size", fontSize)]

@@ -20,6 +20,13 @@ renderResume config = docTypeHtml $ do
   let sectionTitlesColor' = sectionTitlesColor themeSettings'
   let bodyFontFamily' = bodyFontFamily themeSettings'
 
+  let renderSectionHeader headerText =
+        componentSectHeader
+          sectionTitlesColor'
+          (titleFontFamily themeSettings')
+          (fontSize2 themeSettings')
+          headerText
+
   H.head $ do
     H.title . toHtml $ "Resume of " ++ (displayName . personalInformation $ config)
     -- load internal theme stylesheets
@@ -41,52 +48,42 @@ renderResume config = docTypeHtml $ do
             componentPersonNameHeader
               (nameColor themeSettings')
               (titleFontFamily themeSettings')
+              (fontSize1 themeSettings')
               $ displayName personalInformation'
 
             componentJobTitleHeader
               (jobTitleColor themeSettings')
               (titleFontFamily themeSettings')
+              (fontSize2 themeSettings')
               $ jobTitle personalInformation'
 
           -- Contact details section"
           H.div ! applyStyles [("flex-grow", "0.6"), ("display", "flex")] $ do
-            H.div ! applyStyles [("padding", "0.8em")] $ forM_ (addressLines personalInformation') (componentBodyText bodyColor')
+            H.div ! applyStyles [("padding", "0.8em")] $ forM_ (addressLines personalInformation') (componentBodyText bodyColor' (fontSize3 themeSettings'))
             H.div ! applyStyles [("padding", "0.8em")] $ do
-              forM_ (phoneNumbers . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' ["fa-solid", "fa-phone"])
-              forM_ (emails . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' ["fa-solid", "fa-envelope"])
+              forM_ (phoneNumbers . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' (nameColor themeSettings') (fontSize3 themeSettings') ["fa-solid", "fa-phone"])
+              forM_ (emails . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' (nameColor themeSettings') (fontSize3 themeSettings') ["fa-solid", "fa-envelope"])
 
       -- Short introduction section
       H.div $ do
-        componentSectHeader
-          sectionTitlesColor'
-          (titleFontFamily themeSettings')
-          $ shortIntroSectionTitle documentTitles'
-        forM_ (shortIntro personalInformation') (componentJustifiedBodyText bodyColor')
+        renderSectionHeader . shortIntroSectionTitle $ documentTitles'
+        forM_ (shortIntro personalInformation') (componentJustifiedBodyText bodyColor' (fontSize3 themeSettings'))
 
       -- Work experience section
       H.div $ do
-        componentSectHeader
-          sectionTitlesColor'
-          (titleFontFamily themeSettings')
-          $ workExperienceSectionTitle documentTitles'
+        renderSectionHeader . workExperienceSectionTitle $ documentTitles'
         forM_ (workExperienceInformation config) (componentWorkExperienceItem themeSettings')
 
       br
 
       -- Education section
       H.div $ do
-        componentSectHeader
-          sectionTitlesColor'
-          (titleFontFamily themeSettings')
-          $ educationSectionTitle documentTitles'
+        renderSectionHeader . educationSectionTitle $ documentTitles'
         forM_ (educationInformation config) (componentWorkExperienceItem themeSettings')
 
       -- Languages section
       H.div $ do
-        componentSectHeader
-          sectionTitlesColor'
-          (titleFontFamily themeSettings')
-          $ languagesInformationTitle documentTitles'
+        renderSectionHeader . languagesInformationTitle $ documentTitles'
         if simpleMode . languagesInformation $ config
           then p . toHtml $ simpleModeContent . languagesInformation $ config
           else H.div $
@@ -102,38 +99,29 @@ renderResume config = docTypeHtml $ do
 
       -- Driver license section
       H.div $ do
-        componentSectHeader
-          sectionTitlesColor'
-          (titleFontFamily themeSettings')
-          $ driverLicenseInformationTitle documentTitles'
-        ul $ forM_ (driverLicenseInformation config) (componentBodyListItem bodyColor')
+        renderSectionHeader . driverLicenseInformationTitle $ documentTitles'
+        ul $ forM_ (driverLicenseInformation config) (componentBodyListItem bodyColor' (fontSize3 themeSettings'))
 
       -- Interests hobbies section
       H.div $ do
-        componentSectHeader
-          sectionTitlesColor'
-          (titleFontFamily themeSettings')
-          $ interestsHobbiesInformationTitle documentTitles'
-        forM_ (interestsHobbiesInformation config) (componentJustifiedBodyText bodyColor')
+        renderSectionHeader . interestsHobbiesInformationTitle $ documentTitles'
+        forM_ (interestsHobbiesInformation config) (componentJustifiedBodyText bodyColor' (fontSize3 themeSettings'))
 
       -- Websites section
       H.div $ do
-        componentSectHeader
-          sectionTitlesColor'
-          (titleFontFamily themeSettings')
-          $ seeMyWebsitesSectionTitle documentTitles'
+        renderSectionHeader . seeMyWebsitesSectionTitle $ documentTitles'
         componentIconPrecedingTextContainer' $ do
           forM_
             (blogs . websites . contactInformation $ personalInformation')
-            (componentIconPrecedingText bodyColor' ["fa-solid", "fa-rss"])
+            (componentIconPrecedingText bodyColor' bodyColor' (fontSize3 themeSettings') ["fa-solid", "fa-rss"])
 
           forM_
             (github . websites . contactInformation $ personalInformation')
-            (componentIconPrecedingText bodyColor' ["fa-brands", "fa-github"])
+            (componentIconPrecedingText bodyColor' bodyColor' (fontSize3 themeSettings') ["fa-brands", "fa-github"])
 
           forM_
             (linkedIn . websites . contactInformation $ personalInformation')
-            (componentIconPrecedingText bodyColor' ["fa-brands", "fa-linkedin"])
+            (componentIconPrecedingText bodyColor' bodyColor' (fontSize3 themeSettings') ["fa-brands", "fa-linkedin"])
 
       -- Credits to hsResumeBuilder
       H.div ! applyStyles [("margin-top", "16px"), ("text-align", "center")] $ do
