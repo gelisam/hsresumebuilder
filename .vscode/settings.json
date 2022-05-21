@@ -1,0 +1,22 @@
+{
+    "filewatcher.commands": [
+        {
+            "match": "\\.hs*",
+            "isAsync": true,
+            "cmd": "cabal run hsresumebuilder",
+            "event": "onFileChange"
+        },
+        {
+            "match": ".hsresumebuilder.yaml",
+            "isAsync": true,
+            "cmd": "cabal run hsresumebuilder",
+            "event": "onFileChange"
+        },
+        {
+            "match": "output.html",
+            "isAsync": true,
+            "cmd": "cp output.html docs/index.html",
+            "event": "onFileChange"
+        }
+    ]
+}
