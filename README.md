@@ -24,6 +24,12 @@ Your browser will allow you to adjust the scale at which you want to print and a
 
 Of course you can always edit the HTML after generation if you feel like it. My goal is to futurely allow the usage of several themes and add customization options in each theme.
 
+#### Running the binary
+
+Please head over to the [releases page](https://github.com/averageflow/hsresumebuilder/releases), and download the latest release for your system. Currently supporting Linux systems (use ubuntu-latest binary) and macOS systems.
+
+#### Running from source
+
 You can run this tool if you have Cabal installed, from the root of the project, with:
 
 ```

@@ -55,9 +55,17 @@ jobs:
         run: |
           cabal build
           mv dist-newstyle/build/${{ matrix.BUILD_OUTPUT_FOLDER }}/ghc-${{ env.GHC_VERSION }}/hsresumebuilder-0.1.0.0/x/hsresumebuilder/build/hsresumebuilder/hsresumebuilder hsresumebuilder-${{ matrix.os }}
+        
+      - name: "Package"
+        run: |
+          mkdir hsResumeBuilder
+          cp LICENSE hsResumeBuilder/
+          cp README hsResumeBuilder/
+          cp hsresumebuilder-${{ matrix.os }} hsResumeBuilder/
+          tar cvf hsResumeBuilder-${{ matrix.os }}.tar.gz ./hsResumeBuilder -I "gzip --best"
 
       - name: "Upload binaries to release"
         uses: softprops/action-gh-release@v1
         with:
           tag_name: "${{ github.ref_name }}"
-          files: hsresumebuilder-${{ matrix.os }}
+          files: hsResumeBuilder-${{ matrix.os }}.tar.gz
