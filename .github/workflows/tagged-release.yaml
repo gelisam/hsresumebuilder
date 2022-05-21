@@ -62,7 +62,7 @@ jobs:
           cp LICENSE hsResumeBuilder/
           cp README.md hsResumeBuilder/
           cp hsresumebuilder-${{ matrix.os }} hsResumeBuilder/
-          tar cvf hsResumeBuilder-${{ matrix.os }}.tar.gz ./hsResumeBuilder -I "gzip --best"
+          tar cvf hsResumeBuilder-${{ matrix.os }}.tar.gz ./hsResumeBuilder
 
       - name: "Upload binaries to release"
         uses: softprops/action-gh-release@v1
