@@ -123,11 +123,20 @@ renderResume config = docTypeHtml $ do
           (titleFontFamily themeSettings')
           $ seeMyWebsitesSectionTitle documentTitles'
         componentIconPrecedingTextContainer' $ do
-          forM_ (blogs . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' ["fa-solid", "fa-rss"])
-          forM_ (github . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' ["fa-brands", "fa-github"])
-          forM_ (linkedIn . websites . contactInformation $ personalInformation') (componentIconPrecedingText bodyColor' ["fa-brands", "fa-linkedin"])
+          forM_
+            (blogs . websites . contactInformation $ personalInformation')
+            (componentIconPrecedingText bodyColor' ["fa-solid", "fa-rss"])
 
+          forM_
+            (github . websites . contactInformation $ personalInformation')
+            (componentIconPrecedingText bodyColor' ["fa-brands", "fa-github"])
+
+          forM_
+            (linkedIn . websites . contactInformation $ personalInformation')
+            (componentIconPrecedingText bodyColor' ["fa-brands", "fa-linkedin"])
+
+      -- Credits to hsResumeBuilder
       H.div ! applyStyles [("margin-top", "16px"), ("text-align", "center")] $ do
         small $ do
           (a ! href "https://github.com/averageflow/hsresumebuilder")
-            "λ This document has been proudly generated with Haskell code"
+            "λ This document has been proudly auto-generated with Haskell code"
