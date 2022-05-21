@@ -55,12 +55,12 @@ jobs:
         run: |
           cabal build
           mv dist-newstyle/build/${{ matrix.BUILD_OUTPUT_FOLDER }}/ghc-${{ env.GHC_VERSION }}/hsresumebuilder-0.1.0.0/x/hsresumebuilder/build/hsresumebuilder/hsresumebuilder hsresumebuilder-${{ matrix.os }}
-        
+
       - name: "Package"
         run: |
           mkdir hsResumeBuilder
           cp LICENSE hsResumeBuilder/
-          cp README hsResumeBuilder/
+          cp README.md hsResumeBuilder/
           cp hsresumebuilder-${{ matrix.os }} hsResumeBuilder/
           tar cvf hsResumeBuilder-${{ matrix.os }}.tar.gz ./hsResumeBuilder -I "gzip --best"
 
