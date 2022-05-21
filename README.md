@@ -1,4 +1,4 @@
-# hsResumeBuilder
+# λ hsResumeBuilder
 
 ![λ Made with Haskell](https://img.shields.io/badge/%CE%BB%20haskell-%20-blueviolet)
 
