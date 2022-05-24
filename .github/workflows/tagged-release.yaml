@@ -47,9 +47,6 @@ jobs:
         with:
           ghc-version: "${{ env.GHC_VERSION }}"
           cabal-version: "${{ env.CABAL_VERSION }}"
-
-      - name: Freeze Cabal plan
-        run: cabal freeze
         
       - name: Cache ~/.cabal/packages, ~/.cabal/store and dist-newstyle
         uses: actions/cache@v3
