@@ -1,6 +1,7 @@
 # λ hsResumeBuilder
 
-![λ Made with Haskell](https://img.shields.io/badge/%CE%BB%20haskell-%20-blueviolet)
+![Haskell](https://img.shields.io/badge/Haskell-purple?style=for-the-badge&logo=haskell&logoColor=white)
+![Cabal](https://img.shields.io/badge/Cabal-blue?style=for-the-badge&logo=haskell&logoColor=white)
 
 hsResumeBuilder is an attempt at a Curriculum Vitae / Resume generator written entirely in Haskell.
 
