@@ -27,6 +27,12 @@ renderResume config = docTypeHtml $ do
           (fontSize2 theme')
           (sectionTitleBorderEnabled theme')
           headerText
+      renderShortSection headerText body = do
+        jShortSection $ do
+          renderSectionHeader headerText
+          body
+      renderLongSection headerText = do
+        jHeaderAndShortSections (renderSectionHeader headerText)
 
       renderPersonNameHeader headerText =
         jHeader1
@@ -89,40 +95,33 @@ renderResume config = docTypeHtml $ do
                 )
 
       -- Short introduction section
-      H.div $ do
-        renderSectionHeader . shortIntroTitle $ documentTitles'
+      renderShortSection (shortIntroTitle documentTitles') $ do
         forM_ (shortIntro personal') (jJustified bodyColor' (fontSize3 theme'))
 
       -- Work experience section
-      H.div $ do
-        renderSectionHeader . workExperienceTitle $ documentTitles'
-        forM_ (experience config) (jExperienceItem theme')
+      renderLongSection (workExperienceTitle documentTitles')
+        (fmap (jExperienceItem theme') (experience config))
 
       br
 
       -- Education section
-      H.div $ do
-        renderSectionHeader . educationTitle $ documentTitles'
-        forM_ (education config) (jExperienceItem theme')
+      renderLongSection (educationTitle documentTitles')
+        (fmap (jExperienceItem theme') (education config))
 
       -- Languages section
-      H.div $ do
-        renderSectionHeader . languagesTitle $ documentTitles'
+      renderShortSection (languagesTitle documentTitles') $ do
         jLanguageSection $ languages config
 
       -- Driver license section
-      H.div $ do
-        renderSectionHeader . driverLicenseTitle $ documentTitles'
+      renderShortSection (driverLicenseTitle documentTitles') $ do
         ul $ forM_ (driverLicense config) (jListItem bodyColor' (fontSize3 theme'))
 
       -- Interests hobbies section
-      H.div $ do
-        renderSectionHeader . interestsHobbiesTitle $ documentTitles'
-        forM_ (interestsHobbies config) (jJustified bodyColor' (fontSize3 theme'))
+      renderLongSection (interestsHobbiesTitle documentTitles')
+        (fmap (jJustified bodyColor' (fontSize3 theme')) (interestsHobbies config))
 
       -- Websites section
-      H.div $ do
-        renderSectionHeader . seeMyWebsitesTitle $ documentTitles'
+      renderShortSection (seeMyWebsitesTitle documentTitles') $ do
         jFlexContainer' $ do
           forM_
             (blogs . websites . contact $ personal')
@@ -152,10 +151,11 @@ renderResume config = docTypeHtml $ do
             )
 
       -- Credits to hsResumeBuilder
-      H.div ! applyStyles [("margin-top", "16px"), ("text-align", "center")] $ do
-        small $ do
-          jLink
-            linkColor'
-            fontSize3'
-            "https://github.com/averageflow/hsresumebuilder"
-            "λ This document has been proudly auto-generated with Haskell code"
+      jShortSection $ do
+        H.div ! applyStyles [("margin-top", "16px"), ("text-align", "center")] $ do
+          small $ do
+            jLink
+              linkColor'
+              fontSize3'
+              "https://github.com/averageflow/hsresumebuilder"
+              "λ This document has been proudly auto-generated with Haskell code"
