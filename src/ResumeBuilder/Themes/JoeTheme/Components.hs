@@ -59,6 +59,31 @@ jLink color fontSize url = (a ! applyStyles css ! (A.href . fromString) url) . t
         ("font-size", fontSize)
       ]
 
+-- For a prettier output when printing to pdf, prevent the body from being
+-- broken in two by a page break.
+--
+-- Debugging tip: add "border: 1px solid black;" to visualize the sections and
+-- make sure they are indeed small enough that you wouldn't mind wasting that
+-- amount of space in order to bump it to the next page.
+jShortSection :: Html -> Html
+jShortSection = H.div ! A.style "break-inside: avoid;"
+
+-- Similar to @map jShortSection@, but also prevents a page break between the
+-- header and the first item.
+jHeaderAndShortSections :: Html -> [Html] -> Html
+jHeaderAndShortSections header (firstItem:items) = do
+  jShortSection $ do
+    header
+    firstItem
+  forM_ items $ \item -> do
+    jShortSection $ do
+      item
+jTitleAndShortSections header items = do
+  jShortSection $ do
+    header
+    sequence_ items
+
+
 jListItem :: ToMarkup a => String -> String -> a -> Html
 jListItem color fontSize = (li ! applyStyles css) . toHtml
   where
