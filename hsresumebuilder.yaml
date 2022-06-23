@@ -74,11 +74,13 @@ hsResumeBuilder:
         - "As a result, I have often helped my team compare different ways of approaching a problem, and that has led me to become the lead architect of a team of twenty. One of my priorities in that position was to make sure everybody's opinion was heard, not just mine, as I greatly value communication and collaboration."
     experience:
       - entityName: "SimSpace"
-        experiencePoints: []
+        experiencePoints:
+          - "Helped the backend codebase grow to half a million lines of Haskell code, spotted and explained ambiguities in feature requests, wrote design documents guiding feature development, led policy discussions for enhancing collaboration and maintainability, prioritized improvement tickets, and smoothed out interpersonal conflicts as they arose."
         positionName: "Senior Software Engineer, Architect, Lead Architect"
         timeWorked: "2017 – 2022"
       - entityName: "Packt"
-        experiencePoints: []
+        experiencePoints:
+          - "Recorded an online course about advanced Haskell topics including unsafePerformIO, lazy IO, streaming, free monads, Functional Reactive Programming, parallel programming, concurrent programming, and distributed programming."
         positionName: "Course Author"
         timeWorked: "2016 – 2017"
       - entityName: "Keatext"
