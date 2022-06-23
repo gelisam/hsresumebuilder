@@ -103,20 +103,28 @@ renderResume config = docTypeHtml $ do
                 )
             H.div ! applyStyles [("padding", "0.8em")] $ do
               forM_
-                (blogs . websites . contact $ personal')
-                ( jIconWithText
-                    bodyColor'
-                    bodyColor'
-                    (fontSize3 theme')
-                    ["fa-solid", "fa-pen"]
-                )
-              forM_
                 (github . websites . contact $ personal')
                 ( jIconWithText
                     bodyColor'
                     bodyColor'
                     (fontSize3 theme')
                     ["fa-brands", "fa-github"]
+                )
+              forM_
+                (youtube . websites . contact $ personal')
+                ( jIconWithText
+                    bodyColor'
+                    bodyColor'
+                    (fontSize3 theme')
+                    ["fa-brands", "fa-youtube"]
+                )
+              forM_
+                (blogs . websites . contact $ personal')
+                ( jIconWithText
+                    bodyColor'
+                    bodyColor'
+                    (fontSize3 theme')
+                    ["fa-solid", "fa-pen"]
                 )
               forM_
                 (linkedIn . websites . contact $ personal')
@@ -133,14 +141,6 @@ renderResume config = docTypeHtml $ do
                     bodyColor'
                     (fontSize3 theme')
                     ["fa-brands", "fa-twitter"]
-                )
-              forM_
-                (youtube . websites . contact $ personal')
-                ( jIconWithText
-                    bodyColor'
-                    bodyColor'
-                    (fontSize3 theme')
-                    ["fa-brands", "fa-youtube"]
                 )
 
       -- Short introduction section
