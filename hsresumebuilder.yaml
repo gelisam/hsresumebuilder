@@ -28,8 +28,7 @@ hsResumeBuilder:
         customStylesheetsToLoad:
           - "https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
 
-    driverLicense:
-      - "B driver's license, for (automobile) vehicles up to 3,5 ton"
+    driverLicense: []
     education:
       - entityName: "UAlg, Faro, Portugal"
         experiencePoints:
@@ -37,32 +36,9 @@ hsResumeBuilder:
           - "Java, SQL, JavaScript, PHP, Linux, Excel"
         positionName: "Information Technologies Associate's degree"
         timeWorked: "September 2017 to September 2019"
-    interestsHobbies:
-      - "I love playing classical and electric guitar."
-      - "I like building computers out of wood and other materials, blogging about my tech opinions and discoveries and playing strategy games sometimes."
-      - "I love wood and you might find me sanding furniture down, oiling wood, removing weeds from the garden, or improving my house."
+    interestsHobbies: []
     languages:
-      complexModeContent:
-        - languageName: "Catalan"
-          readingProficiency: 4
-          speakingProficiency: 4
-          writingProficiency: 4
-        - languageName: "Spanish"
-          readingProficiency: 4
-          speakingProficiency: 4
-          writingProficiency: 4
-        - languageName: "Portuguese"
-          readingProficiency: 4
-          speakingProficiency: 4
-          writingProficiency: 4
-        - languageName: "English"
-          readingProficiency: 3
-          speakingProficiency: 3
-          writingProficiency: 3
-        - languageName: "Dutch"
-          readingProficiency: 2
-          speakingProficiency: 2
-          writingProficiency: 2
+      complexModeContent: []
       simpleMode: false
       simpleModeContent: "test"
     personal:
