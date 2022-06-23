@@ -106,7 +106,7 @@ renderResume config = docTypeHtml $ do
                 (github . websites . contact $ personal')
                 ( jIconWithText
                     bodyColor'
-                    bodyColor'
+                    (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-github"]
                 )
@@ -114,7 +114,7 @@ renderResume config = docTypeHtml $ do
                 (youtube . websites . contact $ personal')
                 ( jIconWithText
                     bodyColor'
-                    bodyColor'
+                    (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-youtube"]
                 )
@@ -122,7 +122,7 @@ renderResume config = docTypeHtml $ do
                 (blogs . websites . contact $ personal')
                 ( jIconWithText
                     bodyColor'
-                    bodyColor'
+                    (nameColor theme')
                     (fontSize3 theme')
                     ["fa-solid", "fa-pen"]
                 )
@@ -130,7 +130,7 @@ renderResume config = docTypeHtml $ do
                 (linkedIn . websites . contact $ personal')
                 ( jIconWithText
                     bodyColor'
-                    bodyColor'
+                    (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-linkedin"]
                 )
@@ -138,7 +138,7 @@ renderResume config = docTypeHtml $ do
                 (twitter . websites . contact $ personal')
                 ( jIconWithText
                     bodyColor'
-                    bodyColor'
+                    (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-twitter"]
                 )
