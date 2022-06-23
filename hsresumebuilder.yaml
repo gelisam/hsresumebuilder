@@ -12,14 +12,14 @@ hsResumeBuilder:
       theme: "ResumeBuilder.Themes.JoeTheme"
       themeSettings:
         bodyColor: "#292929"
-        jobTitleColor: "#0F486C"
-        nameColor: "#0A3048"
-        sectionTitlesColor: "#0F486C"
+        jobTitleColor: "#453a62"
+        nameColor: "#5e5086"
+        sectionTitlesColor: "#453a62"
         sectionTitleBorderEnabled: true
         entityNameColor: "#555"
         positionNameColor: "#292929"
         timeWorkedColor: "black"
-        linkColor: "#0F486C"
+        linkColor: "#b3a9cf"
         bodyFontFamily: "Crimson Pro"
         titleFontFamily: "Spectral"
         fontSize1: "2rem"
