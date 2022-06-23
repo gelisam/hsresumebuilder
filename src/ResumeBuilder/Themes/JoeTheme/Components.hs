@@ -28,6 +28,11 @@ jHeader2 color fontFamily fontSize = (h2 ! applyStyles css) . toHtml
         ("font-size", fontSize)
       ]
 
+jShortText :: ToMarkup a => String -> String -> a -> Html
+jShortText color fontSize = (H.div ! applyStyles css) . toHtml
+  where
+    css = [("color", color), ("font-size", fontSize)]
+
 jText :: ToMarkup a => String -> String -> a -> Html
 jText color fontSize = (p ! applyStyles css) . toHtml
   where
@@ -167,7 +172,7 @@ jIconWithText :: ToMarkup a => String -> String -> String -> Classes -> a -> Htm
 jIconWithText bodyColor iconColor fontSize classes item = do
   jFlexContainer $ do
     jIcon iconColor classes
-    jText bodyColor fontSize item
+    jShortText bodyColor fontSize item
 
 loadStylesheet :: String -> Html
 loadStylesheet x = link ! rel "stylesheet" ! href (fromString x)
