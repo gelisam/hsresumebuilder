@@ -93,6 +93,30 @@ renderResume config = docTypeHtml $ do
                     fontSize3'
                     ["fa-solid", "fa-envelope"]
                 )
+              forM_
+                (blogs . websites . contact $ personal')
+                ( jIconWithText
+                    bodyColor'
+                    bodyColor'
+                    (fontSize3 theme')
+                    ["fa-solid", "fa-rss"]
+                )
+              forM_
+                (github . websites . contact $ personal')
+                ( jIconWithText
+                    bodyColor'
+                    bodyColor'
+                    (fontSize3 theme')
+                    ["fa-brands", "fa-github"]
+                )
+              forM_
+                (linkedIn . websites . contact $ personal')
+                ( jIconWithText
+                    bodyColor'
+                    bodyColor'
+                    (fontSize3 theme')
+                    ["fa-brands", "fa-linkedin"]
+                )
 
       -- Short introduction section
       renderShortSection (shortIntroTitle documentTitles') $ do
@@ -119,36 +143,6 @@ renderResume config = docTypeHtml $ do
       -- Interests hobbies section
       renderLongSection (interestsHobbiesTitle documentTitles')
         (fmap (jJustified bodyColor' (fontSize3 theme')) (interestsHobbies config))
-
-      -- Websites section
-      renderShortSection (seeMyWebsitesTitle documentTitles') $ do
-        jFlexContainer' $ do
-          forM_
-            (blogs . websites . contact $ personal')
-            ( jIconWithText
-                bodyColor'
-                bodyColor'
-                (fontSize3 theme')
-                ["fa-solid", "fa-rss"]
-            )
-
-          forM_
-            (github . websites . contact $ personal')
-            ( jIconWithText
-                bodyColor'
-                bodyColor'
-                (fontSize3 theme')
-                ["fa-brands", "fa-github"]
-            )
-
-          forM_
-            (linkedIn . websites . contact $ personal')
-            ( jIconWithText
-                bodyColor'
-                bodyColor'
-                (fontSize3 theme')
-                ["fa-brands", "fa-linkedin"]
-            )
 
       -- Credits to hsResumeBuilder
       jShortSection $ do
