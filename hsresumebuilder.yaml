@@ -15,7 +15,7 @@ hsResumeBuilder:
         jobTitleColor: "#0F486C"
         nameColor: "#0A3048"
         sectionTitlesColor: "#0F486C"
-        sectionTitleBorderEnabled: false
+        sectionTitleBorderEnabled: true
         entityNameColor: "#555"
         positionNameColor: "#292929"
         timeWorkedColor: "black"
@@ -66,24 +66,20 @@ hsResumeBuilder:
       simpleMode: false
       simpleModeContent: "test"
     personal:
-      addressLines:
-        - "Hugo de Grootstraat 19"
-        - "1441KH Purmerend"
-        - "The Netherlands"
+      addressLines: []
       contact:
         emails:
-          - "jjbigorra@gmail.com"
+          - "gelisam@gmail.com"
         phoneNumbers:
-          - "+31 639825138"
+          - "+1 514-509-5173"
         websites:
           blogs:
-            - "averageflow.github.io"
+            - "gelisam.com"
           github:
-            - "github.com/averageflow"
-          linkedIn:
-            - "linkedin.com/in/josepjba"
-      displayName: "Josep Bigorra"
-      jobTitle: "SOFTWARE ENGINEER"
+            - "github.com/gelisam"
+          linkedIn: []
+      displayName: "Samuel Gélineau"
+      jobTitle: "Senior Software Engineer, Architect, and Teacher"
       shortIntro:
         - "I am a Software Engineer with DevOps experience that is always eager to learn, create solutions, perfecting my skills and taking on challenges. Living in The Netherlands since 2019, born 23/12/1996 in Spain."
         - "I mostly program in Java, Haskell, Go, SQL, Shell and the occasional Rust and Python. Given the choice I prefer to design most software using the functional programming paradigm. My storage engine experience revolves around PostgreSQL, MariaDB, OracleSQL, NoSQL DBs like BigTable, Redis, MongoDB, Firebase, ElasticSearch."
