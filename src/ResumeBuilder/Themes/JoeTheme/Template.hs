@@ -93,6 +93,7 @@ renderResume config = docTypeHtml $ do
                     fontSize3'
                     ["fa-solid", "fa-envelope"]
                 )
+            H.div ! applyStyles [("padding", "0.8em")] $ do
               forM_
                 (blogs . websites . contact $ personal')
                 ( jIconWithText
