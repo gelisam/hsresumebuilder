@@ -80,6 +80,8 @@ hsResumeBuilder:
           linkedIn: []
       displayName: "Samuel Gélineau"
       jobTitle: "Senior Software Engineer, Architect, and Teacher"
+      locations:
+        - "Montreal, Canada"
       shortIntro:
         - "I am a Software Engineer with DevOps experience that is always eager to learn, create solutions, perfecting my skills and taking on challenges. Living in The Netherlands since 2019, born 23/12/1996 in Spain."
         - "I mostly program in Java, Haskell, Go, SQL, Shell and the occasional Rust and Python. Given the choice I prefer to design most software using the functional programming paradigm. My storage engine experience revolves around PostgreSQL, MariaDB, OracleSQL, NoSQL DBs like BigTable, Redis, MongoDB, Firebase, ElasticSearch."

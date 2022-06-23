@@ -50,6 +50,7 @@ data PersonalInfo = PersonalInfo
   { displayName :: String,
     jobTitle :: String,
     addressLines :: [String],
+    locations :: [String],
     contact :: PersonalInfoContactInfo,
     shortIntro :: [String]
   }
