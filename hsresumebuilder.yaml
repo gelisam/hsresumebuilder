@@ -30,12 +30,18 @@ hsResumeBuilder:
 
     driverLicense: []
     education:
-      - entityName: "UAlg, Faro, Portugal"
-        experiencePoints:
-          - "Graduated with 190/200 score. Maximum score for the software developer internship."
-          - "Java, SQL, JavaScript, PHP, Linux, Excel"
-        positionName: "Information Technologies Associate's degree"
-        timeWorked: "September 2017 to September 2019"
+      - entityName: "McGill University"
+        experiencePoints: []
+        positionName: "M.Sc. in Computer Science"
+        timeWorked: "2010"
+      - entityName: "McGill University"
+        experiencePoints: []
+        positionName: "B.Sc., major in Computer Science"
+        timeWorked: "2006"
+      - entityName: "Collège Édouard-Montpetit"
+        experiencePoints: []
+        positionName: "DEC in Natural Sciences"
+        timeWorked: "2003"
     interestsHobbies: []
     languages:
       complexModeContent: []
