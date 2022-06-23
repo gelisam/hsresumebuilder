@@ -100,7 +100,7 @@ renderResume config = docTypeHtml $ do
                     bodyColor'
                     bodyColor'
                     (fontSize3 theme')
-                    ["fa-solid", "fa-rss"]
+                    ["fa-solid", "fa-pen"]
                 )
               forM_
                 (github . websites . contact $ personal')
