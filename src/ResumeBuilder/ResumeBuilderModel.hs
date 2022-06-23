@@ -27,7 +27,8 @@ data Preferences = Preferences
     education :: [ExperienceItem],
     interestsHobbies :: [String],
     driverLicense :: [String],
-    languages :: Languages
+    languages :: Languages,
+    publications :: [ExperienceItem]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
@@ -113,6 +114,7 @@ data DocumentTitles = DocumentTitles
     interestsHobbiesTitle :: String,
     driverLicenseTitle :: String,
     languagesTitle :: String,
+    publicationsTitle :: String,
     seeMyWebsitesTitle :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
