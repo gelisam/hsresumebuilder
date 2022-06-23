@@ -164,5 +164,5 @@ renderResume config = docTypeHtml $ do
             jLink
               linkColor'
               fontSize3'
-              "https://github.com/averageflow/hsresumebuilder"
+              "https://github.com/gelisam/hsresumebuilder"
               "λ This document has been proudly auto-generated with Haskell code"
