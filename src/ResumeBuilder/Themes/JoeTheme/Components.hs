@@ -39,7 +39,13 @@ jText color fontSize = (p ! applyStyles css) . toHtml
     css = [("color", color), ("font-size", fontSize)]
 
 jIcon :: String -> Classes -> Html
-jIcon color classes = (i ! applyClasses classes ! applyStyles [("color", color)]) ""
+jIcon color classes = (i ! applyClasses classes ! applyStyles css) ""
+  where
+    css =
+      [ ("color", color),
+        ("width", "1.2em"),
+        ("text-align", "center")
+      ]
 
 jSmall :: ToMarkup a => String -> a -> Html
 jSmall color = (H.small ! applyStyles css) . toHtml
