@@ -126,6 +126,14 @@ renderResume config = docTypeHtml $ do
                     (fontSize3 theme')
                     ["fa-brands", "fa-linkedin"]
                 )
+              forM_
+                (twitter . websites . contact $ personal')
+                ( jIconWithText
+                    bodyColor'
+                    bodyColor'
+                    (fontSize3 theme')
+                    ["fa-brands", "fa-twitter"]
+                )
 
       -- Short introduction section
       renderShortSection (shortIntroTitle documentTitles') $ do

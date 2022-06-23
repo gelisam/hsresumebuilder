@@ -78,6 +78,8 @@ hsResumeBuilder:
           github:
             - "github.com/gelisam"
           linkedIn: []
+          twitter:
+            - "@haskell_cat"
       displayName: "Samuel Gélineau"
       jobTitle: "Senior Software Engineer, Architect, and Teacher"
       locations:
