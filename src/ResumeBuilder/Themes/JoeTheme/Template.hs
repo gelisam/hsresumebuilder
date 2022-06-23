@@ -78,20 +78,20 @@ renderResume config = docTypeHtml $ do
                 (jText bodyColor' (fontSize3 theme'))
             H.div ! applyStyles [("padding", "0.8em")] $ do
               forM_
-                (phoneNumbers . contact $ personal')
-                ( jIconWithText
-                    bodyColor'
-                    (nameColor theme')
-                    fontSize3'
-                    ["fa-solid", "fa-phone"]
-                )
-              forM_
                 (emails . contact $ personal')
                 ( jIconWithText
                     bodyColor'
                     (nameColor theme')
                     fontSize3'
                     ["fa-solid", "fa-envelope"]
+                )
+              forM_
+                (phoneNumbers . contact $ personal')
+                ( jIconWithText
+                    bodyColor'
+                    (nameColor theme')
+                    fontSize3'
+                    ["fa-solid", "fa-phone"]
                 )
             H.div ! applyStyles [("padding", "0.8em")] $ do
               forM_
