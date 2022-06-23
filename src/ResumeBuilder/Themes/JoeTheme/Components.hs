@@ -62,8 +62,8 @@ jJustified color fontSize = (p ! applyStyles css) . toHtml
         ("margin-top", "0px")
       ]
 
-jLink :: String -> String -> String -> String -> Html
-jLink color fontSize url = (a ! applyStyles css ! (A.href . fromString) url) . toHtml
+jLink :: String -> String -> String -> Html -> Html
+jLink color fontSize body = (a ! applyStyles css ! (A.href . fromString) body)
   where
     css =
       [ ("color", color),
