@@ -77,7 +77,7 @@ hsResumeBuilder:
     experience:
       - entityName: "SimSpace"
         experiencePoints:
-          - "Helped the backend codebase grow to half a million lines of Haskell code, spotted and explained ambiguities in feature requests, wrote design documents guiding feature development, led policy discussions for enhancing collaboration and maintainability, prioritized improvement tickets, and smoothed out interpersonal conflicts as they arose."
+          - "Helped the backend codebase grow to half a million lines of Haskell code, wrote design documents guiding feature development, led policy discussions for enhancing collaboration and maintainability, and smoothed out interpersonal conflicts as they arose."
         positionName: "Senior Software Engineer, Architect, Lead Architect"
         timeWorked: "2017 – 2022"
       - entityName: "Packt"
