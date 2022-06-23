@@ -157,18 +157,6 @@ renderResume config = docTypeHtml $ do
       renderLongSection (educationTitle documentTitles')
         (fmap (jExperienceItem theme') (education config))
 
-      -- Languages section
-      renderShortSection (languagesTitle documentTitles') $ do
-        jLanguageSection $ languages config
-
-      -- Driver license section
-      renderShortSection (driverLicenseTitle documentTitles') $ do
-        ul $ forM_ (driverLicense config) (jListItem bodyColor' (fontSize3 theme'))
-
-      -- Interests hobbies section
-      renderLongSection (interestsHobbiesTitle documentTitles')
-        (fmap (jJustified bodyColor' (fontSize3 theme')) (interestsHobbies config))
-
       -- Credits to hsResumeBuilder
       jShortSection $ do
         H.div ! applyStyles [("margin-top", "16px"), ("text-align", "center")] $ do
