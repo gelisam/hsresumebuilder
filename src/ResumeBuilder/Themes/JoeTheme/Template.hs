@@ -134,6 +134,14 @@ renderResume config = docTypeHtml $ do
                     (fontSize3 theme')
                     ["fa-brands", "fa-twitter"]
                 )
+              forM_
+                (youtube . websites . contact $ personal')
+                ( jIconWithText
+                    bodyColor'
+                    bodyColor'
+                    (fontSize3 theme')
+                    ["fa-brands", "fa-youtube"]
+                )
 
       -- Short introduction section
       renderShortSection (shortIntroTitle documentTitles') $ do

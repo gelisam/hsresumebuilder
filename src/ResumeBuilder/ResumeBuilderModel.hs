@@ -67,7 +67,8 @@ data PersonalInfoWebsites = PersonalInfoWebsites
   { blogs :: [String],
     github :: [String],
     linkedIn :: [String],
-    twitter :: [String]
+    twitter :: [String],
+    youtube :: [String]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
