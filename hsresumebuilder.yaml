@@ -83,14 +83,13 @@ hsResumeBuilder:
           youtube:
             - "haskellcat.com"
       displayName: "Samuel Gélineau"
-      jobTitle: "Senior Software Engineer, Architect, and Teacher"
+      jobTitle: "Senior Software Engineer, Architect, and Evangelist"
       locations:
         - "Montreal, Canada"
       shortIntro:
-        - "I am a Software Engineer with DevOps experience that is always eager to learn, create solutions, perfecting my skills and taking on challenges. Living in The Netherlands since 2019, born 23/12/1996 in Spain."
-        - "I mostly program in Java, Haskell, Go, SQL, Shell and the occasional Rust and Python. Given the choice I prefer to design most software using the functional programming paradigm. My storage engine experience revolves around PostgreSQL, MariaDB, OracleSQL, NoSQL DBs like BigTable, Redis, MongoDB, Firebase, ElasticSearch."
-        - "I love the Ops side of the projects and platforms too. I am a UNIX guy at home with Linux, BSDs, macOS, etc. I like distributed tracing, infrastructure-as-code, CI/CD, and type-safe languages."
-        - "I love to create solutions, improving, automating workflows, creating fast and reliable programs, helping and teaching others and to express myself via my creations."
+        - "I am a software engineer who specializes in the Functional Programming paradigm and more specifically in Haskell, with which I have 16 years of experience by now. Despite this specialization, I draw from a broad background as I also have professional experience in academic research, distributed systems, embedded systems, entrepreneurship, mobile development, and web development. Throughout those adventures I have been paid to write Bash, C++, C#, Haskell, Java, JavaScript, Python, Scala, and TypeScript. I also have experience with Agda, Elm, Racket, Rust, and others too obscure to list."
+        - "I enjoy spreading the gospel by giving presentations and tutoring sessions on the advantages and disadvantages of various FP idioms, for example combinator libraries, difference lists, free monads, FRP, lenses, and MonadBasedControl vs UnliftIO."
+        - "As a result, I have often helped my team compare different ways of approaching a problem, and that has led me to become the lead architect of a team of twenty. One of my priorities in that position was to make sure everybody's opinion was heard, not just mine, as I greatly value communication and collaboration."
     experience:
       - entityName: "IKEA, Amsterdam, Netherlands"
         experiencePoints:
