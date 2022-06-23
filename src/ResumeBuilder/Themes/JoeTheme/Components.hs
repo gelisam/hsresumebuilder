@@ -58,7 +58,8 @@ jJustified color fontSize = (p ! applyStyles css) . toHtml
     css =
       [ ("color", color),
         ("text-align", "justify"),
-        ("font-size", fontSize)
+        ("font-size", fontSize),
+        ("margin-top", "0px")
       ]
 
 jLink :: String -> String -> String -> String -> Html
@@ -125,19 +126,13 @@ jExperienceItem themeSettings item = H.div $ do
   let positionNameColor' = positionNameColor themeSettings
   let timeWorkedColor' = timeWorkedColor themeSettings
 
-  H.div ! A.style "display: flex;" $ do
-    (strong ! applyStyles [("color", positionNameColor')]) . toHtml . positionName $ item
-    ( H.span
-        ! applyStyles
-          [ ("margin-left", "0.4em"),
-            ("margin-right", "0.4em"),
-            ("color", bodyColor')
-          ]
-      )
-      " - "
+  H.div ! applyStyles [("display", "flex"), ("justify-content", "space-between")] $ do
+    H.span $ do
+      (strong ! applyStyles [("color", positionNameColor')]) . toHtml . positionName $ item
+      (H.span ! applyStyles [("color", bodyColor')]) ", "
+      jSmall timeWorkedColor' $ timeWorked item
     (strong ! applyStyles [("color", entityNameColor')]) . toHtml . entityName $ item
-  jSmall timeWorkedColor' $ timeWorked item
-  ul $ forM_ (experiencePoints item) (jListItem bodyColor' bodyFontSize)
+  forM_ (experiencePoints item) (jJustified bodyColor' bodyFontSize)
 
 jLanguageLevelRow :: LanguageLevel -> Html
 jLanguageLevelRow item = do
