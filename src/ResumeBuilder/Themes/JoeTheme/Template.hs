@@ -151,8 +151,6 @@ renderResume config = docTypeHtml $ do
       renderLongSection (workExperienceTitle documentTitles')
         (fmap (jExperienceItem theme') (experience config))
 
-      br
-
       -- Education section
       renderLongSection (educationTitle documentTitles')
         (fmap (jExperienceItem theme') (education config))
