@@ -6,6 +6,7 @@ hsResumeBuilder:
         educationTitle: "EDUCATION"
         interestsHobbiesTitle: "MY INTERESTS"
         languagesTitle: "LANGUAGES"
+        praiseTitle: "PRAISE"
         publicationsTitle: "SELECTED PUBLICATIONS"
         seeMyWebsitesTitle: "ME ON THE INTERNET"
         shortIntroTitle: "WHO AM I?"
@@ -131,3 +132,34 @@ hsResumeBuilder:
           - "A programming language with type-driven macros."
         positionName: "Klister: Predictable Macros for Hindley-Milner"
         timeWorked: "by Barrett, Christiansen, and Gélineau"
+    praise:
+      - entityName: "Groq"
+        experiencePoints:
+          - "\"Hire this guy.\""
+        positionName: "Edward Kmett"
+        timeWorked: "Haskell Guru"
+      - entityName: "SimSpace"
+        experiencePoints:
+          - "\"Sam is not only a next-level developer but he is also an incredibly kind and compassionate human. I would work with him again in a second. If you are looking for a skilled functional-programming specialist Sam is the best candidate you will find.\""
+        positionName: "Alex Speaks"
+        timeWorked: "esteemed colleague"
+      - entityName: "SimSpace"
+        experiencePoints:
+          - "\"Samuel Gélineau is amazing! One of the best engineers I've ever worked with and an incredible hire for any lucky team.\""
+        positionName: "Matthew Russell"
+        timeWorked: "my boss for a time"
+      - entityName: "SimSpace"
+        experiencePoints:
+          - "\"I cannot agree more with the positive comments about Sam. He is a standout engineer, super passionate, loves to teach others, and would fit in on any team.\""
+        positionName: "Michael Beynon"
+        timeWorked: "my boss for a time"
+      - entityName: "Keatext"
+        experiencePoints:
+          - "Said they use the code I wrote as a reference for what good FP code looks like. They also complimented the quality of my documentation."
+        positionName: "Employees"
+        timeWorked: "who were hired after I left"
+      - entityName: "Environment Canada"
+        experiencePoints:
+          - "Admitted that because I seemed over-confident, he gave me their hardest project and expected me to get stuck for the whole summer, but he was pleasantly surprised to see me succeed and then tackle their second-hardest project as well."
+        positionName: "Michel Larivière"
+        timeWorked: "my boss"
