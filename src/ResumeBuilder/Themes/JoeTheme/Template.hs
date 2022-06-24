@@ -165,7 +165,7 @@ renderResume config = docTypeHtml $ do
 
       -- Credits to hsResumeBuilder
       jShortSection $ do
-        H.div ! applyStyles [("margin-top", "16px"), ("text-align", "center")] $ do
+        H.div ! applyStyles [("margin-top", "6em"), ("text-align", "center")] $ do
           small $ do
             jLink linkColor'
                   fontSize3'
