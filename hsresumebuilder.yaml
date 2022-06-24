@@ -73,7 +73,7 @@ hsResumeBuilder:
       shortIntro:
         - "I am a software engineer who specializes in the Functional Programming paradigm and more specifically in Haskell, with which I have 16 years of experience by now. The most well-known packages I maintain are hint and recursion-schemes. I have contributed to agda, criterion, ffmpeg-light, fltkhs, ghc, gloss, hackett, policeman, polysemy, servant, tasty, and many more."
         - "Despite this specialization, I draw from a broad background as I also have professional experience in academic research, distributed systems, embedded systems, entrepreneurship, graphics programming, mobile development, and web development. Throughout those adventures I have been paid to write Bash, C, C++, C#, Haskell, Java, JavaScript, Python, Ruby, Scala, and TypeScript. I also have experience with Agda, Elm, Racket, and Rust."
-        - "I enjoy spreading the gospel by giving presentations and tutoring sessions on the advantages and disadvantages of various FP idioms, for example combinator libraries, difference lists, free monads, FRP, lenses, and MonadBasedControl vs UnliftIO."
+        - "I enjoy spreading the gospel by giving presentations and tutoring sessions on the advantages and disadvantages of various FP idioms, for example combinator libraries, difference lists, effect systems, lenses, and MonadBasedControl vs UnliftIO."
         - "As a result, I have often helped my team compare different ways of approaching a problem, and that has led me to become the lead architect of a team of twenty. One of my priorities in that position was to make sure everybody's opinion was heard, not just mine, as I greatly value communication and collaboration."
     experience:
       - entityName: "SimSpace"
@@ -93,7 +93,7 @@ hsResumeBuilder:
         timeWorked: "2015 – 2016"
       - entityName: "Spiria"
         experiencePoints:
-          - "Worked for various clients including Autodesk, Citi Bike, Shaw, and the NRCC, I controlled real-time hardware systems such as haptic arms and frame grabbers, refactored codebases with millions of lines of code, benchmarked desktop and embedded software, ported software to Linux, and implemented Android applications."
+          - "Worked for various clients including Autodesk, Citi Bike, Shaw, and the NRCC, controlled real-time hardware systems such as haptic arms and frame grabbers, refactored codebases with millions of lines of code, benchmarked desktop and embedded software, ported software to Linux, and implemented Android applications."
         positionName: "Consultant, Tech Lead"
         timeWorked: "2011 – 2015"
       - entityName: "Aero Web"
@@ -103,7 +103,7 @@ hsResumeBuilder:
         timeWorked: "2011 – 2013, part time"
       - entityName: "Environment Canada"
         experiencePoints:
-          - "Migrated large, legacy C systems from HP-UX to Linux. Exceeded expectations. Maintained and supported high availability systems used 24/7 by airport forecasters across the country."
+          - "Migrated large, legacy C systems from HP-UX to Linux. Maintained and supported high availability systems used 24/7 by airport forecasters across the country."
         positionName: "Programmer"
         timeWorked: "2006 – 2010, part time"
       - entityName: "McGill School of Computer Science"
@@ -133,11 +133,11 @@ hsResumeBuilder:
         positionName: "Klister: Predictable Macros for Hindley-Milner"
         timeWorked: "by Barrett, Christiansen, and Gélineau"
     praise:
-      - entityName: "Groq"
+      - entityName: ""
         experiencePoints:
           - "\"Hire this guy.\""
         positionName: "Edward Kmett"
-        timeWorked: "Haskell Guru"
+        timeWorked: "famous Haskell guru"
       - entityName: "SimSpace"
         experiencePoints:
           - "\"Sam is not only a next-level developer but he is also an incredibly kind and compassionate human. I would work with him again in a second. If you are looking for a skilled functional-programming specialist Sam is the best candidate you will find.\""
@@ -160,6 +160,6 @@ hsResumeBuilder:
         timeWorked: "who were hired after I left"
       - entityName: "Environment Canada"
         experiencePoints:
-          - "Admitted that because I seemed over-confident, he gave me their hardest project and expected me to get stuck for the whole summer, but he was pleasantly surprised to see me succeed and then tackle their second-hardest project as well."
+          - "Admitted that because I seemed over-confident, he gave me their hardest project and expected me to get stuck for the whole summer. He was then pleasantly surprised to see me succeed and then tackle their second-hardest project as well."
         positionName: "Michel Larivière"
         timeWorked: "my boss"
