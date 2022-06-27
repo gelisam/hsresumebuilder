@@ -72,9 +72,9 @@ hsResumeBuilder:
         - "Montreal, Canada"
       shortIntro:
         - "I am a software engineer who specializes in the Functional Programming paradigm and more specifically in Haskell, with which I have 16 years of experience by now. The most well-known packages I maintain are hint and recursion-schemes. I have contributed to agda, criterion, ffmpeg-light, fltkhs, ghc, gloss, hackett, policeman, polysemy, servant, tasty, and many more."
-        - "Despite this specialization, I draw from a broad background as I also have professional experience in academic research, distributed systems, embedded systems, entrepreneurship, graphics programming, mobile development, and web development. Throughout those adventures I have been paid to write Bash, C, C++, C#, Haskell, Java, JavaScript, Python, Ruby, Scala, and TypeScript. I also have experience with Agda, Elm, Racket, and Rust."
+        - "I have a broad background, covering academic research, distributed systems, embedded systems, entrepreneurship, graphics programming, mobile development, and web development. Throughout those adventures I have been paid to write Bash, C, C++, C#, Haskell, Java, JavaScript, Python, Ruby, Scala, and TypeScript. I also have experience with Agda, Elm, Racket, and Rust."
         - "I enjoy spreading the gospel by giving presentations and tutoring sessions on the advantages and disadvantages of various FP idioms, for example combinator libraries, difference lists, effect systems, lenses, and MonadBasedControl vs UnliftIO."
-        - "As a result, I have often helped my team compare different ways of approaching a problem, and that has led me to become the lead architect of a team of twenty. One of my priorities in that position was to make sure everybody's opinion was heard, not just mine, as I greatly value communication and collaboration."
+        - "I strive to be helpful to others, by writing researched, detailed answers with plenty of code examples. I like to codify existing practices, to remove ambiguity and to give us the opportunity to self-reflect and improve. I reach out to others, building bridges, collaborating and resolving misunderstandings."
     experience:
       - entityName: "SimSpace"
         experiencePoints:
