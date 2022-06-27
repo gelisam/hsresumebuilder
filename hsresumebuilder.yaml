@@ -142,17 +142,17 @@ hsResumeBuilder:
         experiencePoints:
           - "\"Sam is not only a next-level developer but he is also an incredibly kind and compassionate human. I would work with him again in a second. If you are looking for a skilled functional-programming specialist Sam is the best candidate you will find.\""
         positionName: "Alex Speaks"
-        timeWorked: "esteemed colleague"
+        timeWorked: "Staff System Engineer"
       - entityName: "SimSpace"
         experiencePoints:
           - "\"Samuel Gélineau is amazing! One of the best engineers I've ever worked with and an incredible hire for any lucky team.\""
         positionName: "Matthew Russell"
-        timeWorked: "my boss for a time"
+        timeWorked: "Deputy Director of Engineering"
       - entityName: "SimSpace"
         experiencePoints:
           - "\"I cannot agree more with the positive comments about Sam. He is a standout engineer, super passionate, loves to teach others, and would fit in on any team.\""
         positionName: "Michael Beynon"
-        timeWorked: "my boss for a time"
+        timeWorked: "Director of Engineering"
       - entityName: "Keatext"
         experiencePoints:
           - "Said they use the code I wrote as a reference for what good FP code looks like. They also complimented the quality of my documentation."
