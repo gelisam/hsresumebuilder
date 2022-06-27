@@ -78,7 +78,8 @@ hsResumeBuilder:
     experience:
       - entityName: "SimSpace"
         experiencePoints:
-          - "Helped the backend codebase grow to half a million lines of Haskell code, wrote design documents guiding feature development, led policy discussions for enhancing collaboration and maintainability, and smoothed out interpersonal conflicts as they arose."
+          - "Helped the backend codebase grow to half a million lines of Haskell code. Main author of several components including an error-reporting library, an incremental-update library, a progress notification system, a step-function library, and a yaml templating language. Wrote architectural documents guiding the development of several other components, including a latency-reducing agent, a network-creation wizard, a resource-division system, and a template-sharing system."
+          - "Led weekly architectural discussions, made sure everybody's opinion was heard. Introduced several collaboration-based policies including a process for choosing between competing technologies, a process for crowd-sourcing code improvements, a process for finding a shared vision for the future of our codebase, and a process for spreading technical knowledge. Created new roles to solidify our codebase's performance, security, and testability. Democratized our tech debt prioritization process while making sure that important improvements were not neglected."
         positionName: "Senior Software Engineer, Architect, Lead Architect"
         timeWorked: "2017 – 2022"
       - entityName: "Packt"
