@@ -143,13 +143,13 @@ renderResume config = docTypeHtml $ do
                     ["fa-brands", "fa-twitter"]
                 )
 
-      -- Short introduction section
-      renderShortSection (shortIntroTitle documentTitles') $ do
-        forM_ (shortIntro personal') (jJustified bodyColor' (fontSize3 theme'))
-
       -- Work experience section
       renderLongSection (workExperienceTitle documentTitles')
         (fmap (jExperienceItem theme') (experience config))
+
+      -- Education section
+      renderLongSection (educationTitle documentTitles')
+        (fmap (jExperienceItem theme') (education config))
 
       -- Publications section
       renderLongSection (publicationsTitle documentTitles')
@@ -158,10 +158,6 @@ renderResume config = docTypeHtml $ do
       -- Praise section
       renderLongSection (praiseTitle documentTitles')
         (fmap (jExperienceItem theme') (praise config))
-
-      -- Education section
-      renderLongSection (educationTitle documentTitles')
-        (fmap (jExperienceItem theme') (education config))
 
       -- Credits to hsResumeBuilder
       jShortSection $ do
