@@ -68,12 +68,16 @@ renderResume config = docTypeHtml $ do
           ]
         $ do
           -- Name and job title section
-          H.div ! applyStyles [("flex-grow", "1")] $ do
+          H.div ! applyStyles [("flex-grow", "0")] $ do
             renderPersonNameHeader . displayName $ personal'
             renderJobTitleHeader . jobTitles $ personal'
 
+          -- Gap
+          H.div ! applyStyles [("flex-grow", "1"), ("display", "flex")] $ do
+            pure ()
+
           -- Contact details section
-          H.div ! applyStyles [("flex-grow", "0.6"), ("display", "flex")] $ do
+          H.div ! applyStyles [("flex-grow", "0"), ("display", "flex")] $ do
             H.div ! applyStyles [("padding", "0.8em")] $ do
               forM_
                 (addressLines personal')
