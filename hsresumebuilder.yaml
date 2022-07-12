@@ -154,13 +154,13 @@ hsResumeBuilder:
           - "\"I cannot agree more with the positive comments about Sam. He is a standout engineer, super passionate, loves to teach others, and would fit in on any team.\""
         positionName: "Michael Beynon"
         timeWorked: "Director of Engineering"
-      - entityName: "Keatext"
-        experiencePoints:
-          - "Said they use the code I wrote as a reference for what good FP code looks like. They also complimented the quality of my documentation."
-        positionName: "Employees"
-        timeWorked: "who were hired after I left"
-      - entityName: "Environment Canada"
-        experiencePoints:
-          - "Admitted that because I seemed over-confident, he gave me their hardest project and expected me to get stuck for the whole summer. He was then pleasantly surprised to see me succeed and then tackle their second-hardest project as well."
-        positionName: "Michel Larivière"
-        timeWorked: "my boss"
+      # - entityName: "Keatext"
+      #   experiencePoints:
+      #     - "Said they use the code I wrote as a reference for what good FP code looks like. They also complimented the quality of my documentation."
+      #   positionName: "Employees"
+      #   timeWorked: "who were hired after I left"
+      # - entityName: "Environment Canada"
+      #   experiencePoints:
+      #     - "Admitted that because I seemed over-confident, he gave me their hardest project and expected me to get stuck for the whole summer. He was then pleasantly surprised to see me succeed and then tackle their second-hardest project as well."
+      #   positionName: "Michel Larivière"
+      #   timeWorked: "my boss"
