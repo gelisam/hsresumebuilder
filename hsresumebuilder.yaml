@@ -134,11 +134,11 @@ hsResumeBuilder:
         positionName: "Klister: Predictable Macros for Hindley-Milner"
         timeWorked: "by Barrett, Christiansen, and Gélineau"
     praise:
-      - entityName: ""
+      - entityName: "Groq"
         experiencePoints:
           - "\"Hire this guy.\""
         positionName: "Edward Kmett"
-        timeWorked: "famous Haskell guru"
+        timeWorked: "Head of Software Engineering"
       - entityName: "SimSpace"
         experiencePoints:
           - "\"Sam is not only a next-level developer but he is also an incredibly kind and compassionate human. I would work with him again in a second. If you are looking for a skilled functional-programming specialist Sam is the best candidate you will find.\""
