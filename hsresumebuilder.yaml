@@ -89,7 +89,7 @@ hsResumeBuilder:
       - entityName: "Keatext"
         experiencePoints:
           - "Worked on the Scala backend (AWS micro-services) and the React frontend of a Natural Language Processing web application."
-        positionName: "Programmer"
+        positionName: "Software Engineer"
         timeWorked: "2015 – 2016"
       - entityName: "Spiria"
         experiencePoints:
@@ -104,7 +104,7 @@ hsResumeBuilder:
       - entityName: "Environment Canada"
         experiencePoints:
           - "Migrated large, legacy C systems from HP-UX to Linux. Maintained and supported high availability systems used 24/7 by airport forecasters across the country."
-        positionName: "Programmer"
+        positionName: "Software Engineer"
         timeWorked: "2006 – 2010, part time"
       - entityName: "McGill School of Computer Science"
         experiencePoints:
@@ -119,7 +119,7 @@ hsResumeBuilder:
       - entityName: "Art Team Images"
         experiencePoints:
           - "Wrote online content editors and cross-browser JavaScript widgets."
-        positionName: "Programmer"
+        positionName: "Software Engineer"
         timeWorked: "2002 – 2003, part time"
     publications:
       - entityName: "POPL2022"
