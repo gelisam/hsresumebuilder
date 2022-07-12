@@ -16,7 +16,8 @@ jHeader1 color fontFamily fontSize = (h1 ! applyStyles css) . toHtml
     css =
       [ ("color", color),
         ("font-family", fontFamily),
-        ("font-size", fontSize)
+        ("font-size", fontSize),
+        ("margin-top", "12px")  -- override light.css's 24px
       ]
 
 jHeader2 :: ToMarkup a => String -> String -> String -> a -> Html
@@ -25,7 +26,8 @@ jHeader2 color fontFamily fontSize = (h2 ! applyStyles css) . toHtml
     css =
       [ ("color", color),
         ("font-family", fontFamily),
-        ("font-size", fontSize)
+        ("font-size", fontSize),
+        ("margin-top", "12px")  -- override light.css's 24px
       ]
 
 jShortText :: ToMarkup a => String -> String -> a -> Html
