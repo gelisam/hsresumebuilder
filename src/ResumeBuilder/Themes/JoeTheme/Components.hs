@@ -105,23 +105,6 @@ jListItem color fontSize = (li ! applyStyles css) . toHtml
   where
     css = [("color", color)]
 
-jLanguageSection :: Languages -> Html
-jLanguageSection languages =
-  if simpleMode languages
-    then p . toHtml $ simpleModeContent languages
-    else H.div $ jLanguageTable languages
-
-jLanguageTable :: Languages -> Html
-jLanguageTable languages = table $ do
-  tr $ do
-    th ""
-    th "SPEAKING"
-    th "WRITING"
-    th "READING"
-  forM_
-    (complexModeContent languages)
-    (tr . jLanguageLevelRow)
-
 jExperienceItem :: JoeThemeSettings -> ExperienceItem -> Html
 jExperienceItem themeSettings item = H.div $ do
   let bodyColor' = bodyColor themeSettings
@@ -137,13 +120,6 @@ jExperienceItem themeSettings item = H.div $ do
       jSmall timeWorkedColor' $ timeWorked item
     (strong ! applyStyles [("color", entityNameColor')]) . toHtml . entityName $ item
   forM_ (experiencePoints item) (jJustified bodyColor' bodyFontSize)
-
-jLanguageLevelRow :: LanguageLevel -> Html
-jLanguageLevelRow item = do
-  td . strong . toHtml . languageName $ item
-  td . toHtml . showLanguageLevel . speakingProficiency $ item
-  td . toHtml . showLanguageLevel . writingProficiency $ item
-  td . toHtml . showLanguageLevel . readingProficiency $ item
 
 showLanguageLevel :: Int -> String
 showLanguageLevel rating =

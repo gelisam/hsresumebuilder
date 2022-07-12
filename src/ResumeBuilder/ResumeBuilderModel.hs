@@ -27,24 +27,8 @@ data Preferences = Preferences
     education :: [ExperienceItem],
     interestsHobbies :: [String],
     driverLicense :: [String],
-    languages :: Languages,
     praise :: [ExperienceItem],
     publications :: [ExperienceItem]
-  }
-  deriving (Generic, Show, ToJSON, FromJSON)
-
-data Languages = Languages
-  { complexModeContent :: [LanguageLevel],
-    simpleMode :: Bool,
-    simpleModeContent :: String
-  }
-  deriving (Generic, Show, ToJSON, FromJSON)
-
-data LanguageLevel = LanguageLevel
-  { languageName :: String,
-    speakingProficiency :: Int,
-    writingProficiency :: Int,
-    readingProficiency :: Int
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 

@@ -45,10 +45,6 @@ hsResumeBuilder:
         positionName: "DEC in Natural Sciences"
         timeWorked: "2003"
     interestsHobbies: []
-    languages:
-      complexModeContent: []
-      simpleMode: false
-      simpleModeContent: "test"
     personal:
       addressLines: []
       contact:
