@@ -67,7 +67,9 @@ hsResumeBuilder:
           youtube:
             - "haskellcat.com"
       displayName: "Samuel Gélineau"
-      jobTitle: "Senior Software Engineer, Software Architect, Tech Lead"
+      jobTitles:
+        - "Senior Software Engineer,"
+        - "Software Architect, Tech Lead"
       locations:
         - "Montreal, Canada"
       shortIntro:

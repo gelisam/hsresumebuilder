@@ -50,7 +50,7 @@ data LanguageLevel = LanguageLevel
 
 data PersonalInfo = PersonalInfo
   { displayName :: String,
-    jobTitle :: String,
+    jobTitles :: [String],
     addressLines :: [String],
     locations :: [String],
     contact :: PersonalInfoContactInfo,

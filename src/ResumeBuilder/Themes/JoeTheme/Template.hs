@@ -3,6 +3,7 @@
 module ResumeBuilder.Themes.JoeTheme.Template where
 
 import Control.Monad (forM_)
+import Data.List (intersperse)
 import Data.String (IsString (fromString))
 import ResumeBuilder.ResumeBuilderModel
 import ResumeBuilder.Themes.JoeTheme.Components
@@ -41,12 +42,13 @@ renderResume config = docTypeHtml $ do
           (fontSize1 theme')
           headerText
 
-      renderJobTitleHeader headerText =
+      renderJobTitleHeader jobTitles = do
         jHeader2
-          (jobTitleColor theme')
-          (titleFontFamily theme')
-          (fontSize2 theme')
-          headerText
+            (jobTitleColor theme')
+            (titleFontFamily theme')
+            (fontSize2 theme')
+            $ do
+          sequence_ $ intersperse br (fmap fromString jobTitles)
 
   H.head $ do
     H.title . toHtml $ "Resume of " ++ (displayName . personal $ config)
@@ -68,7 +70,7 @@ renderResume config = docTypeHtml $ do
           -- Name and job title section
           H.div ! applyStyles [("flex-grow", "1")] $ do
             renderPersonNameHeader . displayName $ personal'
-            renderJobTitleHeader . jobTitle $ personal'
+            renderJobTitleHeader . jobTitles $ personal'
 
           -- Contact details section
           H.div ! applyStyles [("flex-grow", "0.6"), ("display", "flex")] $ do
