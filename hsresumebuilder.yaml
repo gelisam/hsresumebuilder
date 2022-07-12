@@ -108,7 +108,7 @@ hsResumeBuilder:
         experiencePoints:
           - "Migrated large, legacy C systems from HP-UX to Linux. Maintained and supported high availability systems used 24/7 by airport forecasters across the country."
         positionName: "Software Engineer"
-        timeWorked: "2006 – 2010, part time"
+        timeWorked: "2006 – 2010"  # ", part time"
       # - entityName: "McGill School of Computer Science"
       #   experiencePoints:
       #     - "Taught students how to code more quickly without sacrificing correctness."
