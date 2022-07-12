@@ -107,6 +107,14 @@ renderResume config = docTypeHtml $ do
                     fontSize3'
                     ["fa-solid", "fa-location-dot"]
                 )
+              forM_
+                (languages personal')
+                ( jIconWithText
+                    bodyColor'
+                    (nameColor theme')
+                    fontSize3'
+                    ["fa-solid", "fa-globe"]
+                )
             H.div ! applyStyles [("padding", "0.8em")] $ do
               forM_
                 (github . websites . contact $ personal')

@@ -68,6 +68,8 @@ hsResumeBuilder:
         - "Software Architect, Tech Lead"
       locations:
         - "Montreal, Canada"
+      languages:
+        - "English, French"
       shortIntro:
         - "I am a software engineer who specializes in the Functional Programming paradigm and more specifically in Haskell, with which I have 16 years of experience by now. The most well-known packages I maintain are hint and recursion-schemes. I have contributed to agda, criterion, ffmpeg-light, fltkhs, ghc, gloss, hackett, policeman, polysemy, servant, tasty, and many more."
         - "I have a broad background, covering academic research, distributed systems, embedded systems, entrepreneurship, graphics programming, mobile development, and web development. Throughout those adventures I have been paid to write Bash, C, C++, C#, Haskell, Java, JavaScript, Python, Ruby, Scala, and TypeScript. I also have experience with Agda, Elm, Racket, and Rust."

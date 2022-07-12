@@ -37,6 +37,7 @@ data PersonalInfo = PersonalInfo
     jobTitles :: [String],
     addressLines :: [String],
     locations :: [String],
+    languages :: [String],
     contact :: PersonalInfoContactInfo,
     shortIntro :: [String]
   }
