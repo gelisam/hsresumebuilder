@@ -82,11 +82,11 @@ hsResumeBuilder:
           - "Led weekly architectural discussions, made sure everybody's opinion was heard. Introduced several collaboration-based policies including a process for choosing between competing technologies, a process for crowd-sourcing code improvements, a process for finding a shared vision for the future of our codebase, and a process for spreading technical knowledge. Created new roles to solidify our codebase's performance, security, and testability. Democratized our tech debt prioritization process while making sure that important improvements were not neglected."
         positionName: "Senior Software Engineer, Architect, Lead Architect"
         timeWorked: "2017 – 2022"
-      - entityName: "Packt"
-        experiencePoints:
-          - "Recorded an online course about advanced Haskell topics including unsafePerformIO, lazy IO, streaming, free monads, Functional Reactive Programming, parallel programming, concurrent programming, and distributed programming."
-        positionName: "Course Author"
-        timeWorked: "2016 – 2017"
+      # - entityName: "Packt"
+      #   experiencePoints:
+      #     - "Recorded an online course about advanced Haskell topics including unsafePerformIO, lazy IO, streaming, free monads, Functional Reactive Programming, parallel programming, concurrent programming, and distributed programming."
+      #   positionName: "Course Author"
+      #   timeWorked: "2016 – 2017"
       - entityName: "Keatext"
         experiencePoints:
           - "Worked on the Scala backend (AWS micro-services) and the React frontend of a Natural Language Processing web application."
@@ -97,31 +97,31 @@ hsResumeBuilder:
           - "Worked for various clients including Autodesk, Citi Bike, Shaw, and the NRCC, controlled real-time hardware systems such as haptic arms and frame grabbers, refactored codebases with millions of lines of code, benchmarked desktop and embedded software, ported software to Linux, and implemented Android applications."
         positionName: "Consultant, Tech Lead"
         timeWorked: "2011 – 2015"
-      - entityName: "Aero Web"
-        experiencePoints:
-          - "Managed remote employees, connected heterogeneous technologies. Despite a small profit, we closed for lack of passion."
-        positionName: "Technical Co-Founder"
-        timeWorked: "2011 – 2013, part time"
+      # - entityName: "Aero Web"
+      #   experiencePoints:
+      #     - "Managed remote employees, connected heterogeneous technologies. Despite a small profit, we closed for lack of passion."
+      #   positionName: "Technical Co-Founder"
+      #   timeWorked: "2011 – 2013, part time"
       - entityName: "Environment Canada"
         experiencePoints:
           - "Migrated large, legacy C systems from HP-UX to Linux. Maintained and supported high availability systems used 24/7 by airport forecasters across the country."
         positionName: "Software Engineer"
         timeWorked: "2006 – 2010, part time"
-      - entityName: "McGill School of Computer Science"
-        experiencePoints:
-          - "Taught students how to code more quickly without sacrificing correctness."
-        positionName: "Course Instructor"
-        timeWorked: "2007 – 2008, part time"
-      - entityName: "McGill Software Engineering Lab"
-        experiencePoints:
-          - "Researched transactions, aspect-oriented programming, and multitouch widgets. Published at the AOSD conference."
-        positionName: "Research Assistant"
-        timeWorked: "2005 and 2010, part time"
-      - entityName: "Art Team Images"
-        experiencePoints:
-          - "Wrote online content editors and cross-browser JavaScript widgets."
-        positionName: "Software Engineer"
-        timeWorked: "2002 – 2003, part time"
+      # - entityName: "McGill School of Computer Science"
+      #   experiencePoints:
+      #     - "Taught students how to code more quickly without sacrificing correctness."
+      #   positionName: "Course Instructor"
+      #   timeWorked: "2007 – 2008, part time"
+      # - entityName: "McGill Software Engineering Lab"
+      #   experiencePoints:
+      #     - "Researched transactions, aspect-oriented programming, and multitouch widgets. Published at the AOSD conference."
+      #   positionName: "Research Assistant"
+      #   timeWorked: "2005 and 2010, part time"
+      # - entityName: "Art Team Images"
+      #   experiencePoints:
+      #     - "Wrote online content editors and cross-browser JavaScript widgets."
+      #   positionName: "Software Engineer"
+      #   timeWorked: "2002 – 2003, part time"
     publications:
       - entityName: "POPL2022"
         experiencePoints:
