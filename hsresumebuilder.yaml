@@ -95,7 +95,7 @@ hsResumeBuilder:
       - entityName: "Spiria"
         experiencePoints:
           - "Worked for various clients including Autodesk, Citi Bike, Shaw, and the NRCC, controlled real-time hardware systems such as haptic arms and frame grabbers, refactored codebases with millions of lines of code, benchmarked desktop and embedded software, ported software to Linux, and implemented Android applications."
-        positionName: "Consultant, Tech Lead"
+        positionName: "Software Engineer, Tech Lead"
         timeWorked: "2011 – 2015"
       # - entityName: "Aero Web"
       #   experiencePoints:
