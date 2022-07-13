@@ -117,8 +117,8 @@ jListItem color fontSize = (li ! applyStyles css) . toHtml
         ("margin-top", "0px")
       ]
 
-jExperienceItem :: JoeThemeSettings -> ([String] -> Html) -> ExperienceItem -> Html
-jExperienceItem themeSettings renderPoints item = H.div $ do
+jExperienceItem :: JoeThemeSettings -> ([String] -> Html) -> String -> ExperienceItem -> Html
+jExperienceItem themeSettings renderPoints separator item = H.div $ do
   let bodyColor' = bodyColor themeSettings
   let entityNameColor' = entityNameColor themeSettings
   let positionNameColor' = positionNameColor themeSettings
@@ -127,12 +127,12 @@ jExperienceItem themeSettings renderPoints item = H.div $ do
   H.div ! applyStyles [("display", "flex"), ("justify-content", "space-between")] $ do
     H.span $ do
       (strong ! applyStyles [("color", positionNameColor')]) . toHtml . positionName $ item
-      (H.span ! applyStyles [("color", bodyColor')]) ", "
-      jSmall timeWorkedColor' $ timeWorked item
-    (strong ! applyStyles [("color", entityNameColor')]) . toHtml . entityName $ item
+      jSmall entityNameColor' . toHtml $ separator
+      jSmall entityNameColor' $ entityName item
+    jSmall timeWorkedColor' . toHtml . timeWorked $ item
   renderPoints (experiencePoints item)
 
-jParagraphExperienceItem :: JoeThemeSettings -> ExperienceItem -> Html
+jParagraphExperienceItem :: JoeThemeSettings -> String -> ExperienceItem -> Html
 jParagraphExperienceItem themeSettings = jExperienceItem themeSettings $ \points -> do
   let bodyColor' = bodyColor themeSettings
   let bodyFontSize = fontSize3 themeSettings
@@ -140,7 +140,7 @@ jParagraphExperienceItem themeSettings = jExperienceItem themeSettings $ \points
 
 -- TODO: duplicate the code so we have one style for paragraphs (old code) and
 -- one style with bullet points (new code)
-jBulletExperienceItem :: JoeThemeSettings -> ExperienceItem -> Html
+jBulletExperienceItem :: JoeThemeSettings -> String -> ExperienceItem -> Html
 jBulletExperienceItem themeSettings = jExperienceItem themeSettings $ \points -> do
   let bodyColor' = bodyColor themeSettings
   let bodyFontSize = fontSize3 themeSettings
