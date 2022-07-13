@@ -3,7 +3,7 @@
 
 module ResumeBuilder.Themes.JoeTheme.Components where
 
-import Control.Monad (forM_)
+import Control.Monad (forM_, unless)
 import Data.String (IsString (fromString))
 import ResumeBuilder.ResumeBuilderModel
 import ResumeBuilder.Themes.JoeTheme.Styler (Classes, Styles, applyClasses, applyStyles)
@@ -100,15 +100,26 @@ jTitleAndShortSections header items = do
     sequence_ items
 
 
+jUnorderedList :: ToMarkup a => a -> Html
+jUnorderedList = (ul ! applyStyles css) . toHtml
+  where
+    css =
+      [ ("margin-top", "0px")
+      ]
+
 jListItem :: ToMarkup a => String -> String -> a -> Html
 jListItem color fontSize = (li ! applyStyles css) . toHtml
   where
-    css = [("color", color)]
+    css =
+      [ ("color", color),
+        ("text-align", "justify"),
+        ("font-size", fontSize),
+        ("margin-top", "0px")
+      ]
 
-jExperienceItem :: JoeThemeSettings -> ExperienceItem -> Html
-jExperienceItem themeSettings item = H.div $ do
+jExperienceItem :: JoeThemeSettings -> ([String] -> Html) -> ExperienceItem -> Html
+jExperienceItem themeSettings renderPoints item = H.div $ do
   let bodyColor' = bodyColor themeSettings
-  let bodyFontSize = fontSize3 themeSettings
   let entityNameColor' = entityNameColor themeSettings
   let positionNameColor' = positionNameColor themeSettings
   let timeWorkedColor' = timeWorkedColor themeSettings
@@ -119,7 +130,22 @@ jExperienceItem themeSettings item = H.div $ do
       (H.span ! applyStyles [("color", bodyColor')]) ", "
       jSmall timeWorkedColor' $ timeWorked item
     (strong ! applyStyles [("color", entityNameColor')]) . toHtml . entityName $ item
-  forM_ (experiencePoints item) (jJustified bodyColor' bodyFontSize)
+  renderPoints (experiencePoints item)
+
+jParagraphExperienceItem :: JoeThemeSettings -> ExperienceItem -> Html
+jParagraphExperienceItem themeSettings = jExperienceItem themeSettings $ \points -> do
+  let bodyColor' = bodyColor themeSettings
+  let bodyFontSize = fontSize3 themeSettings
+  forM_ points (jJustified bodyColor' bodyFontSize)
+
+-- TODO: duplicate the code so we have one style for paragraphs (old code) and
+-- one style with bullet points (new code)
+jBulletExperienceItem :: JoeThemeSettings -> ExperienceItem -> Html
+jBulletExperienceItem themeSettings = jExperienceItem themeSettings $ \points -> do
+  let bodyColor' = bodyColor themeSettings
+  let bodyFontSize = fontSize3 themeSettings
+  unless (null points) $ do
+    jUnorderedList $ forM_ points (jListItem bodyColor' bodyFontSize)
 
 showLanguageLevel :: Int -> String
 showLanguageLevel rating =
