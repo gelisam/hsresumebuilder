@@ -171,6 +171,11 @@ hsResumeBuilder:
           - "\"Samuel is enthusiastic and knowledgeable, always happy to lend a hand. Don't miss out his informative 'lunch & learn' sessions!\""
         positionName: "Marina Artigas"
         timeWorked: ""
+      - entityName: "NLP Research Engineer at Keatext"
+        experiencePoints:
+          - "\"Samuel and I were colleagues at Keatext AI. He is a highly talented, organized and a hard-working individual and was a pleasure to work work with. Not only does Samuel have great technical skills but he is also a great mentor. Patient and innovative he easily inspires others with his passion for functional programming. I highly value the hours we spent debugging and coding together - and I hope we'll have opportunities to collaborate in the future. I highly recommend him.\""
+        positionName: "Vera Sazonova"
+        timeWorked: ""
       # - entityName: "who were hired after I left Keatext"
       #   experiencePoints:
       #     - "Said they use the code I wrote as a reference for what good FP code looks like. They also complimented the quality of my documentation."
