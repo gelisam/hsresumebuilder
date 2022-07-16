@@ -124,8 +124,8 @@ jGenericItem
   -> (a -> String)
   -> (a -> [String])
   -> ([String] -> Html)
-  -> String -> a -> Html
-jGenericItem themeSettings leftPiece middlePiece rightPiece details renderDetails separator item = H.div $ do
+  -> String -> String -> a -> Html
+jGenericItem themeSettings leftPiece middlePiece rightPiece details renderDetails separator1 separator2 item = H.div $ do
   let bodyColor' = bodyColor themeSettings
   let entityNameColor' = entityNameColor themeSettings
   let positionNameColor' = positionNameColor themeSettings
@@ -134,12 +134,13 @@ jGenericItem themeSettings leftPiece middlePiece rightPiece details renderDetail
   H.div ! applyStyles [("display", "flex"), ("justify-content", "space-between")] $ do
     H.span $ do
       (strong ! applyStyles [("color", positionNameColor')]) . toHtml . leftPiece $ item
-      jSmall entityNameColor' . toHtml $ separator
+      (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
+      jSmall entityNameColor' . toHtml $ separator2
       jSmall entityNameColor' $ middlePiece item
     jSmall timeWorkedColor' . toHtml . rightPiece $ item
   renderDetails (details item)
 
-jParagraphGenericItem :: JoeThemeSettings -> String -> GenericItem -> Html
+jParagraphGenericItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html
 jParagraphGenericItem themeSettings
   = jGenericItem themeSettings
       leftText middleText rightText paragraphs $ \paragraphs_ -> do
@@ -149,7 +150,7 @@ jParagraphGenericItem themeSettings
 
 -- TODO: duplicate the code so we have one style for paragraphs (old code) and
 -- one style with bullet points (new code)
-jBulletExperienceItem :: JoeThemeSettings -> String -> ExperienceItem -> Html
+jBulletExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
 jBulletExperienceItem themeSettings
   = jGenericItem themeSettings
       positionName entityName timeWorked experiencePoints $ \points -> do

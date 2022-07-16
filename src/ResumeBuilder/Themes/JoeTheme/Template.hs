@@ -159,19 +159,19 @@ renderResume config = docTypeHtml $ do
 
       -- Work experience section
       renderLongSection (workExperienceTitle documentTitles')
-        (fmap (jBulletExperienceItem theme' " at ") (experience config))
+        (fmap (jBulletExperienceItem theme' " " "at ") (experience config))
 
       -- Education section
       renderLongSection (educationTitle documentTitles')
-        (fmap (jParagraphGenericItem theme' " from ") (education config))
+        (fmap (jParagraphGenericItem theme' " " "from ") (education config))
 
       -- Publications section
       renderLongSection (publicationsTitle documentTitles')
-        (fmap (jParagraphGenericItem theme' " by ") (publications config))
+        (fmap (jParagraphGenericItem theme' " " "by ") (publications config))
 
       -- Praise section
       renderLongSection (praiseTitle documentTitles')
-        (fmap (jParagraphGenericItem theme' ", ") (praise config))
+        (fmap (jParagraphGenericItem theme' ", " "") (praise config))
 
       -- Credits to hsResumeBuilder
       jShortSection $ do
