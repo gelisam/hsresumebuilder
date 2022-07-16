@@ -24,11 +24,11 @@ data Preferences = Preferences
   { personal :: PersonalInfo,
     appearance :: AppearancePreferences,
     experience :: [ExperienceItem],
-    education :: [ExperienceItem],
+    education :: [GenericItem],
     interestsHobbies :: [String],
     driverLicense :: [String],
-    praise :: [ExperienceItem],
-    publications :: [ExperienceItem]
+    praise :: [GenericItem],
+    publications :: [GenericItem]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
@@ -82,6 +82,14 @@ data JoeThemeSettings = JoeThemeSettings
     fontSize2 :: String,
     fontSize3 :: String,
     customStylesheetsToLoad :: [String]
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data GenericItem = GenericItem
+  { middleText :: String,
+    paragraphs :: [String],
+    leftText :: String,
+    rightText :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 

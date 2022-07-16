@@ -117,8 +117,15 @@ jListItem color fontSize = (li ! applyStyles css) . toHtml
         ("margin-top", "0px")
       ]
 
-jExperienceItem :: JoeThemeSettings -> ([String] -> Html) -> String -> ExperienceItem -> Html
-jExperienceItem themeSettings renderPoints separator item = H.div $ do
+jGenericItem
+  :: JoeThemeSettings
+  -> (a -> String)
+  -> (a -> String)
+  -> (a -> String)
+  -> (a -> [String])
+  -> ([String] -> Html)
+  -> String -> a -> Html
+jGenericItem themeSettings leftPiece middlePiece rightPiece details renderDetails separator item = H.div $ do
   let bodyColor' = bodyColor themeSettings
   let entityNameColor' = entityNameColor themeSettings
   let positionNameColor' = positionNameColor themeSettings
@@ -126,26 +133,30 @@ jExperienceItem themeSettings renderPoints separator item = H.div $ do
 
   H.div ! applyStyles [("display", "flex"), ("justify-content", "space-between")] $ do
     H.span $ do
-      (strong ! applyStyles [("color", positionNameColor')]) . toHtml . positionName $ item
+      (strong ! applyStyles [("color", positionNameColor')]) . toHtml . leftPiece $ item
       jSmall entityNameColor' . toHtml $ separator
-      jSmall entityNameColor' $ entityName item
-    jSmall timeWorkedColor' . toHtml . timeWorked $ item
-  renderPoints (experiencePoints item)
+      jSmall entityNameColor' $ middlePiece item
+    jSmall timeWorkedColor' . toHtml . rightPiece $ item
+  renderDetails (details item)
 
-jParagraphExperienceItem :: JoeThemeSettings -> String -> ExperienceItem -> Html
-jParagraphExperienceItem themeSettings = jExperienceItem themeSettings $ \points -> do
-  let bodyColor' = bodyColor themeSettings
-  let bodyFontSize = fontSize3 themeSettings
-  forM_ points (jJustified bodyColor' bodyFontSize)
+jParagraphGenericItem :: JoeThemeSettings -> String -> GenericItem -> Html
+jParagraphGenericItem themeSettings
+  = jGenericItem themeSettings
+      leftText middleText rightText paragraphs $ \paragraphs_ -> do
+        let bodyColor' = bodyColor themeSettings
+        let bodyFontSize = fontSize3 themeSettings
+        forM_ paragraphs_ (jJustified bodyColor' bodyFontSize)
 
 -- TODO: duplicate the code so we have one style for paragraphs (old code) and
 -- one style with bullet points (new code)
 jBulletExperienceItem :: JoeThemeSettings -> String -> ExperienceItem -> Html
-jBulletExperienceItem themeSettings = jExperienceItem themeSettings $ \points -> do
-  let bodyColor' = bodyColor themeSettings
-  let bodyFontSize = fontSize3 themeSettings
-  unless (null points) $ do
-    jUnorderedList $ forM_ points (jListItem bodyColor' bodyFontSize)
+jBulletExperienceItem themeSettings
+  = jGenericItem themeSettings
+      positionName entityName timeWorked experiencePoints $ \points -> do
+        let bodyColor' = bodyColor themeSettings
+        let bodyFontSize = fontSize3 themeSettings
+        unless (null points) $ do
+          jUnorderedList $ forM_ points (jListItem bodyColor' bodyFontSize)
 
 showLanguageLevel :: Int -> String
 showLanguageLevel rating =

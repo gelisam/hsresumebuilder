@@ -32,18 +32,18 @@ hsResumeBuilder:
 
     driverLicense: []
     education:
-      - entityName: "McGill University"
-        experiencePoints: []
-        positionName: "M.Sc. in Computer Science"
-        timeWorked: "2010"
-      - entityName: "McGill University"
-        experiencePoints: []
-        positionName: "B.Sc., major in Computer Science"
-        timeWorked: "2006"
-      - entityName: "Collège Édouard-Montpetit"
-        experiencePoints: []
-        positionName: "DEC in Natural Sciences"
-        timeWorked: "2003"
+      - middleText: "McGill University"
+        paragraphs: []
+        leftText: "M.Sc. in Computer Science"
+        rightText: "2010"
+      - middleText: "McGill University"
+        paragraphs: []
+        leftText: "B.Sc., major in Computer Science"
+        rightText: "2006"
+      - middleText: "Collège Édouard-Montpetit"
+        paragraphs: []
+        leftText: "DEC in Natural Sciences"
+        rightText: "2003"
     interestsHobbies: []
     personal:
       addressLines: []
@@ -135,54 +135,54 @@ hsResumeBuilder:
       #   positionName: "Software Engineer"
       #   timeWorked: "2002 – 2003, part time"
     publications:
-      - entityName: "Jang, Gélineau, Monnier, and Pientka"
-        experiencePoints:
+      - middleText: "Jang, Gélineau, Monnier, and Pientka"
+        paragraphs:
           - "A programming language guaranteeing that generated code is well-typed."
-        positionName: "Mœbius: Metaprogramming using Contextual Types"
-        timeWorked: "POPL2022"
-      - entityName: "Barrett, Christiansen, and Gélineau"
-        experiencePoints:
+        leftText: "Mœbius: Metaprogramming using Contextual Types"
+        rightText: "POPL2022"
+      - middleText: "Barrett, Christiansen, and Gélineau"
+        paragraphs:
           - "A programming language with type-driven macros."
-        positionName: "Klister: Predictable Macros for Hindley-Milner"
-        timeWorked: "TyDe2020"
+        leftText: "Klister: Predictable Macros for Hindley-Milner"
+        rightText: "TyDe2020"
     praise:
-      - entityName: "Head of Software Engineering at Groq"
-        experiencePoints:
+      - middleText: "Head of Software Engineering at Groq"
+        paragraphs:
           - "\"Hire this guy.\""
-        positionName: "Edward Kmett"
-        timeWorked: ""
-      - entityName: "Staff System Engineer at SimSpace"
-        experiencePoints:
+        leftText: "Edward Kmett"
+        rightText: ""
+      - middleText: "Staff System Engineer at SimSpace"
+        paragraphs:
           - "\"Sam is not only a next-level developer but he is also an incredibly kind and compassionate human. I would work with him again in a second. If you are looking for a skilled functional-programming specialist Sam is the best candidate you will find.\""
-        positionName: "Alex Speaks"
-        timeWorked: ""
-      # - entityName: "Deputy Director of Engineering at SimSpace"
-      #   experiencePoints:
+        leftText: "Alex Speaks"
+        rightText: ""
+      # - middleText: "Deputy Director of Engineering at SimSpace"
+      #   paragraphs:
       #     - "\"Samuel Gélineau is amazing! One of the best engineers I've ever worked with and an incredible hire for any lucky team.\""
-      #   positionName: "Matthew Russell"
-      #   timeWorked: ""
-      - entityName: "Director of Engineering at SimSpace"
-        experiencePoints:
+      #   leftText: "Matthew Russell"
+      #   rightText: ""
+      - middleText: "Director of Engineering at SimSpace"
+        paragraphs:
           - "\"I cannot agree more with the positive comments about Sam. He is a standout engineer, super passionate, loves to teach others, and would fit in on any team.\""
-        positionName: "Michael Beynon"
-        timeWorked: ""
-      - entityName: "Frontend Engineer at Keatext"
-        experiencePoints:
+        leftText: "Michael Beynon"
+        rightText: ""
+      - middleText: "Frontend Engineer at Keatext"
+        paragraphs:
           - "\"Samuel is enthusiastic and knowledgeable, always happy to lend a hand. Don't miss out his informative 'lunch & learn' sessions!\""
-        positionName: "Marina Artigas"
-        timeWorked: ""
-      - entityName: "NLP Research Engineer at Keatext"
-        experiencePoints:
+        leftText: "Marina Artigas"
+        rightText: ""
+      - middleText: "NLP Research Engineer at Keatext"
+        paragraphs:
           - "\"Samuel and I were colleagues at Keatext AI. He is a highly talented, organized and a hard-working individual and was a pleasure to work work with. Not only does Samuel have great technical skills but he is also a great mentor. Patient and innovative he easily inspires others with his passion for functional programming. I highly value the hours we spent debugging and coding together - and I hope we'll have opportunities to collaborate in the future. I highly recommend him.\""
-        positionName: "Vera Sazonova"
-        timeWorked: ""
-      # - entityName: "who were hired after I left Keatext"
-      #   experiencePoints:
+        leftText: "Vera Sazonova"
+        rightText: ""
+      # - middleText: "who were hired after I left Keatext"
+      #   paragraphs:
       #     - "Said they use the code I wrote as a reference for what good FP code looks like. They also complimented the quality of my documentation."
-      #   positionName: "Employees"
-      #   timeWorked: ""
-      # - entityName: "my boss at Environment Canada"
-      #   experiencePoints:
+      #   leftText: "Employees"
+      #   rightText: ""
+      # - middleText: "my boss at Environment Canada"
+      #   paragraphs:
       #     - "Admitted that because I seemed over-confident, he gave me their hardest project and expected me to get stuck for the whole summer. He was then pleasantly surprised to see me succeed and then tackle their second-hardest project as well."
-      #   positionName: "Michel Larivière"
-      #   timeWorked: ""
+      #   leftText: "Michel Larivière"
+      #   rightText: ""

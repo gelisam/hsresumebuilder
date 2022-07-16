@@ -163,15 +163,15 @@ renderResume config = docTypeHtml $ do
 
       -- Education section
       renderLongSection (educationTitle documentTitles')
-        (fmap (jParagraphExperienceItem theme' " from ") (education config))
+        (fmap (jParagraphGenericItem theme' " from ") (education config))
 
       -- Publications section
       renderLongSection (publicationsTitle documentTitles')
-        (fmap (jParagraphExperienceItem theme' " by ") (publications config))
+        (fmap (jParagraphGenericItem theme' " by ") (publications config))
 
       -- Praise section
       renderLongSection (praiseTitle documentTitles')
-        (fmap (jParagraphExperienceItem theme' ", ") (praise config))
+        (fmap (jParagraphGenericItem theme' ", ") (praise config))
 
       -- Credits to hsResumeBuilder
       jShortSection $ do
