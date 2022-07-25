@@ -148,8 +148,6 @@ jParagraphGenericItem themeSettings
         let bodyFontSize = fontSize3 themeSettings
         forM_ paragraphs_ (jJustified bodyColor' bodyFontSize)
 
--- TODO: duplicate the code so we have one style for paragraphs (old code) and
--- one style with bullet points (new code)
 jBulletExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
 jBulletExperienceItem themeSettings
   = jGenericItem themeSettings
