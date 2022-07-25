@@ -122,8 +122,8 @@ jGenericItem
   -> (a -> String)
   -> (a -> String)
   -> (a -> String)
-  -> (a -> [String])
-  -> ([String] -> Html)
+  -> (a -> body)
+  -> (body -> Html)
   -> String -> String -> a -> Html
 jGenericItem themeSettings leftPiece middlePiece rightPiece details renderDetails separator1 separator2 item = H.div $ do
   let bodyColor' = bodyColor themeSettings
@@ -151,11 +151,20 @@ jParagraphGenericItem themeSettings
 jBulletExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
 jBulletExperienceItem themeSettings
   = jGenericItem themeSettings
-      positionName entityName timeWorked experiencePoints $ \points -> do
+      positionName entityName timeWorked Prelude.id $ \body -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
-        unless (null points) $ do
-          jUnorderedList $ forM_ points (jListItem bodyColor' bodyFontSize)
+        jUnorderedList $ do
+          forM_ [ ("Technologies", technologies)
+                , ("Responsibilities", responsibilities)
+                , ("Expertise", expertise)
+                , ("Contexts", contexts)
+                , ("Extra-curricular", extraCurricular)
+                ] $ \(lineName, getLine) -> do
+            forM_ (getLine body) $ \s -> do
+              jListItem bodyColor' bodyFontSize $ do
+                H.i (lineName <> ": ")
+                H.span (fromString s)
 
 showLanguageLevel :: Int -> String
 showLanguageLevel rating =

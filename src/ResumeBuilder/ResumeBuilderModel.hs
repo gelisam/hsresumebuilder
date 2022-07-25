@@ -95,7 +95,11 @@ data GenericItem = GenericItem
 
 data ExperienceItem = ExperienceItem
   { entityName :: String,
-    experiencePoints :: [String],
+    technologies :: Maybe String,
+    responsibilities :: Maybe String,
+    expertise :: Maybe String,
+    contexts :: Maybe String,
+    extraCurricular :: Maybe String,
     positionName :: String,
     timeWorked :: String
   }
