@@ -77,11 +77,16 @@ hsResumeBuilder:
         - "I strive to be helpful to others, by writing researched, detailed answers with plenty of code examples. I like to codify existing practices, to remove ambiguity and to give us the opportunity to self-reflect and improve. I reach out to others, building bridges, collaborating and resolving misunderstandings."
     experience:
       - entityName: "SimSpace"
-        experiencePoints:
+        technologies:
           - "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
+        responsibilities:
           - "Requirements gathering, technical design, estimation, implementation, code review, load testing, project management, interviewing."
-          - "Solo projects, team projects, team lead, project lead, architect, lead architect."
           - "Led meetings, prioritized tickets, picked and announced policies, created and assigned roles, resolved disputes."
+        expertise:
+          - "Secure software development"
+        contexts:
+          - "Solo projects, team projects, team lead, project lead, architect, lead architect."
+        extraCurricular:
           - "mentoring, teaching Haskell, giving talks, going to Haskell conferences."
         positionName: "Senior Backend Engineer, Architect, Lead Architect"
         timeWorked: "2017 – 2022"
@@ -91,19 +96,27 @@ hsResumeBuilder:
       #   positionName: "Course Author"
       #   timeWorked: "2016 – 2017"
       - entityName: "Keatext"
-        experiencePoints:
+        technologies:
           - "Scala, Elm, TypeScript, JavaScript (React). AWS (API Gateway, EC2, Lambda), machine learning (NLP). Linux."
+        responsibilities:
           - "Estimation, implementation, optimization, code review, deployment."
+        expertise: []
+        contexts: []
+        extraCurricular:
           - "Teaching Elm, giving talks."
         positionName: "Backend Engineer"
         timeWorked: "2015 – 2016"
       - entityName: "Spiria"
-        experiencePoints:
+        technologies:
           - "Technologies: C++, Java (Android), Objective-C, Python. Windows, Mac, Linux."
-          - "Responsibilities: Requirements gathering, technical design, estimation, implementation, optimization, code review, deployment."
+        responsibilities:
+          - "Requirements gathering, technical design, estimation, implementation, optimization, code review, deployment."
+        expertise:
           - "Desktop development, embedded systems, graphics programming, mobile development, web development."
+        contexts:
           - "Solo projects, team projects, tech lead."
-          - "Extra-curricular: Teaching git, giving talks, going to Agile conferences."
+        extraCurricular:
+          - "Teaching git, giving talks, going to Agile conferences."
         positionName: "Software Engineer, Tech Lead"
         timeWorked: "2011 – 2015"
       # - entityName: "Aero Web"
@@ -112,10 +125,14 @@ hsResumeBuilder:
       #   positionName: "Technical Co-Founder"
       #   timeWorked: "2011 – 2013, part time"
       - entityName: "Environment Canada"
-        experiencePoints:
+        technologies:
           - "C, Bash, Python, Perl. Linux, HP-UX."
+        responsibilities:
           - "Implementation, user support, incident-response."
+        expertise:
           - "Desktop development."
+        contexts: []
+        extraCurricular:
           - "Teaching svn, giving talks, going to Scala conferences."
         positionName: "Software Engineer"
         timeWorked: "2006 – 2010"  # ", part time"
