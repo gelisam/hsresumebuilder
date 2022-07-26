@@ -56,12 +56,11 @@ jSmall color = (H.small ! applyStyles css) . toHtml
   where
     css = [("color", color)]
 
-jJustified :: ToMarkup a => String -> String -> a -> Html
-jJustified color fontSize = (p ! applyStyles css) . toHtml
+jParagraph :: ToMarkup a => String -> String -> a -> Html
+jParagraph color fontSize = (p ! applyStyles css) . toHtml
   where
     css =
       [ ("color", color),
-        ("text-align", "justify"),
         ("font-size", fontSize),
         ("margin-top", "0px"),
         ("margin-bottom", "0px")
@@ -160,7 +159,7 @@ jParagraphGenericItem themeSettings
       leftText middleText rightText True paragraphs $ \paragraphs_ -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
-        forM_ paragraphs_ (jJustified bodyColor' bodyFontSize)
+        forM_ paragraphs_ (jParagraph bodyColor' bodyFontSize)
 
 jExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
 jExperienceItem themeSettings
@@ -183,7 +182,7 @@ jExperienceItem themeSettings
                                     ] $ do
                   H.i ! applyStyles [("color", timeWorkedColor')] $ lineName
                 H.div ! applyStyles [("display", "table-cell")] $ do
-                  jJustified bodyColor' bodyFontSize $ do
+                  jParagraph bodyColor' bodyFontSize $ do
                     H.span (fromString s)
 
 showLanguageLevel :: Int -> String
