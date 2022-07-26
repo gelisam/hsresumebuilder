@@ -153,7 +153,7 @@ hsResumeBuilder:
     interestsHobbies:
       - entityName: ""
         technologies: "Haskell, Agda, Rust, Racket, AspectJ, Ruby, Scheme, Twelf. 3D modelling (Houdini), image editing (GIMP), video editing (Final Cut)."
-        responsibilities: "Open source maintainer (recursion-schemes, hint, frp-zoo, hawk, git-slides), online course instructor (\"Mastering Haskell Programming\"), meetup organizer (\"Lambda Montreal\"), researcher (see publications)."
+        responsibilities: "Open source maintainer (recursion-schemes, hint, frp-zoo, hawk, git-slides), online course author (\"Mastering Haskell Programming\"), meetup organizer (\"Lambda Montreal\"), researcher (see publications)."
         expertise: "Functional programming, game programming, live coding. Machine learning (AI Safety). Functional reactive programming, type-level programming, linear types, dependent types, proof assistants. Category theory, type theory, compilers, interpreters."
         positionName: []
         timeWorked: ""
