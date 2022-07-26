@@ -78,7 +78,7 @@ hsResumeBuilder:
       - entityName: "SimSpace"
         technologies: "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
         responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
-        expertise: "Web development, secure software development, migrating to microservices."
+        expertise: "Web development, functional programming, secure software development."
         #contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."
         extraCurricular: "Recruiting, mentoring, teaching Haskell, giving talks, presenting at Haskell conferences."
         positionName:
@@ -96,7 +96,7 @@ hsResumeBuilder:
       - entityName: "Keatext"
         technologies: "Scala, Elm, TypeScript, JavaScript (React). AWS (API Gateway, EC2, Lambda). Linux."
         responsibilities: "Implementation, optimization, deployment, addressing outages."
-        expertise: "Web development, microservices, machine learning (NLP)."
+        expertise: "Web development, functional programming. Microservices, machine learning (NLP)."
         extraCurricular: "Teaching Elm, giving talks, presenting at Scala conferences."
         positionName:
           - "Backend Engineer"
@@ -154,7 +154,7 @@ hsResumeBuilder:
       - entityName: ""
         technologies: "Haskell, Agda, Rust, Racket, AspectJ, Ruby, Scheme, Twelf. 3D modelling (Houdini), image editing (GIMP), video editing (Final Cut)."
         responsibilities: "Open source maintainer (recursion-schemes, hint, frp-zoo, hawk, git-slides), online course instructor (\"Mastering Haskell Programming\"), meetup organizer (\"Lambda Montreal\"), researcher (see publications)."
-        expertise: "Game programming, live coding, machine learning (AI Safety). Functional reactive programming, type-level programming, linear types, dependent types, proof assistants. Category theory, type theory, compilers, interpreters."
+        expertise: "Functional programming, game programming, live coding. Machine learning (AI Safety). Functional reactive programming, type-level programming, linear types, dependent types, proof assistants. Category theory, type theory, compilers, interpreters."
         positionName: []
         timeWorked: ""
     praise:
