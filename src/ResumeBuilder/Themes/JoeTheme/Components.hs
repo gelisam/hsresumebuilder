@@ -179,9 +179,9 @@ jExperienceItem themeSettings
             forM_ (getLine body) $ \s -> do
               H.div ! applyStyles [("display", "table-row")] $ do
                 H.div ! applyStyles [ ("display", "table-cell")
-                                    , ("width", "22ex")
+                                    , ("width", "20ex")
                                     ] $ do
-                  H.i ! applyStyles [("color", timeWorkedColor')] $ lineName
+                  H.small $ H.i ! applyStyles [("color", timeWorkedColor')] $ lineName
                 H.div ! applyStyles [("display", "table-cell")] $ do
                   jParagraph bodyColor' bodyFontSize $ do
                     H.span (fromString s)
