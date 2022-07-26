@@ -168,6 +168,7 @@ jExperienceItem themeSettings
       positionName entityName timeWorked True Prelude.id $ \body -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
+        let timeWorkedColor' = timeWorkedColor themeSettings
         H.div ! applyStyles [("display", "table")] $ do
           forM_ [ ("Technologies", technologies)
                 , ("Responsibilities", responsibilities)
@@ -180,7 +181,7 @@ jExperienceItem themeSettings
                 H.div ! applyStyles [ ("display", "table-cell")
                                     , ("width", "22ex")
                                     ] $ do
-                  H.i lineName
+                  H.i ! applyStyles [("color", timeWorkedColor')] $ lineName
                 H.div ! applyStyles [("display", "table-cell")] $ do
                   jJustified bodyColor' bodyFontSize $ do
                     H.span (fromString s)
