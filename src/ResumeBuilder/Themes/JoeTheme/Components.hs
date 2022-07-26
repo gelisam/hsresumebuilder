@@ -161,14 +161,14 @@ jExperienceItem themeSettings
         H.div ! applyStyles [("display", "table")] $ do
           forM_ [ ("Technologies", technologies)
                 , ("Responsibilities", responsibilities)
-                , ("Expertise", expertise)
-                , ("Contexts", contexts)
+                , ("Technological context", expertise)
+                , ("Human context", contexts)
                 , ("Extra-curricular", extraCurricular)
                 ] $ \(lineName, getLine) -> do
             forM_ (getLine body) $ \s -> do
               H.div ! applyStyles [("display", "table-row")] $ do
                 H.div ! applyStyles [ ("display", "table-cell")
-                                    , ("width", "20ex")
+                                    , ("width", "22ex")
                                     ] $ do
                   H.i lineName
                 H.div ! applyStyles [("display", "table-cell")] $ do
