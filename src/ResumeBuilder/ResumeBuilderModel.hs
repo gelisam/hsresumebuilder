@@ -25,7 +25,7 @@ data Preferences = Preferences
     appearance :: AppearancePreferences,
     experience :: [ExperienceItem],
     education :: [GenericItem],
-    interestsHobbies :: [String],
+    interestsHobbies :: [ExperienceItem],
     driverLicense :: [String],
     praise :: [GenericItem],
     publications :: [GenericItem]

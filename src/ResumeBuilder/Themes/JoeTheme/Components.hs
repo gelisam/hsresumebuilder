@@ -134,24 +134,25 @@ jGenericItem themeSettings leftPieces middlePiece rightPiece addSpaceAbove detai
   let positionNameColor' = positionNameColor themeSettings
   let timeWorkedColor' = timeWorkedColor themeSettings
 
-  H.div ! applyStyles ( [ ("display", "flex")
-                        , ("justify-content", "space-between")
-                        ]
-                     ++ if addSpaceAbove
-                        then [("margin-top", "1em")]
-                        else []
-                      ) $ do
-    H.span $ do
-      (H.span ! applyStyles [("color", positionNameColor')]) $ do
-        let stringPieces = leftPieces item
-            htmlPieces = fmap toHtml stringPieces
-            boldPieces = fmap H.strong htmlPieces
-            commaSeparatedPieces = intersperse ", " boldPieces
-        sequence_ commaSeparatedPieces
-      (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
-      jSmall entityNameColor' . toHtml $ separator2
-      jSmall entityNameColor' $ middlePiece item
-    jSmall timeWorkedColor' . toHtml . rightPiece $ item
+  unless (null . leftPieces $ item) $ do
+    H.div ! applyStyles ( [ ("display", "flex")
+                          , ("justify-content", "space-between")
+                          ]
+                       ++ if addSpaceAbove
+                          then [("margin-top", "1em")]
+                          else []
+                        ) $ do
+      H.span $ do
+        (H.span ! applyStyles [("color", positionNameColor')]) $ do
+          let stringPieces = leftPieces item
+              htmlPieces = fmap toHtml stringPieces
+              boldPieces = fmap H.strong htmlPieces
+              commaSeparatedPieces = intersperse ", " boldPieces
+          sequence_ commaSeparatedPieces
+        (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
+        jSmall entityNameColor' . toHtml $ separator2
+        jSmall entityNameColor' $ middlePiece item
+      jSmall timeWorkedColor' . toHtml . rightPiece $ item
   renderDetails (details item)
 
 jEmptyGenericItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html

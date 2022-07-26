@@ -4,7 +4,7 @@ hsResumeBuilder:
       documentTitles:
         driverLicenseTitle: "DRIVING"
         educationTitle: "EDUCATION"
-        interestsHobbiesTitle: "MY INTERESTS"
+        interestsHobbiesTitle: "HOBBIES"
         languagesTitle: "LANGUAGES"
         praiseTitle: "ENDORSEMENTS"
         publicationsTitle: "SELECTED PUBLICATIONS"
@@ -44,7 +44,6 @@ hsResumeBuilder:
         paragraphs: []
         leftText: "DEC in Natural Sciences"
         rightText: "2003"
-    interestsHobbies: []
     personal:
       addressLines: []
       contact:
@@ -151,6 +150,13 @@ hsResumeBuilder:
           - "A programming language with type-driven macros."
         leftText: "Klister: Predictable Macros for Hindley-Milner"
         rightText: "TyDe2020"
+    interestsHobbies:
+      - entityName: ""
+        technologies: "Haskell, Agda, Rust, Racket, AspectJ, Ruby, Scheme, Twelf. 3D modelling (Houdini), image editing (GIMP), video editing (Final Cut)."
+        responsibilities: "Open source maintainer (recursion-schemes, hint, frp-zoo, hawk, git-slides), online course instructor (\"Mastering Haskell Programming\"), meetup organizer (\"Lambda Montreal\"), researcher (see publications)."
+        expertise: "Game programming, live coding, machine learning (AI Safety). Functional reactive programming, type-level programming, linear types, dependent types, proof assistants. Category theory, type theory, compilers, interpreters."
+        positionName: []
+        timeWorked: ""
     praise:
       - middleText: "Head of Software Engineering at Groq"
         paragraphs:
