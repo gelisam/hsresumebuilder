@@ -79,7 +79,7 @@ hsResumeBuilder:
       - entityName: "SimSpace"
         technologies: "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
         responsibilities: "Requirements gathering, technical design, estimation, implementation, code review, load testing, project management, interviewing, leading meetings, prioritizing tickets, drafting and announcing policies, creating and assigning roles, resolving disputes."
-        expertise: "Secure software development"
+        expertise: "Web development, secure software development, migrating to microservices."
         contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."
         extraCurricular: "mentoring, teaching Haskell, giving talks, going to Haskell conferences."
         positionName: "Senior Backend Engineer, Architect, Lead Architect"
