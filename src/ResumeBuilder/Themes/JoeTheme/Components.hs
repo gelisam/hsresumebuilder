@@ -63,7 +63,8 @@ jJustified color fontSize = (p ! applyStyles css) . toHtml
       [ ("color", color),
         ("text-align", "justify"),
         ("font-size", fontSize),
-        ("margin-top", "0px")
+        ("margin-top", "0px"),
+        ("margin-bottom", "0px")
       ]
 
 jLink :: String -> String -> String -> Html -> Html
@@ -131,7 +132,10 @@ jGenericItem themeSettings leftPiece middlePiece rightPiece details renderDetail
   let positionNameColor' = positionNameColor themeSettings
   let timeWorkedColor' = timeWorkedColor themeSettings
 
-  H.div ! applyStyles [("display", "flex"), ("justify-content", "space-between")] $ do
+  H.div ! applyStyles [ ("display", "flex")
+                      , ("justify-content", "space-between")
+                      , ("margin-top", "1em")
+                      ] $ do
     H.span $ do
       (strong ! applyStyles [("color", positionNameColor')]) . toHtml . leftPiece $ item
       (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
@@ -148,13 +152,13 @@ jParagraphGenericItem themeSettings
         let bodyFontSize = fontSize3 themeSettings
         forM_ paragraphs_ (jJustified bodyColor' bodyFontSize)
 
-jBulletExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
-jBulletExperienceItem themeSettings
+jExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
+jExperienceItem themeSettings
   = jGenericItem themeSettings
       positionName entityName timeWorked Prelude.id $ \body -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
-        jUnorderedList $ do
+        H.div ! applyStyles [("display", "table")] $ do
           forM_ [ ("Technologies", technologies)
                 , ("Responsibilities", responsibilities)
                 , ("Expertise", expertise)
@@ -162,9 +166,14 @@ jBulletExperienceItem themeSettings
                 , ("Extra-curricular", extraCurricular)
                 ] $ \(lineName, getLine) -> do
             forM_ (getLine body) $ \s -> do
-              jListItem bodyColor' bodyFontSize $ do
-                H.i (lineName <> ": ")
-                H.span (fromString s)
+              H.div ! applyStyles [("display", "table-row")] $ do
+                H.div ! applyStyles [ ("display", "table-cell")
+                                    , ("width", "20ex")
+                                    ] $ do
+                  H.i lineName
+                H.div ! applyStyles [("display", "table-cell")] $ do
+                  jJustified bodyColor' bodyFontSize $ do
+                    H.span (fromString s)
 
 showLanguageLevel :: Int -> String
 showLanguageLevel rating =

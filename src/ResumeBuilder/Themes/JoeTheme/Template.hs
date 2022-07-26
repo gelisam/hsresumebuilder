@@ -159,7 +159,7 @@ renderResume config = docTypeHtml $ do
 
       -- Work experience section
       renderLongSection (workExperienceTitle documentTitles')
-        (fmap (jBulletExperienceItem theme' " " "at ") (experience config))
+        (fmap (jExperienceItem theme' " " "at ") (experience config))
 
       -- Education section
       renderLongSection (educationTitle documentTitles')
