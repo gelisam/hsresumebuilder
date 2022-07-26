@@ -123,19 +123,23 @@ jGenericItem
   -> (a -> String)
   -> (a -> String)
   -> (a -> String)
+  -> Bool
   -> (a -> body)
   -> (body -> Html)
   -> String -> String -> a -> Html
-jGenericItem themeSettings leftPiece middlePiece rightPiece details renderDetails separator1 separator2 item = H.div $ do
+jGenericItem themeSettings leftPiece middlePiece rightPiece addSpaceAbove details renderDetails separator1 separator2 item = H.div $ do
   let bodyColor' = bodyColor themeSettings
   let entityNameColor' = entityNameColor themeSettings
   let positionNameColor' = positionNameColor themeSettings
   let timeWorkedColor' = timeWorkedColor themeSettings
 
-  H.div ! applyStyles [ ("display", "flex")
-                      , ("justify-content", "space-between")
-                      , ("margin-top", "1em")
-                      ] $ do
+  H.div ! applyStyles ( [ ("display", "flex")
+                        , ("justify-content", "space-between")
+                        ]
+                     ++ if addSpaceAbove
+                        then [("margin-top", "1em")]
+                        else []
+                      ) $ do
     H.span $ do
       (strong ! applyStyles [("color", positionNameColor')]) . toHtml . leftPiece $ item
       (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
@@ -144,10 +148,16 @@ jGenericItem themeSettings leftPiece middlePiece rightPiece details renderDetail
     jSmall timeWorkedColor' . toHtml . rightPiece $ item
   renderDetails (details item)
 
+jEmptyGenericItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html
+jEmptyGenericItem themeSettings
+  = jGenericItem themeSettings
+      leftText middleText rightText False (\_ -> ()) $ \() -> do
+        pure ()
+
 jParagraphGenericItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html
 jParagraphGenericItem themeSettings
   = jGenericItem themeSettings
-      leftText middleText rightText paragraphs $ \paragraphs_ -> do
+      leftText middleText rightText True paragraphs $ \paragraphs_ -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
         forM_ paragraphs_ (jJustified bodyColor' bodyFontSize)
@@ -155,7 +165,7 @@ jParagraphGenericItem themeSettings
 jExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
 jExperienceItem themeSettings
   = jGenericItem themeSettings
-      positionName entityName timeWorked Prelude.id $ \body -> do
+      positionName entityName timeWorked True Prelude.id $ \body -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
         H.div ! applyStyles [("display", "table")] $ do
