@@ -66,8 +66,8 @@ hsResumeBuilder:
       jobTitles:
         - "Senior Software Engineer,"
         - "Software Architect, Tech Lead"
-      locations:
-        - "Montreal, Canada"
+      locations: []
+        #- "Montreal, Canada"
       languages:
         - "English, French"
       shortIntro:
