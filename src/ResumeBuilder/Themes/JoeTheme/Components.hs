@@ -4,6 +4,7 @@
 module ResumeBuilder.Themes.JoeTheme.Components where
 
 import Control.Monad (forM_, unless)
+import Data.List (intersperse)
 import Data.String (IsString (fromString))
 import ResumeBuilder.ResumeBuilderModel
 import ResumeBuilder.Themes.JoeTheme.Styler (Classes, Styles, applyClasses, applyStyles)
@@ -120,14 +121,14 @@ jListItem color fontSize = (li ! applyStyles css) . toHtml
 
 jGenericItem
   :: JoeThemeSettings
-  -> (a -> String)
+  -> (a -> [String])
   -> (a -> String)
   -> (a -> String)
   -> Bool
   -> (a -> body)
   -> (body -> Html)
   -> String -> String -> a -> Html
-jGenericItem themeSettings leftPiece middlePiece rightPiece addSpaceAbove details renderDetails separator1 separator2 item = H.div $ do
+jGenericItem themeSettings leftPieces middlePiece rightPiece addSpaceAbove details renderDetails separator1 separator2 item = H.div $ do
   let bodyColor' = bodyColor themeSettings
   let entityNameColor' = entityNameColor themeSettings
   let positionNameColor' = positionNameColor themeSettings
@@ -141,7 +142,12 @@ jGenericItem themeSettings leftPiece middlePiece rightPiece addSpaceAbove detail
                         else []
                       ) $ do
     H.span $ do
-      (strong ! applyStyles [("color", positionNameColor')]) . toHtml . leftPiece $ item
+      (H.span ! applyStyles [("color", positionNameColor')]) $ do
+        let stringPieces = leftPieces item
+            htmlPieces = fmap toHtml stringPieces
+            boldPieces = fmap H.strong htmlPieces
+            commaSeparatedPieces = intersperse ", " boldPieces
+        sequence_ commaSeparatedPieces
       (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
       jSmall entityNameColor' . toHtml $ separator2
       jSmall entityNameColor' $ middlePiece item
@@ -151,13 +157,13 @@ jGenericItem themeSettings leftPiece middlePiece rightPiece addSpaceAbove detail
 jEmptyGenericItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html
 jEmptyGenericItem themeSettings
   = jGenericItem themeSettings
-      leftText middleText rightText False (\_ -> ()) $ \() -> do
+      ((:[]) . leftText) middleText rightText False (\_ -> ()) $ \() -> do
         pure ()
 
 jParagraphGenericItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html
 jParagraphGenericItem themeSettings
   = jGenericItem themeSettings
-      leftText middleText rightText True paragraphs $ \paragraphs_ -> do
+      ((:[]) . leftText) middleText rightText True paragraphs $ \paragraphs_ -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
         forM_ paragraphs_ (jParagraph bodyColor' bodyFontSize)

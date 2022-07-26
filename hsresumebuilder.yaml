@@ -82,7 +82,12 @@ hsResumeBuilder:
         expertise: "Web development, secure software development, migrating to microservices."
         #contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."
         extraCurricular: "Recruiting, mentoring, teaching Haskell, giving talks, presenting at Haskell conferences."
-        positionName: "Senior Backend Engineer, Team Lead, Project Lead, Architect, Lead Architect"
+        positionName:
+          - "Senior Backend Engineer"
+          - "Team Lead"
+          - "Project Lead"
+          - "Architect"
+          - "Lead Architect"
         timeWorked: "2017 – 2022"
       # - entityName: "Packt"
       #   experiencePoints:
@@ -94,7 +99,8 @@ hsResumeBuilder:
         responsibilities: "Implementation, optimization, deployment, addressing outages."
         expertise: "Web development, microservices, machine learning (NLP)."
         extraCurricular: "Teaching Elm, giving talks, presenting at Scala conferences."
-        positionName: "Backend Engineer"
+        positionName:
+          - "Backend Engineer"
         timeWorked: "2015 – 2016"
       - entityName: "Spiria"
         technologies: "C++, Java (Android), Objective-C, Python. Windows, Mac, Linux."
@@ -102,7 +108,9 @@ hsResumeBuilder:
         expertise: "Desktop development, embedded systems, graphics programming, mobile development, web development."
         #contexts: "Solo projects, team projects, tech lead."
         extraCurricular: "Teaching Git, giving talks, going to Agile conferences."
-        positionName: "Software Engineer, Tech Lead"
+        positionName:
+          - "Software Engineer"
+          - "Tech Lead"
         timeWorked: "2011 – 2015"
       # - entityName: "Aero Web"
       #   experiencePoints:
@@ -114,7 +122,8 @@ hsResumeBuilder:
         responsibilities: "Implementation, user support, addressing outages."
         expertise: "Desktop development."
         extraCurricular: "Teaching SVN, giving talks."
-        positionName: "Software Engineer"
+        positionName:
+          - "Software Engineer"
         timeWorked: "2006 – 2010"  # ", part time"
       # - entityName: "McGill School of Computer Science"
       #   experiencePoints:
