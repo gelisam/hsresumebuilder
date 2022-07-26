@@ -78,7 +78,7 @@ hsResumeBuilder:
     experience:
       - entityName: "SimSpace"
         technologies: "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
-        responsibilities: "Requirements gathering, technical design, estimation, implementation, code review, load testing, project management, interviewing. Led meetings, prioritized tickets, picked and announced policies, created and assigned roles, resolved disputes."
+        responsibilities: "Requirements gathering, technical design, estimation, implementation, code review, load testing, project management, interviewing, leading meetings, prioritizing tickets, drafting and announcing policies, creating and assigning roles, resolving disputes."
         expertise: "Secure software development"
         contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."
         extraCurricular: "mentoring, teaching Haskell, giving talks, going to Haskell conferences."
