@@ -61,6 +61,7 @@ jParagraph color fontSize = (p ! applyStyles css) . toHtml
   where
     css =
       [ ("color", color),
+        ("text-align", "justify"),
         ("font-size", fontSize),
         ("margin-top", "0px"),
         ("margin-bottom", "0px")
