@@ -1,0 +1,88 @@
+# .github/workflows/deploy-pr.yml
+name: Deploy PR to Server
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Only run if it's not an 'edited' event, or if it is 'edited', only when base branch changed
+    if: github.event.action != 'edited' || github.event.changes.base.ref.from != null
+    permissions:
+      contents: read
+      pull-requests: write
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+      
+    - name: Setup Haskell
+      uses: haskell-actions/setup@v2
+      with:
+        ghc-version: '9.4'
+        cabal-version: '3.8'
+        
+    - name: Cache Cabal packages
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.cabal/packages
+          ~/.cabal/store
+          dist-newstyle
+        key: ${{ runner.os }}-cabal-${{ hashFiles('**/*.cabal') }}
+        restore-keys: |
+          ${{ runner.os }}-cabal-
+        
+    - name: Build project
+      run: cabal run
+      
+    - name: Debug - Show current commit
+      run: |
+        echo "Current commit: $(git rev-parse HEAD)"
+        echo "PR head SHA: ${{ github.event.pull_request.head.sha }}"
+        echo "PR branch: ${{ github.event.pull_request.head.ref }}"
+      
+    - name: Setup SSH key
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        
+        # Debug: Check if SERVER_HOST is set
+        if [ -z "${{ secrets.SERVER_HOST }}" ]; then
+          echo "ERROR: SERVER_HOST secret is empty or not set!"
+          exit 1
+        fi
+        
+        echo "Scanning SSH keys for host: ${{ secrets.SERVER_HOST }}"
+        # If using custom SSH port, add: -p ${{ secrets.SSH_PORT }}
+        ssh-keyscan -H "${{ secrets.SERVER_HOST }}" >> ~/.ssh/known_hosts
+        
+    - name: Deploy to server
+      run: |
+        # Create a unique directory for this PR
+        PR_DIR="pr-${{ github.event.number }}"
+        
+        # Create directory on server if it doesn't exist
+        ssh ${{ secrets.SSH_USER }}@${{ secrets.SERVER_HOST }} "mkdir -p ${{ secrets.DEPLOY_PATH }}/$PR_DIR"
+        
+        # Copy output.html to server
+        scp output.html ${{ secrets.SSH_USER }}@${{ secrets.SERVER_HOST }}:${{ secrets.DEPLOY_PATH }}/$PR_DIR/index.html
+        
+    - name: Comment PR with deploy URL
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const prNumber = context.payload.number;
+          const deployUrl = `${{ secrets.BASE_URL }}/pr-${prNumber}`;
+          
+          github.rest.issues.createComment({
+            issue_number: prNumber,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: `🚀 **PR deployed successfully!**\n\n📱 Test URL: ${deployUrl}\n\nThis deployment will be updated automatically when you push new commits to this PR.`
+          });
