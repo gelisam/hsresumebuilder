@@ -4,7 +4,7 @@
 module ResumeBuilder.Themes.JoeTheme.Components where
 
 import Control.Monad (forM_, unless)
-import Data.List (intersperse, isPrefixOf, isSuffixOf)
+import Data.List (intersperse)
 import Data.String (IsString (fromString))
 import ResumeBuilder.ResumeBuilderModel
 import ResumeBuilder.Themes.JoeTheme.Styler (Classes, Styles, applyClasses, applyStyles)
@@ -256,7 +256,6 @@ jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ 
   let bodyColor' = bodyColor themeSettings
       timeWorkedColor' = timeWorkedColor themeSettings
       greyedColor = "#888888" -- A generic grey color for the URL
-      bodyFontSize = fontSize3 themeSettings
 
   -- Main content row (Description and Year)
   H.div ! applyStyles mainRowStyles $ do
@@ -272,37 +271,24 @@ jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ 
   case url item of
     Nothing -> pure ()
     Just itemUrl -> do
-      let cleanedUrl = cleanUrl itemUrl
-      unless (null cleanedUrl) $
+      unless (null itemUrl) $ -- Check if the URL string is not empty
         H.div ! applyStyles urlRowStyles $
-          H.small ! applyStyles [("color", greyedColor), ("font-size", "0.8em")] $ -- Smaller font for URL
-            toHtml cleanedUrl
+          H.small ! applyStyles [("color", greyedColor), ("font-size", "0.8em")] $
+            toHtml itemUrl
   where
     sectionContainerStyles =
       [ ("display", "flex"),
-        ("flex-direction", "column"), -- Changed to column for URL on new line
-        ("margin-bottom", "0.75em"), -- Space between items
+        ("flex-direction", "column"),
+        ("margin-bottom", "0.75em"),
         ("text-align", "left")
       ]
     mainRowStyles =
       [ ("display", "flex"),
         ("flex-direction", "row"),
-        ("justify-content", "space-between"), -- Pushes year to the right
+        ("justify-content", "space-between"),
         ("align-items", "flex-start")
       ]
     urlRowStyles =
       [ ("margin-left", "1.5em"), -- Indentation for the URL
         ("margin-top", "0.25em")  -- Small space between description and URL
       ]
-
--- Helper function to clean URL
-cleanUrl :: String -> String
-cleanUrl = removeTrailingSlash . removeHttpHttps
-  where
-    removeHttpHttps str
-      | "https://" `isPrefixOf` str = drop (length "https://") str
-      | "http://" `isPrefixOf` str = drop (length "http://") str
-      | otherwise = str
-    removeTrailingSlash str
-      | "/" `isSuffixOf` str = take (length str - 1) str
-      | otherwise = str
