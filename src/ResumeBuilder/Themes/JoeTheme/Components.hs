@@ -4,7 +4,7 @@
 module ResumeBuilder.Themes.JoeTheme.Components where
 
 import Control.Monad (forM_, unless)
-import Data.List (intersperse)
+import Data.List (intersperse, isPrefixOf, isSuffixOf)
 import Data.String (IsString (fromString))
 import ResumeBuilder.ResumeBuilderModel
 import ResumeBuilder.Themes.JoeTheme.Styler (Classes, Styles, applyClasses, applyStyles)
@@ -252,30 +252,57 @@ jSectionHeader color fontFamily fontSize enableBorder =
     (h3 ! applyStyles css) . toHtml
 
 jAISafetyItem :: JoeThemeSettings -> AISafetyItem -> Html
-jAISafetyItem themeSettings item = H.div ! applyStyles containerStyles $ do
-  let timeWorkedColor' = timeWorkedColor themeSettings
-      bodyColor' = bodyColor themeSettings
-      linkColor' = linkColor themeSettings
+jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ do
+  let bodyColor' = bodyColor themeSettings
+      timeWorkedColor' = timeWorkedColor themeSettings
+      greyedColor = "#888888" -- A generic grey color for the URL
       bodyFontSize = fontSize3 themeSettings
 
-  -- Year on the left
-  H.span ! applyStyles [("color", timeWorkedColor'), ("white-space", "nowrap"), ("margin-right", "1em")] $
-    toHtml (year item)
+  -- Main content row (Description and Year)
+  H.div ! applyStyles mainRowStyles $ do
+    -- Description on the left
+    H.span ! applyStyles [("color", bodyColor'), ("flex-grow", "1")] $ do
+      toHtml (description item)
 
-  -- Description and URL on the right
-  H.span ! applyStyles [("color", bodyColor')] $ do
-    toHtml (description item)
-    case url item of
-      Nothing -> pure ()
-      Just itemUrl -> do
-        H.span " " -- Space before the URL
-        a ! href (fromString itemUrl) ! target "_blank" ! applyStyles [("color", linkColor'), ("font-size", bodyFontSize)] $
-          toHtml itemUrl
+    -- Year on the right
+    H.span ! applyStyles [("color", timeWorkedColor'), ("white-space", "nowrap"), ("margin-left", "1em")] $
+      jSmall timeWorkedColor' (toHtml $ year item)
+
+  -- Optional URL row (indented, small, greyed-out)
+  case url item of
+    Nothing -> pure ()
+    Just itemUrl -> do
+      let cleanedUrl = cleanUrl itemUrl
+      unless (null cleanedUrl) $
+        H.div ! applyStyles urlRowStyles $
+          H.small ! applyStyles [("color", greyedColor), ("font-size", "0.8em")] $ -- Smaller font for URL
+            toHtml cleanedUrl
   where
-    containerStyles =
+    sectionContainerStyles =
+      [ ("display", "flex"),
+        ("flex-direction", "column"), -- Changed to column for URL on new line
+        ("margin-bottom", "0.75em"), -- Space between items
+        ("text-align", "left")
+      ]
+    mainRowStyles =
       [ ("display", "flex"),
         ("flex-direction", "row"),
-        ("align-items", "flex-start"), -- Align items to the top
-        ("margin-bottom", "0.5em"), -- Space between items
-        ("text-align", "left") -- Ensure text aligns left
+        ("justify-content", "space-between"), -- Pushes year to the right
+        ("align-items", "flex-start")
       ]
+    urlRowStyles =
+      [ ("margin-left", "1.5em"), -- Indentation for the URL
+        ("margin-top", "0.25em")  -- Small space between description and URL
+      ]
+
+-- Helper function to clean URL
+cleanUrl :: String -> String
+cleanUrl = removeTrailingSlash . removeHttpHttps
+  where
+    removeHttpHttps str
+      | "https://" `isPrefixOf` str = drop (length "https://") str
+      | "http://" `isPrefixOf` str = drop (length "http://") str
+      | otherwise = str
+    removeTrailingSlash str
+      | "/" `isSuffixOf` str = take (length str - 1) str
+      | otherwise = str

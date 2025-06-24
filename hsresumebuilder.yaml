@@ -241,13 +241,13 @@ hsResumeBuilder:
     aiSafetyExposure:
       - year: "2025"
         description: "Interactive demo: using Range Analysis to prove the safety of a toy example"
-        url: "https://gelisam.com/range-analysis"
+        url: "gelisam.com/range-analysis"
       - year: "2025"
         description: "Applied to Safeguarded AI TA1.2 as part of GLAIVe Research"
         url: null
       - year: "2022"
         description: "Invited talk at Galois, \"Can we Prove Facts about ML Models via Code Synthesis?\""
-        url: "https://youtu.be/-2nFTfXAsmU"
+        url: "youtu.be/-2nFTfXAsmU"
       - year: "2019"
         description: "Answered AI Safety questions from comments on Rob Miles's YouTube videos as part of his Patreon-only Discord server"
         url: null
