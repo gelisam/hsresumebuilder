@@ -30,7 +30,14 @@ data Preferences = Preferences
     praise :: [GenericItem],
     publications :: [GenericItem],
     programmingLanguageExperience :: [ExperienceItem],
-    aiSafetyExposure :: [ExperienceItem]
+    aiSafetyExposure :: [AISafetyItem]
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data AISafetyItem = AISafetyItem
+  { year :: String,
+    description :: String,
+    url :: Maybe String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 

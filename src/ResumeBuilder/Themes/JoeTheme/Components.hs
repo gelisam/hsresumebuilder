@@ -250,3 +250,32 @@ jSectionHeader color fontFamily fontSize enableBorder =
               else ("border-bottom", "none")
           ]
     (h3 ! applyStyles css) . toHtml
+
+jAISafetyItem :: JoeThemeSettings -> AISafetyItem -> Html
+jAISafetyItem themeSettings item = H.div ! applyStyles containerStyles $ do
+  let timeWorkedColor' = timeWorkedColor themeSettings
+      bodyColor' = bodyColor themeSettings
+      linkColor' = linkColor themeSettings
+      bodyFontSize = fontSize3 themeSettings
+
+  -- Year on the left
+  H.span ! applyStyles [("color", timeWorkedColor'), ("white-space", "nowrap"), ("margin-right", "1em")] $
+    toHtml (year item)
+
+  -- Description and URL on the right
+  H.span ! applyStyles [("color", bodyColor')] $ do
+    toHtml (description item)
+    case url item of
+      Nothing -> pure ()
+      Just itemUrl -> do
+        H.span " " -- Space before the URL
+        a ! href (fromString itemUrl) ! target "_blank" ! applyStyles [("color", linkColor'), ("font-size", bodyFontSize)] $
+          toHtml itemUrl
+  where
+    containerStyles =
+      [ ("display", "flex"),
+        ("flex-direction", "row"),
+        ("align-items", "flex-start"), -- Align items to the top
+        ("margin-bottom", "0.5em"), -- Space between items
+        ("text-align", "left") -- Ensure text aligns left
+      ]
