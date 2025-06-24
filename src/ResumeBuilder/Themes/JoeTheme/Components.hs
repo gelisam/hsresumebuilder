@@ -267,7 +267,7 @@ jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ 
     H.span ! applyStyles [("color", timeWorkedColor'), ("white-space", "nowrap"), ("margin-left", "1em")] $
       jSmall timeWorkedColor' (toHtml $ year item)
 
-  -- Optional URL row (indented, small, greyed-out)
+  -- Optional URL row (small, close, greyed-out)
   case url item of
     Nothing -> pure ()
     Just itemUrl -> do
@@ -288,7 +288,4 @@ jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ 
         ("justify-content", "space-between"),
         ("align-items", "flex-start")
       ]
-    urlRowStyles =
-      [ ("margin-left", "1.5em"), -- Indentation for the URL
-        ("margin-top", "0.25em")  -- Small space between description and URL
-      ]
+    urlRowStyles = []
