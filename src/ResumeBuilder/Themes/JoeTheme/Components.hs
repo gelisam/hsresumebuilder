@@ -250,3 +250,45 @@ jSectionHeader color fontFamily fontSize enableBorder =
               else ("border-bottom", "none")
           ]
     (h3 ! applyStyles css) . toHtml
+
+jAISafetyItem :: JoeThemeSettings -> AISafetyItem -> Html
+jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ do
+  let bodyColor' = bodyColor themeSettings
+      timeWorkedColor' = timeWorkedColor themeSettings
+      greyedColor = "#888888" -- A generic grey color for the URL
+
+  -- Main content row (Description and Year)
+  H.div ! applyStyles mainRowStyles $ do
+    -- Description on the left
+    H.span ! applyStyles [("color", bodyColor'), ("flex-grow", "1")] $ do
+      toHtml (description item)
+
+    -- Year on the right
+    H.span ! applyStyles [("color", timeWorkedColor'), ("white-space", "nowrap"), ("margin-left", "1em")] $
+      jSmall timeWorkedColor' (toHtml $ year item)
+
+  -- Optional URL row (indented, small, greyed-out)
+  case url item of
+    Nothing -> pure ()
+    Just itemUrl -> do
+      unless (null itemUrl) $ -- Check if the URL string is not empty
+        H.div ! applyStyles urlRowStyles $
+          H.small ! applyStyles [("color", greyedColor), ("font-size", "0.8em")] $
+            toHtml itemUrl
+  where
+    sectionContainerStyles =
+      [ ("display", "flex"),
+        ("flex-direction", "column"),
+        ("margin-bottom", "0.75em"),
+        ("text-align", "left")
+      ]
+    mainRowStyles =
+      [ ("display", "flex"),
+        ("flex-direction", "row"),
+        ("justify-content", "space-between"),
+        ("align-items", "flex-start")
+      ]
+    urlRowStyles =
+      [ ("margin-left", "1.5em"), -- Indentation for the URL
+        ("margin-top", "0.25em")  -- Small space between description and URL
+      ]
