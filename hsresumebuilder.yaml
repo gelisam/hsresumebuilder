@@ -176,7 +176,7 @@ hsResumeBuilder:
         positionName: []
         timeWorked: ""
     praise:
-      - middleText: "Head of Software Engineering at Groq"
+      - middleText: "Haskell superstar and former programming language researcher at MIRI"
         paragraphs:
           - "\"Hire this guy.\""
         leftText: "Edward Kmett"
