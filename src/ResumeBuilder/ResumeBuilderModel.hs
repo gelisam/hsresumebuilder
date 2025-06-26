@@ -109,7 +109,8 @@ data ExperienceItem = ExperienceItem
     contexts :: Maybe String,
     extraCurricular :: Maybe String,
     positionName :: [String],
-    timeWorked :: String
+    timeWorked :: String,
+    highlight :: Maybe String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
