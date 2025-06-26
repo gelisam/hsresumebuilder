@@ -157,10 +157,6 @@ renderResume config = docTypeHtml $ do
                     ["fa-brands", "fa-twitter"]
                 )
 
-      -- Programming Language Experience section
-      renderLongSection (programmingLanguageExperienceTitle documentTitles')
-        (fmap (jExperienceItem theme' " " "at ") (programmingLanguageExperience config))
-
       -- AI Safety Exposure section
       renderLongSection (aiSafetyExposureTitle documentTitles')
         (fmap (jAISafetyItem theme') (aiSafetyExposure config))

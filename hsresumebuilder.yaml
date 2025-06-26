@@ -11,7 +11,6 @@ hsResumeBuilder:
         seeMyWebsitesTitle: "ME ON THE INTERNET"
         shortIntroTitle: "WHO AM I?"
         workExperienceTitle: "WORK EXPERIENCE"
-        programmingLanguageExperienceTitle: "PROGRAMMING LANGUAGE EXPERIENCE"
         aiSafetyExposureTitle: "AI SAFETY EXPOSURE"
       theme: "ResumeBuilder.Themes.JoeTheme"
       themeSettings:
@@ -207,40 +206,6 @@ hsResumeBuilder:
       #     - "Admitted that because I seemed over-confident, he gave me their hardest project and expected me to get stuck for the whole summer. He was then pleasantly surprised to see me succeed and then tackle their second-hardest project as well."
       #   leftText: "Michel Larivière"
       #   rightText: ""
-    programmingLanguageExperience:
-      - entityName: "Haskell"
-        technologies: "GHC, Cabal, Stack, recursion-schemes, hint, polysemy, servant, lens"
-        responsibilities: "Package maintenance, conference presentations, teaching, mentoring"
-        expertise: "Advanced type-level programming, effect systems, category theory applications"
-        extraCurricular: "Open source contributions, conference speaking, community leadership"
-        positionName:
-          - "Expert practitioner"
-          - "Package maintainer"
-          - "Community contributor"
-        timeWorked: "16 years"
-      - entityName: "TypeScript/JavaScript"
-        technologies: "fp-ts, React, Node.js, functional programming patterns"
-        responsibilities: "Full-stack development, code reviews, architecture decisions"
-        expertise: "Functional programming in imperative languages, type safety"
-        positionName:
-          - "Professional developer"
-        timeWorked: "8+ years"
-      - entityName: "Scala"
-        technologies: "Cats, scalaz, functional programming ecosystem"
-        responsibilities: "Backend development, microservices architecture"
-        expertise: "Functional programming, type safety, concurrent programming"
-        extraCurricular: "Conference presentations"
-        positionName:
-          - "Backend engineer"
-        timeWorked: "2 years"
-      - entityName: "Python/C++/Java"
-        technologies: "Various frameworks and ecosystems"
-        responsibilities: "System development, performance optimization, cross-platform development"
-        expertise: "Systems programming, performance tuning, legacy system integration"
-        positionName:
-          - "Multi-language developer"
-        timeWorked: "10+ years combined"
-
     aiSafetyExposure:
       - year: "2025"
         description: "Interactive demo: using Range Analysis to prove the safety of a toy example"

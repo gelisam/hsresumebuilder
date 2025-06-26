@@ -29,7 +29,6 @@ data Preferences = Preferences
     driverLicense :: [String],
     praise :: [GenericItem],
     publications :: [GenericItem],
-    programmingLanguageExperience :: [ExperienceItem],
     aiSafetyExposure :: [AISafetyItem]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
@@ -124,7 +123,6 @@ data DocumentTitles = DocumentTitles
     praiseTitle :: String,
     publicationsTitle :: String,
     seeMyWebsitesTitle :: String,
-    programmingLanguageExperienceTitle :: String,
     aiSafetyExposureTitle :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
