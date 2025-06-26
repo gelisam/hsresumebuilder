@@ -171,7 +171,7 @@ renderResume config = docTypeHtml $ do
 
       -- Education section
       renderLongSection (educationTitle documentTitles')
-        (fmap (jEmptyGenericItem theme' " " "from ") (education config))
+        (fmap (jParagraphGenericItem theme' " " "from ") (education config))
 
       -- Publications section
       renderLongSection (publicationsTitle documentTitles')

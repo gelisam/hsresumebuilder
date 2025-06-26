@@ -35,17 +35,20 @@ hsResumeBuilder:
     driverLicense: []
     education:
       - middleText: "McGill University"
-        paragraphs: []
+        paragraphs:
+          - "Master's thesis about proving lack of conflicts in Aspect-Oriented programs."
         leftText: "M.Sc. in Computer Science"
         rightText: "2010"
       - middleText: "McGill University"
-        paragraphs: []
+        paragraphs:
+          - "Compilers class, course project was combining frontend and backend in a single language."
+          - "AI class, final project was a shallow neural network playing a board game."
         leftText: "B.Sc., major in Computer Science"
         rightText: "2006"
-      - middleText: "Collège Édouard-Montpetit"
-        paragraphs: []
-        leftText: "DEC in Natural Sciences"
-        rightText: "2003"
+      #- middleText: "Collège Édouard-Montpetit"
+      #  paragraphs: []
+      #  leftText: "DEC in Natural Sciences"
+      #  rightText: "2003"
     personal:
       addressLines: []
       contact:
