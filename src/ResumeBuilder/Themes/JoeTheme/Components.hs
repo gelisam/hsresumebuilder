@@ -5,6 +5,7 @@ module ResumeBuilder.Themes.JoeTheme.Components where
 
 import Control.Monad (forM_, unless)
 import Data.List (intersperse)
+import Data.List.Extra (splitOn)
 import Data.String (IsString (fromString))
 import ResumeBuilder.ResumeBuilderModel
 import ResumeBuilder.Themes.JoeTheme.Styler (Classes, Styles, applyClasses, applyStyles)
@@ -171,29 +172,13 @@ jParagraphGenericItem themeSettings
         let bodyFontSize = fontSize3 themeSettings
         forM_ paragraphs_ (jParagraph bodyColor' bodyFontSize)
 
-jExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
+jExperienceItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html
 jExperienceItem themeSettings
   = jGenericItem themeSettings
-      positionName entityName timeWorked True Prelude.id $ \body -> do
+      (splitOn ", " . leftText) middleText rightText True paragraphs $ \paragraphs_ -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
-        let timeWorkedColor' = timeWorkedColor themeSettings
-        H.div ! applyStyles [("display", "table")] $ do
-          forM_ [ ("Technologies", technologies)
-                , ("Responsibilities", responsibilities)
-                , ("Technological context", expertise)
-                , ("Human context", contexts)
-                , ("Extra-curricular", extraCurricular)
-                ] $ \(lineName, getLine) -> do
-            forM_ (getLine body) $ \s -> do
-              H.div ! applyStyles [("display", "table-row")] $ do
-                H.div ! applyStyles [ ("display", "table-cell")
-                                    , ("width", "20ex")
-                                    ] $ do
-                  H.small $ H.i ! applyStyles [("color", timeWorkedColor')] $ lineName
-                H.div ! applyStyles [("display", "table-cell")] $ do
-                  jParagraph bodyColor' bodyFontSize $ do
-                    H.span (fromString s)
+        forM_ paragraphs_ (jParagraph bodyColor' bodyFontSize)
 
 showLanguageLevel :: Int -> String
 showLanguageLevel rating =

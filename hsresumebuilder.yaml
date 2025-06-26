@@ -4,7 +4,6 @@ hsResumeBuilder:
       documentTitles:
         driverLicenseTitle: "DRIVING"
         educationTitle: "EDUCATION"
-        interestsHobbiesTitle: "HOBBIES"
         languagesTitle: "LANGUAGES"
         praiseTitle: "ENDORSEMENTS"
         publicationsTitle: "SELECTED PUBLICATIONS"
@@ -38,12 +37,14 @@ hsResumeBuilder:
           - "Master's thesis about proving lack of conflicts in Aspect-Oriented programs."
         leftText: "M.Sc. in Computer Science"
         rightText: "2010"
+        keywords: []
       - middleText: "McGill University"
         paragraphs:
           - "Compilers class, course project was a language listing server-side and client-side code in the same function."
           - "AI class, final project was a shallow neural network playing a board game."
         leftText: "B.Sc., major in Computer Science"
         rightText: "2006"
+        keywords: []
       #- middleText: "Collège Édouard-Montpetit"
       #  paragraphs: []
       #  leftText: "DEC in Natural Sciences"
@@ -79,99 +80,168 @@ hsResumeBuilder:
         - "I enjoy spreading the gospel by giving presentations and tutoring sessions on the advantages and disadvantages of various FP idioms, for example combinator libraries, difference lists, effect systems, lenses, and MonadBasedControl vs UnliftIO."
         - "I strive to be helpful to others, by writing researched, detailed answers with plenty of code examples. I like to codify existing practices, to remove ambiguity and to give us the opportunity to self-reflect and improve. I reach out to others, building bridges, collaborating and resolving misunderstandings."
     experience:
-      - entityName: "SimSpace"
-        technologies: "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
-        responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
-        expertise: "Web development, functional programming, secure software development."
-        #contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."
-        extraCurricular: "Recruiting, mentoring, teaching Haskell, giving talks, presenting at Haskell conferences."
-        positionName:
-          - "Senior Backend Engineer"
-          - "Team Lead"
-          - "Project Lead"
-          - "Architect"
-          - "Lead Architect"
-        timeWorked: "2017 – 2022"
-      # - entityName: "Packt"
-      #   experiencePoints:
-      #     - "Recorded an online course about advanced Haskell topics including unsafePerformIO, lazy IO, streaming, free monads, Functional Reactive Programming, parallel programming, concurrent programming, and distributed programming."
-      #   positionName: "Course Author"
-      #   timeWorked: "2016 – 2017"
-      - entityName: "Keatext"
-        technologies: "Scala, Elm, TypeScript, JavaScript (React). AWS (API Gateway, EC2, Lambda). Linux."
-        responsibilities: "Implementation, optimization, deployment, addressing outages."
-        expertise: "Web development, functional programming. Microservices, machine learning (NLP)."
-        extraCurricular: "Teaching Elm, giving talks, presenting at Scala conferences."
-        positionName:
-          - "Backend Engineer"
-        timeWorked: "2015 – 2016"
-      - entityName: "Spiria"
-        technologies: "C++, Java (Android), Objective-C, Python. Windows, Mac, Linux."
-        responsibilities: "Requirements gathering, technical design, implementation, optimization, deployment."
-        expertise: "Desktop development, embedded systems, graphics programming, mobile development, web development."
-        #contexts: "Solo projects, team projects, tech lead."
-        extraCurricular: "Teaching Git, giving talks, going to Agile conferences."
-        positionName:
-          - "Software Engineer"
-          - "Tech Lead"
-        timeWorked: "2011 – 2015"
-      # - entityName: "Aero Web"
-      #   experiencePoints:
-      #     - "Managed remote employees, connected heterogeneous technologies. Despite a small profit, we closed for lack of passion."
-      #   positionName: "Technical Co-Founder"
-      #   timeWorked: "2011 – 2013, part time"
-      - entityName: "Environment Canada"
-        technologies: "C, Bash, Python, Perl. Linux, HP-UX."
-        responsibilities: "Implementation, user support, addressing outages."
-        expertise: "Desktop development."
-        extraCurricular: "Teaching SVN, giving talks."
-        positionName:
-          - "Software Engineer"
-        timeWorked: "2006 – 2010"  # ", part time"
-      # - entityName: "McGill School of Computer Science"
-      #   experiencePoints:
-      #     - "Taught students how to code more quickly without sacrificing correctness."
-      #   positionName: "Course Instructor"
-      #   timeWorked: "2007 – 2008, part time"
-      # - entityName: "McGill Software Engineering Lab"
-      #   experiencePoints:
-      #     - "Researched transactions, aspect-oriented programming, and multitouch widgets. Published at the AOSD conference."
-      #   positionName: "Research Assistant"
-      #   timeWorked: "2005 and 2010, part time"
-      # - entityName: "Art Team Images"
-      #   experiencePoints:
-      #     - "Wrote online content editors and cross-browser JavaScript widgets."
-      #   positionName: "Software Engineer"
-      #   timeWorked: "2002 – 2003, part time"
+      - middleText: "Well.co"
+        rightText: "2022 – present"
+        leftText: "Principal Backend Engineer, Project Lead, Tech Lead"
+        paragraphs:
+          - "Designed a programming language for defining health-related challenges and their presentation."
+        keywords:
+          - "Haskell"
+          - "PureScript"
+          - "Bash"
+          - "Postgres"
+          - "Nix"
+          - "AWS Cognito"
+          - "Terraform"
+      - middleText: "SimSpace"
+        rightText: "2017 – 2022"
+        leftText: "Senior Backend Engineer, Lead Architect"
+        paragraphs:
+          - "Worked on a programming language for configuring virtual machines."
+          - "Also: drafting and announcing company-wide policies including creating new roles and training."
+        keywords:
+          - "Haskell"
+          - "TypeScript"
+          - "JavaScript"
+          - "Bash"
+          - "Postgres"
+          - "Mongo"
+          - "Nix"
+          - "Docker"
+          - "Kubernetes"
+          - "VMWare"
+          - "secure software development"
+      - middleText: "Keatext"
+        rightText: "2015 – 2016"
+        leftText: "Backend Engineer"
+        paragraphs:
+          - "Implemented the equations from the NLP researchers, sometimes improving their algorithmic complexity."
+        keywords:
+          - "Scala"
+          - "Elm"
+          - "TypeScript"
+          - "JavaScript"
+          - "React"
+          - "Postgres"
+          - "AWS API Gateway"
+          - "AWS EC2"
+          - "AWS Lambda"
+          - "microservices"
+          - "NLP"
+      - middleText: "Spiria"
+        rightText: "2011 – 2015"
+        leftText: "Backend Engineer, Tech Lead"
+        paragraphs:
+          - "A variety of projects for a variety of clients."
+        keywords:
+          - "C++"
+          - "Java (Android)"
+          - "Objective-C (macOS)"
+          - "Python"
+          - "Windows"
+          - "Mac"
+          - "Linux"
+          - "embedded systems"
+          - "graphics programming"
+          - "mobile development"
+    #experience:
+    #  - entityName: "SimSpace"
+    #    technologies: "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
+    #    responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
+    #    expertise: "Web development, functional programming, secure software development."
+    #    #contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."
+    #    extraCurricular: "Recruiting, mentoring, teaching Haskell, giving talks, presenting at Haskell conferences."
+    #    positionName:
+    #      - "Senior Backend Engineer"
+    #      - "Team Lead"
+    #      - "Project Lead"
+    #      - "Architect"
+    #      - "Lead Architect"
+    #    timeWorked: "2017 – 2022"
+    #  # - entityName: "Packt"
+    #  #   experiencePoints:
+    #  #     - "Recorded an online course about advanced Haskell topics including unsafePerformIO, lazy IO, streaming, free monads, Functional Reactive Programming, parallel programming, concurrent programming, and distributed programming."
+    #  #   positionName: "Course Author"
+    #  #   timeWorked: "2016 – 2017"
+    #  - entityName: "Keatext"
+    #    technologies: "Scala, Elm, TypeScript, JavaScript (React). AWS (API Gateway, EC2, Lambda). Linux."
+    #    responsibilities: "Implementation, optimization, deployment, addressing outages."
+    #    expertise: "Web development, functional programming. Microservices, machine learning (NLP)."
+    #    extraCurricular: "Teaching Elm, giving talks, presenting at Scala conferences."
+    #    positionName:
+    #      - "Backend Engineer"
+    #    timeWorked: "2015 – 2016"
+    #  - entityName: "Spiria"
+    #    technologies: "C++, Java (Android), Objective-C, Python. Windows, Mac, Linux."
+    #    responsibilities: "Requirements gathering, technical design, implementation, optimization, deployment."
+    #    expertise: "Desktop development, embedded systems, graphics programming, mobile development, web development."
+    #    #contexts: "Solo projects, team projects, tech lead."
+    #    extraCurricular: "Teaching Git, giving talks, going to Agile conferences."
+    #    positionName:
+    #      - "Software Engineer"
+    #      - "Tech Lead"
+    #    timeWorked: "2011 – 2015"
+    #  # - entityName: "Aero Web"
+    #  #   experiencePoints:
+    #  #     - "Managed remote employees, connected heterogeneous technologies. Despite a small profit, we closed for lack of passion."
+    #  #   positionName: "Technical Co-Founder"
+    #  #   timeWorked: "2011 – 2013, part time"
+    #  - entityName: "Environment Canada"
+    #    technologies: "C, Bash, Python, Perl. Linux, HP-UX."
+    #    responsibilities: "Implementation, user support, addressing outages."
+    #    expertise: "Desktop development."
+    #    extraCurricular: "Teaching SVN, giving talks."
+    #    positionName:
+    #      - "Software Engineer"
+    #    timeWorked: "2006 – 2010"  # ", part time"
+    #  # - entityName: "McGill School of Computer Science"
+    #  #   experiencePoints:
+    #  #     - "Taught students how to code more quickly without sacrificing correctness."
+    #  #   positionName: "Course Instructor"
+    #  #   timeWorked: "2007 – 2008, part time"
+    #  # - entityName: "McGill Software Engineering Lab"
+    #  #   experiencePoints:
+    #  #     - "Researched transactions, aspect-oriented programming, and multitouch widgets. Published at the AOSD conference."
+    #  #   positionName: "Research Assistant"
+    #  #   timeWorked: "2005 and 2010, part time"
+    #  # - entityName: "Art Team Images"
+    #  #   experiencePoints:
+    #  #     - "Wrote online content editors and cross-browser JavaScript widgets."
+    #  #   positionName: "Software Engineer"
+    #  #   timeWorked: "2002 – 2003, part time"
     publications:
       - middleText: "Jang, Gélineau, Monnier, and Pientka"
         paragraphs:
           - "A programming language guaranteeing that generated code is well-typed."
         leftText: "Mœbius: Metaprogramming using Contextual Types"
         rightText: "POPL2022"
+        keywords: []
       - middleText: "Barrett, Christiansen, and Gélineau"
         paragraphs:
           - "A programming language with type-driven macros."
         leftText: "Klister: Predictable Macros for Hindley-Milner"
         rightText: "TyDe2020"
-    interestsHobbies:
-      - entityName: ""
-        technologies: "Haskell, Agda, Rust, Racket, AspectJ, Go, Ruby, Scheme, Twelf. 3D modelling (Houdini), image editing (GIMP), video editing (Final Cut)."
-        responsibilities: "Open source maintainer (recursion-schemes, hint, frp-zoo, hawk, git-slides), online course author (\"Mastering Haskell Programming\"), meetup organizer (\"Lambda Montreal\"), researcher (see publications)."
-        expertise: "Functional programming, game programming, live coding. Machine learning (AI Safety). Functional reactive programming, type-level programming, linear types, dependent types, proof assistants. Category theory, type theory, compilers, interpreters."
-        positionName: []
-        timeWorked: ""
+        keywords: []
+    #interestsHobbies:
+    #  - entityName: ""
+    #    technologies: "Haskell, Agda, Rust, Racket, AspectJ, Go, Ruby, Scheme, Twelf. 3D modelling (Houdini), image editing (GIMP), video editing (Final Cut)."
+    #    responsibilities: "Open source maintainer (recursion-schemes, hint, frp-zoo, hawk, git-slides), online course author (\"Mastering Haskell Programming\"), meetup organizer (\"Lambda Montreal\"), researcher (see publications)."
+    #    expertise: "Functional programming, game programming, live coding. Machine learning (AI Safety). Functional reactive programming, type-level programming, linear types, dependent types, proof assistants. Category theory, type theory, compilers, interpreters."
+    #    positionName: []
+    #    timeWorked: ""
     praise:
       - middleText: "Head of Software Engineering at Groq"
         paragraphs:
           - "\"Hire this guy.\""
         leftText: "Edward Kmett"
         rightText: ""
+        keywords: []
       - middleText: "Staff System Engineer at SimSpace"
         paragraphs:
           - "\"Sam is not only a next-level developer but he is also an incredibly kind and compassionate human. I would work with him again in a second. If you are looking for a skilled functional-programming specialist Sam is the best candidate you will find.\""
         leftText: "Alex Speaks"
         rightText: ""
+        keywords: []
       #- middleText: "Deputy Director of Engineering at SimSpace"
       #  paragraphs:
       #    - "\"Samuel Gélineau is amazing! One of the best engineers I've ever worked with and an incredible hire for any lucky team.\""
@@ -182,16 +252,19 @@ hsResumeBuilder:
           - "\"I cannot agree more with the positive comments about Sam. He is a standout engineer, super passionate, loves to teach others, and would fit in on any team.\""
         leftText: "Michael Beynon"
         rightText: ""
+        keywords: []
       - middleText: "Frontend Engineer at Keatext"
         paragraphs:
           - "\"Samuel is enthusiastic and knowledgeable, always happy to lend a hand. Don't miss out his informative 'lunch & learn' sessions!\""
         leftText: "Marina Artigas"
         rightText: ""
+        keywords: []
       - middleText: "NLP Research Engineer at Keatext"
         paragraphs:
           - "\"Samuel and I were colleagues at Keatext AI. He is a highly talented, organized and a hard-working individual and was a pleasure to work work with. Not only does Samuel have great technical skills but he is also a great mentor. Patient and innovative he easily inspires others with his passion for functional programming. I highly value the hours we spent debugging and coding together - and I hope we'll have opportunities to collaborate in the future. I highly recommend him.\""
         leftText: "Vera Sazonova"
         rightText: ""
+        keywords: []
       # - middleText: "who were hired after I left Keatext"
       #   paragraphs:
       #     - "Said they use the code I wrote as a reference for what good FP code looks like. They also complimented the quality of my documentation."

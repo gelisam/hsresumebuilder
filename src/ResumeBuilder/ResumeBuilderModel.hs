@@ -23,9 +23,8 @@ newtype HsResumeBuilderPreferences = HsResumeBuilderPreferences
 data Preferences = Preferences
   { personal :: PersonalInfo,
     appearance :: AppearancePreferences,
-    experience :: [ExperienceItem],
+    experience :: [GenericItem],
     education :: [GenericItem],
-    interestsHobbies :: [ExperienceItem],
     driverLicense :: [String],
     praise :: [GenericItem],
     publications :: [GenericItem],
@@ -96,6 +95,7 @@ data JoeThemeSettings = JoeThemeSettings
 data GenericItem = GenericItem
   { middleText :: String,
     paragraphs :: [String],
+    keywords :: [String],
     leftText :: String,
     rightText :: String
   }
@@ -117,7 +117,6 @@ data DocumentTitles = DocumentTitles
   { shortIntroTitle :: String,
     workExperienceTitle :: String,
     educationTitle :: String,
-    interestsHobbiesTitle :: String,
     driverLicenseTitle :: String,
     languagesTitle :: String,
     praiseTitle :: String,
