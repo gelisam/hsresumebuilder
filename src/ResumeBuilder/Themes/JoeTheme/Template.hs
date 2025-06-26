@@ -158,8 +158,9 @@ renderResume config = docTypeHtml $ do
                 )
 
       -- AI Safety Exposure section
-      renderLongSection (aiSafetyExposureTitle documentTitles')
-        (fmap (jAISafetyItem theme') (aiSafetyExposure config))
+      shortLineHeight $
+        renderLongSection (aiSafetyExposureTitle documentTitles')
+          (fmap (jAISafetyItem theme') (aiSafetyExposure config))
 
       -- Work experience section
       renderLongSection (workExperienceTitle documentTitles')

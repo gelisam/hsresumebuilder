@@ -84,7 +84,9 @@ jLink color fontSize body = (a ! applyStyles css ! (A.href . fromString) body)
 -- make sure they are indeed small enough that you wouldn't mind wasting that
 -- amount of space in order to bump it to the next page.
 jShortSection :: Html -> Html
-jShortSection = H.div ! A.style "break-inside: avoid;"
+jShortSection = H.div ! applyStyles
+  [ ("break-inside", "avoid")
+  ]
 
 -- Similar to @map jShortSection@, but also prevents a page break between the
 -- header and the first item.
@@ -289,3 +291,9 @@ jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ 
         ("align-items", "flex-start")
       ]
     urlRowStyles = []
+
+-- Override the default line height to make it shorter.
+shortLineHeight :: Html -> Html
+shortLineHeight = H.div ! applyStyles
+  [ ("line-height", "1em")
+  ]
