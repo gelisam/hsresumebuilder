@@ -208,7 +208,7 @@ hsResumeBuilder:
       #   rightText: ""
     aiSafetyExposure:
       - year: "2025"
-        description: "Interactive demo: using Range Analysis to prove the safety of a toy example"
+        description: "Interactive demo: using Value Range Analysis to prove the safety of a toy example"
         url: "gelisam.com/range-analysis"
       - year: "2025"
         description: "Applied to Safeguarded AI TA1.2 as part of GLAIVe Research"
