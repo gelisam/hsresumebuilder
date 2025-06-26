@@ -79,10 +79,6 @@ hsResumeBuilder:
         - "I enjoy spreading the gospel by giving presentations and tutoring sessions on the advantages and disadvantages of various FP idioms, for example combinator libraries, difference lists, effect systems, lenses, and MonadBasedControl vs UnliftIO."
         - "I strive to be helpful to others, by writing researched, detailed answers with plenty of code examples. I like to codify existing practices, to remove ambiguity and to give us the opportunity to self-reflect and improve. I reach out to others, building bridges, collaborating and resolving misunderstandings."
     experience:
-      # TODO: section dedicated to AI and AI Safety exposure
-      - positionName: ["Early exposure to AI Safety"]
-        entityName: "LessWrong forum participant"
-        timeWorked: "2009 – 2014"
       - entityName: "SimSpace"
         technologies: "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
         responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
