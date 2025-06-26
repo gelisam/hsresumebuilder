@@ -162,6 +162,10 @@ renderResume config = docTypeHtml $ do
         renderLongSection (aiSafetyExposureTitle documentTitles')
           (fmap (jAISafetyItem theme') (aiSafetyExposure config))
 
+      -- Publications section
+      renderLongSection (publicationsTitle documentTitles')
+        (fmap (jParagraphGenericItem theme' " " "by ") (publications config))
+
       -- Work experience section
       renderLongSection (workExperienceTitle documentTitles')
         (fmap (jExperienceItem theme' " " "at ") (experience config))
@@ -169,10 +173,6 @@ renderResume config = docTypeHtml $ do
       -- Education section
       renderLongSection (educationTitle documentTitles')
         (fmap (jParagraphGenericItem theme' " " "from ") (education config))
-
-      -- Publications section
-      renderLongSection (publicationsTitle documentTitles')
-        (fmap (jParagraphGenericItem theme' " " "by ") (publications config))
 
       -- Skills section
       renderLongSection (interestsHobbiesTitle documentTitles')
