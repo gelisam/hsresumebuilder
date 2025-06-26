@@ -79,7 +79,20 @@ hsResumeBuilder:
         - "I enjoy spreading the gospel by giving presentations and tutoring sessions on the advantages and disadvantages of various FP idioms, for example combinator libraries, difference lists, effect systems, lenses, and MonadBasedControl vs UnliftIO."
         - "I strive to be helpful to others, by writing researched, detailed answers with plenty of code examples. I like to codify existing practices, to remove ambiguity and to give us the opportunity to self-reflect and improve. I reach out to others, building bridges, collaborating and resolving misunderstandings."
     experience:
+      - entityName: "Well.co"
+        highlight:
+          - "Designed a programming language for defining health-related challenges and their presentation."
+        technologies: "Haskell, Postgres, PureScript, Bash. Nix, Docker, AWS Cognito, Terraform. Mac, Linux. GitHub Copilot."
+        responsibilities: ""
+        expertise: ""
+        extraCurricular: ""
+        positionName:
+          - "Principal Backend Engineer"
+          - "Project Lead"
+          - "Tech Lead"
+        timeWorked: "2022 – present"
       - entityName: "SimSpace"
+        highlight: "Worked on a programming language for configuring virtual machines."
         technologies: "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
         responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
         expertise: "Web development, functional programming, secure software development."
@@ -98,6 +111,7 @@ hsResumeBuilder:
       #   positionName: "Course Author"
       #   timeWorked: "2016 – 2017"
       - entityName: "Keatext"
+        highlight: "Implemented the equations from the NLP researchers, sometimes improving their algorithmic complexity."
         technologies: "Scala, Elm, TypeScript, JavaScript (React). AWS (API Gateway, EC2, Lambda). Linux."
         responsibilities: "Implementation, optimization, deployment, addressing outages."
         expertise: "Web development, functional programming. Microservices, machine learning (NLP)."
