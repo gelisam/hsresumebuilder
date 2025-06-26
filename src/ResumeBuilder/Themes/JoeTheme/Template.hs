@@ -174,6 +174,10 @@ renderResume config = docTypeHtml $ do
       renderLongSection (publicationsTitle documentTitles')
         (fmap (jParagraphGenericItem theme' " " "by ") (publications config))
 
+      -- Skills section
+      renderLongSection (interestsHobbiesTitle documentTitles')
+        (fmap (jExperienceItem theme' "" "") (interestsHobbies config))
+
       -- Praise section
       renderLongSection (praiseTitle documentTitles')
         (fmap (jParagraphGenericItem theme' ", " "") (praise config))
