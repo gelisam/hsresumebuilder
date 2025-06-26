@@ -80,8 +80,7 @@ hsResumeBuilder:
         - "I strive to be helpful to others, by writing researched, detailed answers with plenty of code examples. I like to codify existing practices, to remove ambiguity and to give us the opportunity to self-reflect and improve. I reach out to others, building bridges, collaborating and resolving misunderstandings."
     experience:
       - entityName: "Well.co"
-        highlight:
-          - "Designed a programming language for defining health-related challenges and their presentation."
+        highlight: "Designed a programming language for defining health-related challenges and their presentation." # Corrected from list to string
         technologies: "Haskell, Postgres, PureScript, Bash. Nix, Docker, AWS Cognito, Terraform. Mac, Linux. GitHub Copilot."
         responsibilities: "Technical design, implementation, load testing, addressing outages, project management."
         expertise: ""
