@@ -178,6 +178,12 @@ jExperienceItem themeSettings
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
         let timeWorkedColor' = timeWorkedColor themeSettings
+
+        -- Display highlight if it exists
+        forM_ (highlight body) $ \h -> do
+          H.div ! applyStyles [("margin-bottom", "0.5em")] $ do -- Add some space below the highlight
+            jParagraph bodyColor' bodyFontSize $ H.strong (fromString h)
+
         H.div ! applyStyles [("display", "table")] $ do
           forM_ [ ("Technologies", technologies)
                 , ("Responsibilities", responsibilities)
