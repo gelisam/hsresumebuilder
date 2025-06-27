@@ -223,7 +223,7 @@ hsResumeBuilder:
         description: "Applied to Safeguarded AI TA1.2 as part of GLAIVe Research"
         url: null
       - year: "2022"
-        description: "Invited talk at Galois, \"<strong>Can we Prove Facts about ML Models via Code Synthesis?</strong>\""
+        description: "Invited talk at Galois, <strong>\"Can we Prove Facts about ML Models via Code Synthesis?\"</strong>"
         url: "youtu.be/-2nFTfXAsmU"
       - year: "2020 – 2022"
         description: "Answered AI Safety questions from comments on Rob Miles's videos as part of his Patreon-only Discord server"
