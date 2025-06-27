@@ -4,8 +4,10 @@
 module ResumeBuilder.Themes.JoeTheme.Components where
 
 import Control.Monad (forM_, unless)
+import Data.Function ((&))
 import Data.List (intersperse)
 import Data.String (IsString (fromString))
+import Text.Blaze.Html (preEscapedString)
 import ResumeBuilder.ResumeBuilderModel
 import ResumeBuilder.Themes.JoeTheme.Styler (Classes, Styles, applyClasses, applyStyles)
 import Text.Blaze.Html5 as H
@@ -153,7 +155,7 @@ jGenericItem themeSettings leftPieces middlePiece rightPiece addSpaceAbove detai
           sequence_ commaSeparatedPieces
         (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
         jSmall entityNameColor' . toHtml $ separator2
-        jSmall entityNameColor' $ middlePiece item
+        (middlePiece item) & preEscapedString & jSmall entityNameColor'
       jSmall timeWorkedColor' . toHtml . rightPiece $ item
   renderDetails (details item)
 
@@ -169,7 +171,7 @@ jParagraphGenericItem themeSettings
       ((:[]) . leftText) middleText rightText True paragraphs $ \paragraphs_ -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
-        forM_ paragraphs_ (jParagraph bodyColor' bodyFontSize)
+        forM_ paragraphs_ (\p -> p & preEscapedString & jParagraph bodyColor' bodyFontSize)
 
 jExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
 jExperienceItem themeSettings
@@ -269,7 +271,7 @@ jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ 
   H.div ! applyStyles mainRowStyles $ do
     -- Description on the left
     H.span ! applyStyles [("color", bodyColor'), ("flex-grow", "1")] $ do
-      toHtml (description item)
+      preEscapedString (description item)
 
     -- Year on the right
     H.span ! applyStyles [("color", timeWorkedColor'), ("white-space", "nowrap"), ("margin-left", "1em")] $

@@ -1,7 +1,7 @@
 [x] Add "Programming Language Experience" and "AI Safety Exposure" sections.
 [x] Reorganize the "AI Safety Exposure" section to only keep one line of
     explanation and one date range.
-[ ] Make these bold and nothing else (but leave the header as-is):
+[x] Make these bold and nothing else (but leave the header as-is):
     * "using Value Range Analysis to prove the safety of a toy example"
     * "Can we Prove Facts about ML Models via Code Synthesis?"
     * "A programming language guaranteeing that generated code is well-typed."

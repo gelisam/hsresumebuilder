@@ -40,7 +40,7 @@ hsResumeBuilder:
         rightText: "2010"
       - middleText: "McGill University"
         paragraphs:
-          - "Compilers class, course project was a language listing server-side and client-side code in the same function."
+          - "Compilers class, course project was <strong>a language listing server-side and client-side code in the same function</strong>."
           - "AI class, final project was a shallow neural network playing a board game."
         leftText: "B.Sc., major in Computer Science"
         rightText: "2006"
@@ -159,12 +159,12 @@ hsResumeBuilder:
     publications:
       - middleText: "Jang, Gélineau, Monnier, and Pientka"
         paragraphs:
-          - "A programming language guaranteeing that generated code is well-typed."
+          - "<strong>A programming language guaranteeing that generated code is well-typed.</strong>"
         leftText: "Mœbius: Metaprogramming using Contextual Types"
         rightText: "POPL2022"
       - middleText: "Barrett, Christiansen, and Gélineau"
         paragraphs:
-          - "A programming language with type-driven macros."
+          - "<strong>A programming language with type-driven macros.</strong>"
         leftText: "Klister: Predictable Macros for Hindley-Milner"
         rightText: "TyDe2020"
     interestsHobbies:
@@ -175,7 +175,7 @@ hsResumeBuilder:
         positionName: []
         timeWorked: ""
     praise:
-      - middleText: "Haskell superstar and former programming language researcher at MIRI"
+      - middleText: "Haskell superstar and former <strong>programming language researcher at MIRI</strong>"
         paragraphs:
           - "\"Hire this guy.\""
         leftText: "Edward Kmett"
@@ -217,13 +217,13 @@ hsResumeBuilder:
       #   rightText: ""
     aiSafetyExposure:
       - year: "2025"
-        description: "Interactive demo: using Value Range Analysis to prove the safety of a toy example"
+        description: "Interactive demo: <strong>using Value Range Analysis to prove the safety of a toy example</strong>"
         url: "gelisam.com/range-analysis"
       - year: "2025"
         description: "Applied to Safeguarded AI TA1.2 as part of GLAIVe Research"
         url: null
       - year: "2022"
-        description: "Invited talk at Galois, \"Can we Prove Facts about ML Models via Code Synthesis?\""
+        description: "Invited talk at Galois, \"<strong>Can we Prove Facts about ML Models via Code Synthesis?</strong>\""
         url: "youtu.be/-2nFTfXAsmU"
       - year: "2020 – 2022"
         description: "Answered AI Safety questions from comments on Rob Miles's videos as part of his Patreon-only Discord server"
