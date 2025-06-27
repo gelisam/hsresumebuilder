@@ -81,10 +81,10 @@ hsResumeBuilder:
     experience:
       - entityName: "Well.co"
         highlight: "Designed a programming language for defining health-related challenges and their presentation."
-        technologies: "Haskell, Postgres, PureScript, Bash. Nix, Docker, AWS Cognito, Terraform. Mac, Linux. GitHub Copilot, MCP."
+        technologies: "Haskell, Postgres, PureScript, Bash. Nix, Docker, AWS Cognito, Terraform. Mac, Linux. GitHub Copilot."
         responsibilities: "Technical design, implementation, load testing, addressing outages, project management."
-        expertise: ""
-        extraCurricular: ""
+        expertise: "Mobile app, web app. Regulated data handling."
+        extraCurricular: "Custom MCP tools, talks about functional programming, about GitHub Copilot, compared AI offerings."
         positionName:
           - "Principal Backend Engineer"
           - "Project Lead"
@@ -92,7 +92,7 @@ hsResumeBuilder:
         timeWorked: "2022 – present"
       - entityName: "SimSpace"
         highlight: "Worked on a programming language for configuring virtual machines."
-        technologies: "Haskell, Postgres, Mongo, TypeScript (fp-ts), JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
+        technologies: "Haskell, Postgres, Mongo, TypeScript, JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
         responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
         expertise: "Web app, functional programming, secure software development."
         #contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."
