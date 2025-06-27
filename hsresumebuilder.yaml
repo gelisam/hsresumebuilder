@@ -81,7 +81,7 @@ hsResumeBuilder:
     experience:
       - entityName: "Well.co"
         highlight: "Designed a programming language for defining health-related challenges and their presentation."
-        technologies: "Haskell, Postgres, PureScript, Bash. Nix, Docker, AWS Cognito, Terraform. Mac, Linux. GitHub Copilot."
+        technologies: "Haskell, Postgres, PureScript, Bash. Nix, Docker, AWS Cognito, Terraform. Mac, Linux. GitHub Copilot, MCP."
         responsibilities: "Technical design, implementation, load testing, addressing outages, project management."
         expertise: ""
         extraCurricular: ""
