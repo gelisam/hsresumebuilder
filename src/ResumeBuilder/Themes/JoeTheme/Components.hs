@@ -183,7 +183,8 @@ jExperienceItem themeSettings
 
         -- Display highlight if it exists
         forM_ (highlight body) $ \h -> do
-          jParagraph bodyColor' bodyFontSize $ H.strong (fromString h)
+          jParagraph bodyColor' bodyFontSize $ do
+            preEscapedString h
 
         H.div ! applyStyles [("display", "table")] $ do
           forM_ [ ("Technologies", technologies)

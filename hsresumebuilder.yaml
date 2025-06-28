@@ -80,7 +80,7 @@ hsResumeBuilder:
         - "I strive to be helpful to others, by writing researched, detailed answers with plenty of code examples. I like to codify existing practices, to remove ambiguity and to give us the opportunity to self-reflect and improve. I reach out to others, building bridges, collaborating and resolving misunderstandings."
     experience:
       - entityName: "Well.co"
-        highlight: "Designed a programming language for defining health-related challenges and their presentation."
+        highlight: "Designed <strong>a programming language for defining health-related challenges and their presentation</strong>."
         technologies: "Haskell, Postgres, PureScript, Bash. Nix, Docker, AWS Cognito, Terraform. Mac, Linux. GitHub Copilot."
         responsibilities: "Technical design, implementation, load testing, addressing outages, project management."
         expertise: "Mobile app, web app. Regulated data handling."
@@ -91,7 +91,7 @@ hsResumeBuilder:
           - "Tech Lead"
         timeWorked: "2022 – present"
       - entityName: "SimSpace"
-        highlight: "Worked on a programming language for configuring virtual machines."
+        highlight: "Worked on <strong>a programming language for configuring virtual machines</strong>."
         technologies: "Haskell, Postgres, Mongo, TypeScript, JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
         responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
         expertise: "Web app, functional programming, secure software development."
@@ -110,7 +110,7 @@ hsResumeBuilder:
       #   positionName: "Course Author"
       #   timeWorked: "2016 – 2017"
       - entityName: "Keatext AI"
-        highlight: "Implemented the equations from the NLP researchers, sometimes improving their algorithmic complexity."
+        highlight: "<strong>Implemented the equations from the NLP researchers, sometimes improving their algorithmic complexity</strong>."
         technologies: "Scala, Elm, TypeScript, JavaScript (React). AWS (API Gateway, EC2, Lambda). Linux."
         responsibilities: "Implementation, optimization, deployment, addressing outages."
         expertise: "Web app, functional programming. Microservices, machine learning (NLP)."
@@ -159,12 +159,12 @@ hsResumeBuilder:
     publications:
       - middleText: "Jang, Gélineau, Monnier, and Pientka"
         paragraphs:
-          - "<strong>A programming language guaranteeing that generated code is well-typed.</strong>"
+          - "<strong>A programming language guaranteeing that generated code is well-typed</strong>."
         leftText: "Mœbius: Metaprogramming using Contextual Types"
         rightText: "POPL2022"
       - middleText: "Barrett, Christiansen, and Gélineau"
         paragraphs:
-          - "<strong>A programming language with type-driven macros.</strong>"
+          - "<strong>A programming language with type-driven macros</strong>."
         leftText: "Klister: Predictable Macros for Hindley-Milner"
         rightText: "TyDe2020"
     interestsHobbies:
@@ -217,13 +217,13 @@ hsResumeBuilder:
       #   rightText: ""
     aiSafetyExposure:
       - year: "2025"
-        description: "Interactive demo: <strong>using Value Range Analysis to prove the safety of a toy example</strong>"
+        description: "Interactive demo: <strong>Proving a toy neural network safe using Value Range Analysis</strong>"
         url: "gelisam.com/range-analysis"
       - year: "2025"
         description: "Applied to Safeguarded AI TA1.2 as part of GLAIVe Research"
         url: null
       - year: "2022"
-        description: "Invited talk at Galois, <strong>\"Can we Prove Facts about ML Models via Code Synthesis?\"</strong>"
+        description: "Invited talk at Galois, \"<strong>Can we Prove Facts about ML Models via Code Synthesis?</strong>\""
         url: "youtu.be/-2nFTfXAsmU"
       - year: "2020 – 2022"
         description: "Answered AI Safety questions from comments on Rob Miles's videos as part of his Patreon-only Discord server"
