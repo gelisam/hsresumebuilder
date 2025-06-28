@@ -183,8 +183,7 @@ jExperienceItem themeSettings
 
         -- Display highlight if it exists
         forM_ (highlight body) $ \h -> do
-          H.div ! applyStyles [("margin-bottom", "0.5em")] $ do -- Add some space below the highlight
-            jParagraph bodyColor' bodyFontSize $ H.strong (fromString h)
+          jParagraph bodyColor' bodyFontSize $ H.strong (fromString h)
 
         H.div ! applyStyles [("display", "table")] $ do
           forM_ [ ("Technologies", technologies)
