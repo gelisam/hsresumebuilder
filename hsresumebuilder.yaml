@@ -232,7 +232,7 @@ hsResumeBuilder:
         description: "Interactive demo: <strong>Proving a toy neural network safe using Value Range Analysis</strong>"
         url: "gelisam.com/range-analysis"
       - year: "2025"
-        description: "Applied to Safeguarded AI TA1.2 as part of GLAIVe Research"
+        description: "Proposed <strong>a programming language for composing APIs</strong> to UK's Safeguarded AI program as part of GLAIVe Research"
         url: null
       - year: "2022"
         description: "Invited talk at Galois, \"<strong>Can we Prove Facts about ML Models via Code Synthesis?</strong>\""
