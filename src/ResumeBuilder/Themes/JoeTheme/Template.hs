@@ -160,7 +160,7 @@ renderResume config = docTypeHtml $ do
       -- AI Safety Exposure section
       shortLineHeight $
         renderLongSection (aiSafetyExposureTitle documentTitles')
-          (fmap (jAISafetyItem theme') (aiSafetyExposure config))
+          (fmap (jSingleItem theme') (aiSafetyExposure config))
 
       -- Publications section
       renderLongSection (publicationsTitle documentTitles')
@@ -174,9 +174,10 @@ renderResume config = docTypeHtml $ do
       renderLongSection (educationTitle documentTitles')
         (fmap (jParagraphGenericItem theme' " " "from ") (education config))
 
-      -- Skills section
-      renderLongSection (interestsHobbiesTitle documentTitles')
-        (fmap (jExperienceItem theme' "" "") (interestsHobbies config))
+      -- Hobbies section
+      shortLineHeight $
+        renderLongSection (interestsHobbiesTitle documentTitles')
+          (fmap (jSingleItem theme') (interestsHobbies config))
 
       -- Praise section
       renderLongSection (praiseTitle documentTitles')

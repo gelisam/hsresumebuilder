@@ -168,12 +168,24 @@ hsResumeBuilder:
         leftText: "Klister: Predictable Macros for Hindley-Milner"
         rightText: "TyDe2020"
     interestsHobbies:
-      - entityName: ""
-        technologies: "Haskell, Agda, Rust, Racket, AspectJ, Go, Ruby, Scheme, Twelf. 3D modelling (Houdini, Blender), image editing (GIMP), video editing (Final Cut)."
-        responsibilities: "Open source maintainer (recursion-schemes, hint, frp-zoo, hawk, git-slides), online course author (\"Mastering Haskell Programming\"), meetup organizer (\"Lambda Montreal\"), researcher (see publications)."
-        expertise: "Functional programming, game programming, live coding. Machine learning (AI Safety). Functional reactive programming, type-level programming, linear types, dependent types, proof assistants. Category theory, type theory, compilers, interpreters."
-        positionName: []
-        timeWorked: ""
+      - description: "\"Haskell [Mask]\", <strong>a live-streamed series on neural networks in Haskell</strong>"
+        year: "2021"
+        url: "youtu.be/ba2BlLolqS8"
+      - description: "Open-source maintainer for the most popular Haskell interpreter library"
+        year: "2018 – present"
+        url: "hackage.haskell.org/package/hint"
+      - description: "Advisor for <strong>a programming language which competes with Puppet</strong>"
+        year: "2016 – present"
+        url: "github.com/purpleidea/mgmt"
+      - description: "Proficient at writing proofs using the Agda proof assistant"
+        year: "2009 – present"
+        url: "youtu.be/G_Z78S_5vno"
+      #- entityName: ""
+      #  technologies: "Haskell, Agda, Rust, Racket, AspectJ, Go, Ruby, Scheme, Twelf. 3D modelling (Houdini, Blender), image editing (GIMP), video editing (Final Cut)."
+      #  responsibilities: "Open source maintainer (recursion-schemes, hint, frp-zoo, hawk, git-slides), online course author (\"Mastering Haskell Programming\"), meetup organizer (\"Lambda Montreal\"), researcher (see publications)."
+      #  expertise: "Functional programming, game programming, live coding. Machine learning (AI Safety). Functional reactive programming, type-level programming, linear types, dependent types, proof assistants. Category theory, type theory, compilers, interpreters."
+      #  positionName: []
+      #  timeWorked: ""
     praise:
       - middleText: "Haskell superstar and former <strong>programming language researcher at MIRI</strong>"
         paragraphs:

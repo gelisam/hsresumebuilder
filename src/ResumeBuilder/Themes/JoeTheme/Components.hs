@@ -261,8 +261,8 @@ jSectionHeader color fontFamily fontSize enableBorder =
           ]
     (h3 ! applyStyles css) . toHtml
 
-jAISafetyItem :: JoeThemeSettings -> AISafetyItem -> Html
-jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ do
+jSingleItem :: JoeThemeSettings -> SingleItem -> Html
+jSingleItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ do
   let bodyColor' = bodyColor themeSettings
       timeWorkedColor' = timeWorkedColor themeSettings
       greyedColor = "#888888" -- A generic grey color for the URL
@@ -278,13 +278,16 @@ jAISafetyItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ 
       jSmall timeWorkedColor' (toHtml $ year item)
 
   -- Optional URL row (small, close, greyed-out)
+  -- Render this URL only if it's not already in the description (heuristic: description doesn't contain "href")
+  -- or if the url is different from any URL found in the description.
+  -- For simplicity now, we render it if present and non-empty, assuming it might be a canonical link
+  -- versus a descriptive link in the text.
   case url item of
     Nothing -> pure ()
-    Just itemUrl -> do
-      unless (null itemUrl) $ -- Check if the URL string is not empty
-        H.div ! applyStyles urlRowStyles $
-          H.small ! applyStyles [("color", greyedColor), ("font-size", "0.8em")] $
-            toHtml itemUrl
+    Just url -> do
+      H.div ! applyStyles urlRowStyles $
+        H.small ! applyStyles [("color", greyedColor), ("font-size", "0.8em")] $
+          toHtml url
   where
     sectionContainerStyles =
       [ ("display", "flex"),

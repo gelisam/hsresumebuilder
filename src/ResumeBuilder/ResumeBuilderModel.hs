@@ -25,15 +25,15 @@ data Preferences = Preferences
     appearance :: AppearancePreferences,
     experience :: [ExperienceItem],
     education :: [GenericItem],
-    interestsHobbies :: [ExperienceItem],
+    interestsHobbies :: [SingleItem],
     driverLicense :: [String],
     praise :: [GenericItem],
     publications :: [GenericItem],
-    aiSafetyExposure :: [AISafetyItem]
+    aiSafetyExposure :: [SingleItem]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
-data AISafetyItem = AISafetyItem
+data SingleItem = SingleItem
   { year :: String,
     description :: String,
     url :: Maybe String
