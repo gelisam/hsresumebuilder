@@ -207,11 +207,11 @@ hsResumeBuilder:
           - "\"I cannot agree more with the positive comments about Sam. He is a standout engineer, super passionate, loves to teach others, and would fit in on any team.\""
         leftText: "Michael Beynon"
         rightText: ""
-      - middleText: "Frontend Engineer at Keatext AI"
-        paragraphs:
-          - "\"Samuel is enthusiastic and knowledgeable, always happy to lend a hand. Don't miss out his informative 'lunch & learn' sessions!\""
-        leftText: "Marina Artigas"
-        rightText: ""
+      #- middleText: "Frontend Engineer at Keatext AI"
+      #  paragraphs:
+      #    - "\"Samuel is enthusiastic and knowledgeable, always happy to lend a hand. Don't miss out his informative 'lunch & learn' sessions!\""
+      #  leftText: "Marina Artigas"
+      #  rightText: ""
       - middleText: "NLP Research Engineer at Keatext AI"
         paragraphs:
           - "\"Samuel and I were colleagues at Keatext AI. He is a highly talented, organized and a hard-working individual and was a pleasure to work work with. Not only does Samuel have great technical skills but he is also a great mentor. Patient and innovative he easily inspires others with his passion for functional programming. I highly value the hours we spent debugging and coding together - and I hope we'll have opportunities to collaborate in the future. I highly recommend him.\""
