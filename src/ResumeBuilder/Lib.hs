@@ -27,8 +27,8 @@ beginRendering :: HsResumeBuilder -> IO ()
 beginRendering config = do
   let generatedContent = renderHtml . renderResume . preferences . hsResumeBuilder $ config
   saveContentToFile generatedContent
-  putStrLn "SUCCESSFULLY GENERATED RESUME! SEE THE FILE NAMED docs/index.html IN THIS CURRENT DIRECTORY!"
+  putStrLn "SUCCESSFULLY GENERATED RESUME! SEE THE FILE NAMED output.html IN THIS CURRENT DIRECTORY!"
 
 saveContentToFile :: String -> IO ()
 saveContentToFile content = do
-  writeFile "docs/index.html" content
+  writeFile "output.html" content

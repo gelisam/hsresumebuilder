@@ -48,7 +48,7 @@ renderResume config = docTypeHtml $ do
             (titleFontFamily theme')
             (fontSize2 theme')
             $ do
-          sequence_ $ intersperse br (fmap preEscapedString jobTitles)
+          sequence_ $ intersperse br (fmap (strong . fromString) jobTitles)
 
   H.head $ do
     H.title . toHtml $ "Resume of " ++ (displayName . personal $ config)
