@@ -4,7 +4,7 @@ hsResumeBuilder:
       documentTitles:
         driverLicenseTitle: "DRIVING"
         educationTitle: "EDUCATION"
-        interestsHobbiesTitle: "HOBBIES"
+        interestsHobbiesTitle: "PROJECTS"
         languagesTitle: "LANGUAGES"
         praiseTitle: "ENDORSEMENTS"
         publicationsTitle: "SELECTED PUBLICATIONS"
@@ -36,13 +36,13 @@ hsResumeBuilder:
       - middleText: "McGill University"
         paragraphs:
           - "Master's thesis about proving lack of conflicts in Aspect-Oriented programs."
-        leftText: "M.Sc. in Computer Science"
+        leftText: "<strong>M.Sc.</strong> in Computer Science"
         rightText: "2010"
       - middleText: "McGill University"
         paragraphs:
           - "Compilers class, course project was <strong>a language listing server-side and client-side code in the same function</strong>."
           - "AI class, final project was a shallow neural network playing a board game."
-        leftText: "B.Sc., major in Computer Science"
+        leftText: "<strong>B.Sc.</strong>, major in Computer Science"
         rightText: "2006"
       #- middleText: "Collège Édouard-Montpetit"
       #  paragraphs: []
@@ -64,11 +64,11 @@ hsResumeBuilder:
           twitter:
             - "@haskell_cat"
           youtube:
-            - "youtube.com/c/SamuelGélineau"
+            - "youtube.com/c/SamuelGelineau"
       displayName: "Samuel Gélineau"
       jobTitles:
-        - "Principal Software Engineer,"
-        - "Programming Language Researcher"
+        - "<strong>Principal Software Engineer,</strong>"
+        - "<strong>Programming Language Researcher</strong>"
       locations: []
         #- "Montreal, Canada"
       languages:
@@ -86,23 +86,23 @@ hsResumeBuilder:
         expertise: "Mobile app, web app. Regulated data handling."
         extraCurricular: "Custom MCP tools. Talks about functional programming, about GitHub Copilot. Compared AI offerings."
         positionName:
-          - "Principal Backend Engineer"
-          - "Project Lead"
-          - "Tech Lead"
+          - "<strong>Principal Backend Engineer</strong>"
+          - "<strong>Project Lead</strong>"
+          - "<strong>Tech Lead</strong>"
         timeWorked: "2022 – present"
       - entityName: "SimSpace"
         highlight: "Worked on <strong>a programming language for configuring virtual machines</strong>."
-        technologies: "Haskell, Postgres, Mongo, TypeScript, JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
+        technologies: "Haskell, Postgres, MongoDB, TypeScript, JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
         responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
         expertise: "Web app, functional programming, secure software development."
         #contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."
         extraCurricular: "Recruiting, mentoring, teaching Haskell, giving talks, presenting at Haskell conferences."
         positionName:
-          - "Senior Backend Engineer"
-          - "Team Lead"
-          - "Project Lead"
-          - "Architect"
-          - "Lead Architect"
+          - "<strong>Senior Backend Engineer</strong>"
+          - "<strong>Team Lead</strong>"
+          - "<strong>Project Lead</strong>"
+          - "<strong>Architect</strong>"
+          - "<strong>Lead Architect</strong>"
         timeWorked: "2017 – 2022"
       # - entityName: "Packt"
       #   experiencePoints:
@@ -116,7 +116,7 @@ hsResumeBuilder:
         expertise: "Web app, functional programming. Microservices, machine learning (NLP)."
         extraCurricular: "Teaching Elm, giving talks, presenting at Scala conferences."
         positionName:
-          - "Backend Engineer"
+          - "<strong>Backend Engineer</strong>"
         timeWorked: "2015 – 2016"
       - entityName: "Spiria"
         technologies: "C++, Java (Android), Python, Objective-C. Windows, Mac, Linux."
@@ -125,8 +125,8 @@ hsResumeBuilder:
         #contexts: "Solo projects, team projects, tech lead."
         extraCurricular: "Teaching Git, giving talks, going to Agile conferences."
         positionName:
-          - "Software Engineer"
-          - "Tech Lead"
+          - "<strong>Software Engineer</strong>"
+          - "<strong>Tech Lead</strong>"
         timeWorked: "2011 – 2015"
       # - entityName: "Aero Web"
       #   experiencePoints:
@@ -139,7 +139,7 @@ hsResumeBuilder:
         expertise: "Desktop app."
         extraCurricular: "Teaching SVN, giving talks."
         positionName:
-          - "Software Engineer"
+          - "<strong>Software Engineer</strong>"
         timeWorked: "2006 – 2010"  # ", part time"
       # - entityName: "McGill School of Computer Science"
       #   experiencePoints:
@@ -187,7 +187,7 @@ hsResumeBuilder:
       #  positionName: []
       #  timeWorked: ""
     praise:
-      - middleText: "Haskell superstar and former <strong>programming language researcher at MIRI</strong>"
+      - middleText: "Haskell superstar and former <strong>programming language researcher at Machine Intelligence Research Institute (MIRI)</strong>"
         paragraphs:
           - "\"Hire this guy.\""
         leftText: "Edward Kmett"
@@ -214,7 +214,7 @@ hsResumeBuilder:
       #  rightText: ""
       - middleText: "NLP Research Engineer at Keatext AI"
         paragraphs:
-          - "\"Samuel and I were colleagues at Keatext AI. He is a highly talented, organized and a hard-working individual and was a pleasure to work work with. Not only does Samuel have great technical skills but he is also a great mentor. Patient and innovative he easily inspires others with his passion for functional programming. I highly value the hours we spent debugging and coding together - and I hope we'll have opportunities to collaborate in the future. I highly recommend him.\""
+          - "\"Samuel and I were colleagues at Keatext AI. He is a highly talented, organized and a hard-working individual and was a pleasure to work with. Not only does Samuel have great technical skills but he is also a great mentor. Patient and innovative he easily inspires others with his passion for functional programming. I highly value the hours we spent debugging and coding together - and I hope we'll have opportunities to collaborate in the future. I highly recommend him.\""
         leftText: "Vera Sazonova"
         rightText: ""
       # - middleText: "who were hired after I left Keatext"
@@ -222,7 +222,7 @@ hsResumeBuilder:
       #     - "Said they use the code I wrote as a reference for what good FP code looks like. They also complimented the quality of my documentation."
       #   leftText: "Employees"
       #   rightText: ""
-      # - middleText: "my boss at Environment Canada"
+      # - middle-text: "my boss at Environment Canada"
       #   paragraphs:
       #     - "Admitted that because I seemed over-confident, he gave me their hardest project and expected me to get stuck for the whole summer. He was then pleasantly surprised to see me succeed and then tackle their second-hardest project as well."
       #   leftText: "Michel Larivière"
@@ -230,7 +230,7 @@ hsResumeBuilder:
     aiSafetyExposure:
       - year: "2025"
         description: "Interactive demo: <strong>Proving that a neural network really did learn its safety property</strong>."
-        url: "gelisam.com/ai-safety-via-static-analysis"
+        url: "gelisam.com/parity-bot"
       - year: "2025"
         description: "Proposed <strong>a programming language for composing APIs</strong> to UK's Safeguarded AI program as part of GLAIVe Research."
         url: null
