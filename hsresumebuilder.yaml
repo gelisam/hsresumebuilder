@@ -230,7 +230,7 @@ hsResumeBuilder:
     aiSafetyExposure:
       - year: "2025"
         description: "Interactive demo: <strong>Proving that a neural network really did learn its safety property</strong>."
-        url: "gelisam.com/ai-safety-via-static-analysis"
+        url: "gelisam.com/parity-bot"
       - year: "2025"
         description: "Proposed <strong>a programming language for composing APIs</strong> to UK's Safeguarded AI program as part of GLAIVe Research."
         url: null
