@@ -5,7 +5,7 @@ AI
 [ ] bold diplomas (e.g. "M.Sc")
 [x] "MongoDB", not "Mongo"
 [x] "Projects", not "Hobbies"
-[ ] Talks about functional programming _and_ about GitHub Copilot
+[x] Talks about functional programming _and_ about GitHub Copilot
 [ ] Open-source maintainer _of_ the most popular
 [ ] "Machine Intelligence Research Institute (MIRI)" instead of "MIRI"
 [ ] "work" instead of "work work"

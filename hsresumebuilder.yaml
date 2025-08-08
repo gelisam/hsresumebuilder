@@ -84,7 +84,7 @@ hsResumeBuilder:
         technologies: "Haskell, Postgres, PureScript, Python, Bash. Nix, Docker, AWS (Cognito), Terraform. GitHub Copilot."
         responsibilities: "Technical design, implementation, load testing, addressing outages, project management."
         expertise: "Mobile app, web app. Regulated data handling."
-        extraCurricular: "Custom MCP tools. Talks about functional programming, about GitHub Copilot. Compared AI offerings."
+        extraCurricular: "Custom MCP tools. Talks about functional programming and about GitHub Copilot. Compared AI offerings."
         positionName:
           - "Principal Backend Engineer"
           - "Project Lead"
