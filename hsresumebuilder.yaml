@@ -92,7 +92,7 @@ hsResumeBuilder:
         timeWorked: "2022 – present"
       - entityName: "SimSpace"
         highlight: "Worked on <strong>a programming language for configuring virtual machines</strong>."
-        technologies: "Haskell, Postgres, Mongo, TypeScript, JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
+        technologies: "Haskell, Postgres, MongoDB, TypeScript, JavaScript, Bash. Nix, Docker, Kubernetes, VMware. Mac, Linux."
         responsibilities: "Requirements gathering, technical design, implementation, load testing, addressing outages, project management, interviewing, drafting and announcing policies, creating and assigning roles."
         expertise: "Web app, functional programming, secure software development."
         #contexts: "Solo projects, team projects, team lead, project lead, architect, lead architect."

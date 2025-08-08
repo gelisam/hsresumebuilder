@@ -3,7 +3,7 @@ AI
 [x] gelisam.com/parity-bot instead of gelisam.com/ai-safety-via-static-analysis
 [ ] bold roles (e.g. "Principal Software Engineer")
 [ ] bold diplomas (e.g. "M.Sc")
-[ ] "MongoDB", not "Mongo"
+[x] "MongoDB", not "Mongo"
 [ ] "Projects", not "Hobbies"
 [ ] Talks about functional programming _and_ about GitHub Copilot
 [ ] Open-source maintainer _of_ the most popular
