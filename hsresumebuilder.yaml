@@ -171,7 +171,7 @@ hsResumeBuilder:
       - description: "\"Haskell [Mask]\", <strong>a live-streamed series on neural networks in Haskell</strong>."
         year: "2021"
         url: "youtu.be/ba2BlLolqS8"
-      - description: "Open-source maintainer for the most popular Haskell interpreter library."
+      - description: "Open-source maintainer of the most popular Haskell interpreter library."
         year: "2018 – present"
         url: "hackage.haskell.org/package/hint"
       - description: "Advisor for <strong>a programming language which competes with Puppet</strong>."
