@@ -222,14 +222,14 @@ hsResumeBuilder:
         description: "Invited talk at Galois, \"<strong>Can we Prove Facts about ML Models via Code Synthesis?</strong>\"."
         url: "youtu.be/-2nFTfXAsmU"
       - year: "2020 – 2022"
-        description: "Answered AI Safety questions from comments on Rob Miles's videos as part of his Patreon-only Discord server."
+        description: "Answered AI Safety questions from the internet. Rob Miles receives a lot of AI Safety questions on his YouTube videos, so he asked his Patreons to discuss and answer those questions for him. Rob Miles himself approved some of my answers, including answers about using one AI we trust to monitor an AI we don't, and answers about increasing safety by using an AI which whose goal is to be correct rather than to affect the world."
         url: null
       #- year: "2020 – 2022"
       #  description: "Exposure to more recent AI Safety research as a forum participant."
       #  url: "Rob Miles's Patreon-only Discord server"
-      - year: "2009 – 2014"
-        description: "Early exposure to AI Safety as a forum participant."
-        url: "lesswrong.com"
+      #- year: "2009 – 2014"
+      #  description: "Early exposure to AI Safety as a forum participant."
+      #  url: "lesswrong.com"
     programmingLanguageProjects:
       - year: "2025"
         description: "Interactive demo: <strong>Proving that a neural network really did learn its safety property</strong>."
