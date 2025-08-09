@@ -167,6 +167,11 @@ renderResume config = docTypeHtml $ do
         renderLongSection (programmingLanguageProjectsTitle documentTitles')
           (fmap (jSingleItem theme') (programmingLanguageProjects config))
 
+      -- AI Projects section
+      shortLineHeight $
+        renderLongSection (aiProjectsTitle documentTitles')
+          (fmap (jSingleItem theme') (aiProjects config))
+
       -- Publications section
       renderLongSection (publicationsTitle documentTitles')
         (fmap (jParagraphGenericItem theme' " " "by ") (publications config))
