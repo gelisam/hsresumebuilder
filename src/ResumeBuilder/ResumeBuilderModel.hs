@@ -29,7 +29,11 @@ data Preferences = Preferences
     driverLicense :: [String],
     praise :: [GenericItem],
     publications :: [GenericItem],
-    aiSafetyExposure :: [SingleItem]
+    aiSafetyExposure :: [SingleItem],
+    technologies :: [TechnologiesItem],
+    responsibilities :: [ResponsibilitiesItem],
+    technologicalContexts :: [TechnologicalContextItem],
+    extraCurricular :: [ExtraCurricularItem]
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 
@@ -103,11 +107,6 @@ data GenericItem = GenericItem
 
 data ExperienceItem = ExperienceItem
   { entityName :: String,
-    technologies :: Maybe String,
-    responsibilities :: Maybe String,
-    expertise :: Maybe String,
-    contexts :: Maybe String,
-    extraCurricular :: Maybe String,
     positionName :: [String],
     timeWorked :: String,
     highlight :: Maybe String
@@ -124,6 +123,34 @@ data DocumentTitles = DocumentTitles
     praiseTitle :: String,
     publicationsTitle :: String,
     seeMyWebsitesTitle :: String,
-    aiSafetyExposureTitle :: String
+    aiSafetyExposureTitle :: String,
+    technologiesTitle :: String,
+    responsibilitiesTitle :: String,
+    technologicalContextsTitle :: String,
+    extraCurricularTitle :: String
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data TechnologiesItem = TechnologiesItem
+  { techEntityName :: String,
+    techTechnologies :: String
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data ResponsibilitiesItem = ResponsibilitiesItem
+  { respEntityName :: String,
+    respResponsibilities :: String
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data TechnologicalContextItem = TechnologicalContextItem
+  { expertiseEntityName :: String,
+    expertiseText :: String
+  }
+  deriving (Generic, Show, ToJSON, FromJSON)
+
+data ExtraCurricularItem = ExtraCurricularItem
+  { extraEntityName :: String,
+    extraCurricularText :: String
   }
   deriving (Generic, Show, ToJSON, FromJSON)

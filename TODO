@@ -10,9 +10,9 @@ AI
 [x] "Machine Intelligence Research Institute (MIRI)" instead of "MIRI"
 [x] "work" instead of "work work"
 
-[ ] move technologies to a different section
-[ ] move technological contexts to a different section
-[ ] move extra-curricular to a different section
+[x] move technologies to a different section
+[x] move technological contexts to a different section
+[x] move extra-curricular to a different section
 [ ] move education to page 1
 [ ] don't make the AI and PL stuff bold, move them to a separate section
 [ ] more about mgmt
@@ -23,6 +23,8 @@ AI
 Maybe
 [ ] all the publications in "Selected Publications"
 [ ] no periods among the commas
+
+Nah
 [ ] impact (e.g. 42% faster)
 
 

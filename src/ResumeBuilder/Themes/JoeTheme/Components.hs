@@ -186,23 +186,6 @@ jExperienceItem themeSettings
           jParagraph bodyColor' bodyFontSize $ do
             preEscapedString h
 
-        H.div ! applyStyles [("display", "table")] $ do
-          forM_ [ ("Technologies", technologies)
-                , ("Responsibilities", responsibilities)
-                , ("Technological context", expertise)
-                , ("Human context", contexts)
-                , ("Extra-curricular", extraCurricular)
-                ] $ \(lineName, getLine) -> do
-            forM_ (getLine body) $ \s -> do
-              H.div ! applyStyles [("display", "table-row")] $ do
-                H.div ! applyStyles [ ("display", "table-cell")
-                                    , ("width", "20ex")
-                                    ] $ do
-                  H.small $ H.i ! applyStyles [("color", timeWorkedColor')] $ lineName
-                H.div ! applyStyles [("display", "table-cell")] $ do
-                  jParagraph bodyColor' bodyFontSize $ do
-                    H.span (fromString s)
-
 showLanguageLevel :: Int -> String
 showLanguageLevel rating =
   case rating of
@@ -308,3 +291,68 @@ shortLineHeight :: Html -> Html
 shortLineHeight = H.div ! applyStyles
   [ ("line-height", "1em")
   ]
+
+-- Render technologies section
+jTechnologiesItem :: JoeThemeSettings -> TechnologiesItem -> Html
+jTechnologiesItem themeSettings item = do
+  let bodyColor' = bodyColor themeSettings
+  let bodyFontSize = fontSize3 themeSettings
+  let entityNameColor' = entityNameColor themeSettings
+  let timeWorkedColor' = timeWorkedColor themeSettings
+
+  H.div ! applyStyles [("margin-bottom", "6px")] $ do
+    H.div ! applyStyles [("display", "table")] $ do
+      H.div ! applyStyles [("display", "table-row")] $ do
+        H.div ! applyStyles [("display", "table-cell"), ("width", "20ex")] $ do
+          H.small $ H.strong ! applyStyles [("color", entityNameColor')] $ fromString (techEntityName item)
+        H.div ! applyStyles [("display", "table-cell")] $ do
+          jParagraph bodyColor' bodyFontSize $ do
+            H.span (fromString (techTechnologies item))
+
+-- Render responsibilities section
+jResponsibilitiesItem :: JoeThemeSettings -> ResponsibilitiesItem -> Html
+jResponsibilitiesItem themeSettings item = do
+  let bodyColor' = bodyColor themeSettings
+  let bodyFontSize = fontSize3 themeSettings
+  let entityNameColor' = entityNameColor themeSettings
+
+  H.div ! applyStyles [("margin-bottom", "6px")] $ do
+    H.div ! applyStyles [("display", "table")] $ do
+      H.div ! applyStyles [("display", "table-row")] $ do
+        H.div ! applyStyles [("display", "table-cell"), ("width", "20ex")] $ do
+          H.small $ H.strong ! applyStyles [("color", entityNameColor')] $ fromString (respEntityName item)
+        H.div ! applyStyles [("display", "table-cell")] $ do
+          jParagraph bodyColor' bodyFontSize $ do
+            H.span (fromString (respResponsibilities item))
+
+-- Render technological contexts section
+jTechnologicalContextItem :: JoeThemeSettings -> TechnologicalContextItem -> Html
+jTechnologicalContextItem themeSettings item = do
+  let bodyColor' = bodyColor themeSettings
+  let bodyFontSize = fontSize3 themeSettings
+  let entityNameColor' = entityNameColor themeSettings
+
+  H.div ! applyStyles [("margin-bottom", "6px")] $ do
+    H.div ! applyStyles [("display", "table")] $ do
+      H.div ! applyStyles [("display", "table-row")] $ do
+        H.div ! applyStyles [("display", "table-cell"), ("width", "20ex")] $ do
+          H.small $ H.strong ! applyStyles [("color", entityNameColor')] $ fromString (expertiseEntityName item)
+        H.div ! applyStyles [("display", "table-cell")] $ do
+          jParagraph bodyColor' bodyFontSize $ do
+            H.span (fromString (expertiseText item))
+
+-- Render extra-curricular section
+jExtraCurricularItem :: JoeThemeSettings -> ExtraCurricularItem -> Html
+jExtraCurricularItem themeSettings item = do
+  let bodyColor' = bodyColor themeSettings
+  let bodyFontSize = fontSize3 themeSettings
+  let entityNameColor' = entityNameColor themeSettings
+
+  H.div ! applyStyles [("margin-bottom", "6px")] $ do
+    H.div ! applyStyles [("display", "table")] $ do
+      H.div ! applyStyles [("display", "table-row")] $ do
+        H.div ! applyStyles [("display", "table-cell"), ("width", "20ex")] $ do
+          H.small $ H.strong ! applyStyles [("color", entityNameColor')] $ fromString (extraEntityName item)
+        H.div ! applyStyles [("display", "table-cell")] $ do
+          jParagraph bodyColor' bodyFontSize $ do
+            H.span (fromString (extraCurricularText item))

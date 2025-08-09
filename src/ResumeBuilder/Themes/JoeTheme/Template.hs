@@ -170,6 +170,22 @@ renderResume config = docTypeHtml $ do
       renderLongSection (workExperienceTitle documentTitles')
         (fmap (jExperienceItem theme' " " "at ") (experience config))
 
+      -- Technologies section
+      renderLongSection (technologiesTitle documentTitles')
+        (fmap (jTechnologiesItem theme') (technologies config))
+
+      -- Responsibilities section
+      renderLongSection (responsibilitiesTitle documentTitles')
+        (fmap (jResponsibilitiesItem theme') (responsibilities config))
+
+      -- Technological Contexts section
+      renderLongSection (technologicalContextsTitle documentTitles')
+        (fmap (jTechnologicalContextItem theme') (technologicalContexts config))
+
+      -- Extra-Curricular section
+      renderLongSection (extraCurricularTitle documentTitles')
+        (fmap (jExtraCurricularItem theme') (extraCurricular config))
+
       -- Education section
       renderLongSection (educationTitle documentTitles')
         (fmap (jParagraphGenericItem theme' " " "from ") (education config))
