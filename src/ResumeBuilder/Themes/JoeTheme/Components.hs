@@ -149,9 +149,9 @@ jGenericItem themeSettings leftPieces middlePiece rightPiece addSpaceAbove detai
       H.span $ do
         (H.span ! applyStyles [("color", positionNameColor')]) $ do
           let stringPieces = leftPieces item
-              htmlPieces = fmap preEscapedString stringPieces
-              -- Boldness is now controlled by <strong> tags in YAML
-              commaSeparatedPieces = intersperse ", " htmlPieces
+              htmlPieces = fmap toHtml stringPieces
+              boldPieces = fmap H.strong htmlPieces
+              commaSeparatedPieces = intersperse ", " boldPieces
           sequence_ commaSeparatedPieces
         (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
         jSmall entityNameColor' . toHtml $ separator2

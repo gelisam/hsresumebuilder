@@ -1,8 +1,8 @@
 AI
 [x] SamuelGelineau instead of SamuelGélineau in the youtube URL
 [x] gelisam.com/parity-bot instead of gelisam.com/ai-safety-via-static-analysis
-[ ] bold roles (e.g. "Principal Software Engineer")
-[ ] bold diplomas (e.g. "M.Sc")
+[x] bold roles (e.g. "Principal Software Engineer")
+[x] bold diplomas (e.g. "M.Sc.")
 [x] "MongoDB", not "Mongo"
 [x] "Projects", not "Hobbies"
 [x] Talks about functional programming _and_ about GitHub Copilot
