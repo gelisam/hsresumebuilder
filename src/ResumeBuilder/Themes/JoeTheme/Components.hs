@@ -92,6 +92,7 @@ jShortSection = H.div ! applyStyles
 -- Similar to @map jShortSection@, but also prevents a page break between the
 -- header and the first item.
 jHeaderAndShortSections :: Html -> [Html] -> Html
+jHeaderAndShortSections header [] = jShortSection header
 jHeaderAndShortSections header (firstItem:items) = do
   jShortSection $ do
     header
