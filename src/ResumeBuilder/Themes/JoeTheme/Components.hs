@@ -7,7 +7,6 @@ import Control.Monad (forM_, unless)
 import Data.Function ((&))
 import Data.List (intersperse)
 import Data.String (IsString (fromString))
-import Text.Blaze.Html (preEscapedString)
 import ResumeBuilder.ResumeBuilderModel
 import ResumeBuilder.Themes.JoeTheme.Styler (Classes, Styles, applyClasses, applyStyles)
 import Text.Blaze.Html5 as H
@@ -93,6 +92,7 @@ jShortSection = H.div ! applyStyles
 -- Similar to @map jShortSection@, but also prevents a page break between the
 -- header and the first item.
 jHeaderAndShortSections :: Html -> [Html] -> Html
+jHeaderAndShortSections header [] = jShortSection header
 jHeaderAndShortSections header (firstItem:items) = do
   jShortSection $ do
     header
@@ -155,7 +155,7 @@ jGenericItem themeSettings leftPieces middlePiece rightPiece addSpaceAbove detai
           sequence_ commaSeparatedPieces
         (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
         jSmall entityNameColor' . toHtml $ separator2
-        (middlePiece item) & preEscapedString & jSmall entityNameColor'
+        (middlePiece item) & H.toHtml & jSmall entityNameColor'
       jSmall timeWorkedColor' . toHtml . rightPiece $ item
   renderDetails (details item)
 
@@ -171,7 +171,7 @@ jParagraphGenericItem themeSettings
       ((:[]) . leftText) middleText rightText True paragraphs $ \paragraphs_ -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
-        forM_ paragraphs_ (\p -> p & preEscapedString & jParagraph bodyColor' bodyFontSize)
+        forM_ paragraphs_ (\p -> p & H.toHtml & jParagraph bodyColor' bodyFontSize)
 
 jExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
 jExperienceItem themeSettings
@@ -184,7 +184,7 @@ jExperienceItem themeSettings
         -- Display highlight if it exists
         forM_ (highlight body) $ \h -> do
           jParagraph bodyColor' bodyFontSize $ do
-            preEscapedString h
+            H.toHtml h
 
 showLanguageLevel :: Int -> String
 showLanguageLevel rating =
@@ -254,7 +254,7 @@ jSingleItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ do
   H.div ! applyStyles mainRowStyles $ do
     -- Description on the left
     H.span ! applyStyles [("color", bodyColor'), ("flex-grow", "1")] $ do
-      preEscapedString (description item)
+      H.toHtml (description item)
 
     -- Year on the right
     H.span ! applyStyles [("color", timeWorkedColor'), ("white-space", "nowrap"), ("margin-left", "1em")] $
