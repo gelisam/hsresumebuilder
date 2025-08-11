@@ -119,6 +119,7 @@ hsResumeBuilder:
       - entityName: "Environment Canada"
         positionName:
           - "Software Engineer"
+        highlight: "Modernized the weather visualization and data collection suite, reducing the hardware maintenance costs and the risk of critical failure. Improved the team's software practices, reducing deployment-time incidents. Exceeded expectations."
         timeWorked: "2006 – 2010"  # ", part time"
       # - entityName: "McGill School of Computer Science"
       #   experiencePoints:
