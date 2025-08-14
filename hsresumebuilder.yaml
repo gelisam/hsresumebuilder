@@ -110,7 +110,7 @@ hsResumeBuilder:
         positionName:
           - "Consultant"
           - "Tech Lead"
-        highlight: "Consulted on a broad array of projects, including inventing a time-constrained data transfer protocol, simplifying the math of a brain surgery simulation, and eliminating a common source of bug by teaching my colleagues about composition."
+        highlight: "Consulted on a broad array of projects, including inventing a time-constrained data transfer protocol, simplifying the math of a brain surgery simulation, and eliminating a common source of bugs by teaching my colleagues about combinator libraries."
         timeWorked: "2011 – 2015"
       # - entityName: "Aero Web"
       #   experiencePoints:
