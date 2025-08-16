@@ -91,11 +91,12 @@ hsResumeBuilder:
         timeWorked: "2022 – present"
       - entityName: "SimSpace"
         positionName:
-          - "Senior Backend Engineer"
-          - "Team Lead"
-          - "Project Lead"
-          - "Architect"
           - "Lead Architect"
+          - "Senior Backend Engineer"
+          - "Project Lead"
+          - "Team Lead"
+        highlight: "Led a team of software architects, aligned their conflicting visions by introducing specialized roles. Architected various components including an error-reporting library which improved code clarity, a step-function library which drastically simplified our implementation of time-sharing, and a proxy which reduced the latency of our cyber-attack simulator."
+        #Implemented a cybersecurity training web app."
         timeWorked: "2017 – 2022"
       - entityName: "Packt Publishing"
         positionName:
