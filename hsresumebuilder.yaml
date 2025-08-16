@@ -236,7 +236,7 @@ hsResumeBuilder:
         description: "Compilers class, course project was a language listing server-side and client-side code in the same function."
     aiProjects:
       - year: "2021"
-        description: "\"Haskell [Mask]\", a live-streamed series on neural networks in Haskell."
+        description: "\"Haskell [Mask]\", a live-streamed series on implementing neural networks in Haskell."
         url: "youtu.be/ba2BlLolqS8"
       - year: "at Keatext AI"
         description: "Implemented the equations from the NLP researchers, sometimes improving their algorithmic complexity."
