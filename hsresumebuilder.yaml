@@ -100,7 +100,7 @@ hsResumeBuilder:
         timeWorked: "2017 – 2022"
       - entityName: "Packt Publishing"
         positionName:
-          - "Course Instructor"
+          - "Course Author"
         highlight: "Created and taught a 6 hour video course called \"Mastering Haskell Programming\" exploring unusual code architectures which can reduce bugs in data processing pipelines, user-interface code, multi-threaded code, and distributed systems."
         timeWorked: "2016 – 2017"
       - entityName: "Keatext AI"
