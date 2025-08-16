@@ -107,7 +107,7 @@ hsResumeBuilder:
         positionName:
           - "Backend Engineer"
           - "Frontend Engineer"
-        highlight: "Helped a team of NPL researchers debug their experiments, and turned their equations into a web application. Taught and documented best practices, increasing maintainability long after I left."
+        highlight: "Helped a team of NPL researchers debug their experiments, and turned their equations into a web application. Taught and documented the best practices in functional programming, increasing maintainability long after I left."
         timeWorked: "2015 – 2016"
       - entityName: "Spiria"
         positionName:
