@@ -206,6 +206,9 @@ hsResumeBuilder:
       #   leftText: "Michel Larivière"
       #   rightText: ""
     aiSafetyExposure:
+      - year: "2026"
+        description: "Interactive demo: Proving that a neural network is not sandbagging."
+        url: "gelisam.com/sandbagging"
       - year: "2025"
         description: "Interactive demo: Proving that a neural network really did learn its safety property."
         url: "gelisam.com/parity-bot"
