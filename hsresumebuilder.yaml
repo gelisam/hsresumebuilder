@@ -233,7 +233,7 @@ hsResumeBuilder:
       - year: "at SimSpace"
         description: "Worked on a programming language for configuring virtual machines."
       - year: "2016 – present"
-        description: "Advisor for a programming language which competes with Puppet."
+        description: "Advisor and contributor for a configuration language in the style of Puppet, but real-time."
         url: "github.com/purpleidea/mgmt"
       - year: "McGill, 2006"
         description: "Compilers class, course project was a language listing server-side and client-side code in the same function."
