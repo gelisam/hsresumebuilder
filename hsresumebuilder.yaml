@@ -213,8 +213,8 @@ hsResumeBuilder:
         description: "Interactive demo: Proving that a neural network really did learn its safety property."
         url: "gelisam.com/parity-bot"
       - year: "2025"
-        description: "Proposed a programming language for composing APIs to UK's Safeguarded AI program as part of GLAIVe Research."
-        url: null
+        description: "Proposal to UK's AISI Challenge Fund: proving that reinforcement learning really did find a safe policy."
+        url: "gelisam.com/safe-rl-via-ltl"
       - year: "2022"
         description: "Invited talk at Galois, \"Can we Prove Facts about ML Models via Code Synthesis?\"."
         url: "youtu.be/-2nFTfXAsmU"
