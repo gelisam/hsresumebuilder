@@ -88,6 +88,7 @@ hsResumeBuilder:
           - "Principal Backend Engineer"
           - "Project Lead"
           - "Tech Lead"
+        highlight: "Translated product requirements into architecture proposals, and participated in the implementation with the rest of the backend team. Designed various domain-specific languages for simplifying the configuration and presentation of the challenges which our users complete to improve their health."
         timeWorked: "2022 – present"
       - entityName: "SimSpace"
         positionName:
