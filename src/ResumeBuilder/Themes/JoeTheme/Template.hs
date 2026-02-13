@@ -157,36 +157,40 @@ renderResume config = docTypeHtml $ do
                     ["fa-brands", "fa-twitter"]
                 )
 
+      -- Work experience section
+      renderLongSection (workExperienceTitle documentTitles')
+        (fmap (jExperienceItem theme' " " "at ") (experience config))
+
+      -- Publications section
+      renderLongSection (publicationsTitle documentTitles')
+        (fmap (jParagraphGenericItem theme' " " "by ") (publications config))
+
+      -- Education section
+      renderLongSection (educationTitle documentTitles')
+        (fmap (jParagraphGenericItem theme' " " "from ") (education config))
+
       -- AI Safety Exposure section
       shortLineHeight $
         renderLongSection (aiSafetyExposureTitle documentTitles')
           (fmap (jSingleItem theme') (aiSafetyExposure config))
-
-      -- Programming Language Projects section
-      shortLineHeight $
-        renderLongSection (programmingLanguageProjectsTitle documentTitles')
-          (fmap (jSingleItem theme') (programmingLanguageProjects config))
 
       -- AI Projects section
       shortLineHeight $
         renderLongSection (aiProjectsTitle documentTitles')
           (fmap (jSingleItem theme') (aiProjects config))
 
-      -- Publications section
-      renderLongSection (publicationsTitle documentTitles')
-        (fmap (jParagraphGenericItem theme' " " "by ") (publications config))
-
-      -- Work experience section
-      renderLongSection (workExperienceTitle documentTitles')
-        (fmap (jExperienceItem theme' " " "at ") (experience config))
+      ---- Programming Language Projects section
+      --shortLineHeight $
+      --  renderLongSection (programmingLanguageProjectsTitle documentTitles')
+      --    (fmap (jSingleItem theme') (programmingLanguageProjects config))
 
       -- Technologies section
       renderLongSection (technologiesTitle documentTitles')
         (fmap (jTechnologiesItem theme') (technologies config))
 
-      -- Responsibilities section
-      renderLongSection (responsibilitiesTitle documentTitles')
-        (fmap (jResponsibilitiesItem theme') (responsibilities config))
+      ---- Responsibilities section
+      --renderLongSection (responsibilitiesTitle documentTitles')
+      --  (fmap (jResponsibilitiesItem theme') (responsibilities config))
 
       -- Technological Contexts section
       renderLongSection (technologicalContextsTitle documentTitles')
@@ -195,10 +199,6 @@ renderResume config = docTypeHtml $ do
       -- Extra-Curricular section
       renderLongSection (extraCurricularTitle documentTitles')
         (fmap (jExtraCurricularItem theme') (extraCurricular config))
-
-      -- Education section
-      renderLongSection (educationTitle documentTitles')
-        (fmap (jParagraphGenericItem theme' " " "from ") (education config))
 
       -- Hobbies section
       shortLineHeight $
