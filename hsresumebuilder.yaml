@@ -68,7 +68,7 @@ hsResumeBuilder:
           twitter:
             - "@haskell_cat"
           youtube:
-            - "youtube.com/c/SamuelGelineau"
+            - "youtube.com/@haskell_cat"
       displayName: "Samuel Gélineau"
       jobTitles:
         - "Principal Software Engineer,"
