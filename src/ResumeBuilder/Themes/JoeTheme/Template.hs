@@ -163,7 +163,7 @@ renderResume config = docTypeHtml $ do
                     (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-twitter"]
-                    ("https://" ++ u)
+                    ("https://twitter.com/" ++ dropWhile (== '@') u)
                     u
                 )
 
