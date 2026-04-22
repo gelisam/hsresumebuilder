@@ -220,6 +220,16 @@ jIconWithText bodyColor iconColor fontSize classes item = do
     jIcon iconColor classes
     jShortText bodyColor fontSize item
 
+-- Like jIconWithText, but wraps in a clickable anchor tag.
+jIconWithLink :: String -> String -> String -> Classes -> String -> String -> Html
+jIconWithLink bodyColor iconColor fontSize classes href displayText = do
+  a ! A.href (fromString href)
+    ! A.target "_blank"
+    ! applyStyles [("color", "inherit"), ("text-decoration", "none")] $ do
+    jFlexContainer $ do
+      jIcon iconColor classes
+      jShortText bodyColor fontSize displayText
+
 loadStylesheet :: String -> Html
 loadStylesheet x = link ! rel "stylesheet" ! href (fromString x)
 
@@ -267,10 +277,13 @@ jSingleItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ do
   -- versus a descriptive link in the text.
   case url item of
     Nothing -> pure ()
-    Just url -> do
+    Just urlStr -> do
       H.div ! applyStyles urlRowStyles $
         H.small ! applyStyles [("color", greyedColor), ("font-size", "0.8em")] $
-          toHtml url
+          a ! A.href (fromString ("https://" ++ urlStr))
+            ! A.target "_blank"
+            ! applyStyles [("color", greyedColor)] $
+            toHtml urlStr
   where
     sectionContainerStyles =
       [ ("display", "flex"),

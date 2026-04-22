@@ -118,43 +118,53 @@ renderResume config = docTypeHtml $ do
             H.div ! applyStyles [("padding", "0.8em")] $ do
               forM_
                 (github . websites . contact $ personal')
-                ( jIconWithText
+                ( \u -> jIconWithLink
                     bodyColor'
                     (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-github"]
+                    ("https://" ++ u)
+                    u
                 )
               forM_
                 (youtube . websites . contact $ personal')
-                ( jIconWithText
+                ( \u -> jIconWithLink
                     bodyColor'
                     (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-youtube"]
+                    ("https://" ++ u)
+                    u
                 )
               forM_
                 (blogs . websites . contact $ personal')
-                ( jIconWithText
+                ( \u -> jIconWithLink
                     bodyColor'
                     (nameColor theme')
                     (fontSize3 theme')
                     ["fa-solid", "fa-pen"]
+                    ("https://" ++ u)
+                    u
                 )
               forM_
                 (linkedIn . websites . contact $ personal')
-                ( jIconWithText
+                ( \u -> jIconWithLink
                     bodyColor'
                     (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-linkedin"]
+                    ("https://" ++ u)
+                    u
                 )
               forM_
                 (twitter . websites . contact $ personal')
-                ( jIconWithText
+                ( \u -> jIconWithLink
                     bodyColor'
                     (nameColor theme')
                     (fontSize3 theme')
                     ["fa-brands", "fa-twitter"]
+                    ("https://" ++ u)
+                    u
                 )
 
       -- Work experience section
