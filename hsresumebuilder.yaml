@@ -149,7 +149,7 @@ hsResumeBuilder:
         rightText: "POPL2022"
       - middleText: "Barrett, Christiansen, and Gélineau"
         paragraphs:
-          - "A programming language with type-driven macros."
+          - "A programming language guaranteeing that type-driven macros aren't affected by the order in which they are type-checked."
         leftText: "Klister: Predictable Macros for Hindley-Milner"
         rightText: "TyDe2020"
     interestsHobbies:
@@ -270,7 +270,7 @@ hsResumeBuilder:
         respResponsibilities: "Implementation, user support, addressing outages."
     technologicalContexts:
       - expertiseEntityName: "Well.co"
-        expertiseText: "Mobile app, web app. Regulated data handling."
+        expertiseText: "Mobile app, web app, regulated data handling."
       - expertiseEntityName: "SimSpace"
         expertiseText: "Web app, secure software development."
       - expertiseEntityName: "Keatext AI"
