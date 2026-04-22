@@ -281,9 +281,9 @@ hsResumeBuilder:
         expertiseText: "Desktop app."
     extraCurricular:
       - extraEntityName: "Well.co"
-        extraCurricularText: "Custom MCP tools. Talks about functional programming and about GitHub Copilot. Compared AI offerings."
+        extraCurricularText: "Teaching AI-assisted coding, writing MCP servers, comparing AI offerings."
       - extraEntityName: "SimSpace"
-        extraCurricularText: "Recruiting, mentoring, teaching Haskell, giving talks, presenting at Haskell conferences."
+        extraCurricularText: "Teaching Haskell, recruiting, mentoring, giving talks, presenting at Haskell conferences."
       - extraEntityName: "Keatext AI"
         extraCurricularText: "Teaching Elm, giving talks, presenting at Scala conferences."
       - extraEntityName: "Spiria"
