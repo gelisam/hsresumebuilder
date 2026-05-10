@@ -127,7 +127,7 @@ jGenericItem
   :: JoeThemeSettings
   -> (a -> [String])
   -> (a -> String)
-  -> (a -> String)
+  -> (a -> Html)
   -> Bool
   -> (a -> body)
   -> (body -> Html)
@@ -156,27 +156,42 @@ jGenericItem themeSettings leftPieces middlePiece rightPiece addSpaceAbove detai
         (H.span ! applyStyles [("color", positionNameColor')]) . toHtml $ separator1
         jSmall entityNameColor' . toHtml $ separator2
         (middlePiece item) & H.toHtml & jSmall entityNameColor'
-      jSmall timeWorkedColor' . toHtml . rightPiece $ item
+      rightPiece item
   renderDetails (details item)
 
 jEmptyGenericItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html
 jEmptyGenericItem themeSettings
   = jGenericItem themeSettings
-      ((:[]) . leftText) middleText rightText False (\_ -> ()) $ \() -> do
+      ((:[]) . leftText) middleText (jGenericRightPiece themeSettings) False (\_ -> ()) $ \() -> do
         pure ()
 
 jParagraphGenericItem :: JoeThemeSettings -> String -> String -> GenericItem -> Html
 jParagraphGenericItem themeSettings
   = jGenericItem themeSettings
-      ((:[]) . leftText) middleText rightText True paragraphs $ \paragraphs_ -> do
+      ((:[]) . leftText) middleText (jGenericRightPiece themeSettings) True paragraphs $ \paragraphs_ -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
         forM_ paragraphs_ (\p -> p & H.toHtml & jParagraph bodyColor' bodyFontSize)
 
+jGenericRightPiece :: JoeThemeSettings -> GenericItem -> Html
+jGenericRightPiece themeSettings item =
+  let timeWorkedColor' = timeWorkedColor themeSettings
+   in case rightUrl item of
+        Nothing -> jSmall timeWorkedColor' (toHtml $ rightText item)
+        Just urlStr -> jUrlSmallLink timeWorkedColor' "0.8em" urlStr
+
+jUrlSmallLink :: String -> String -> String -> Html
+jUrlSmallLink color fontSize urlStr =
+  H.small ! applyStyles [("color", color), ("font-size", fontSize)] $
+    a ! A.href (fromString ("https://" ++ urlStr))
+      ! A.target "_blank"
+      ! applyStyles [("color", color)] $
+      toHtml urlStr
+
 jExperienceItem :: JoeThemeSettings -> String -> String -> ExperienceItem -> Html
 jExperienceItem themeSettings
   = jGenericItem themeSettings
-      positionName entityName timeWorked True Prelude.id $ \body -> do
+      positionName entityName (\item -> jSmall (timeWorkedColor themeSettings) (toHtml $ timeWorked item)) True Prelude.id $ \body -> do
         let bodyColor' = bodyColor themeSettings
         let bodyFontSize = fontSize3 themeSettings
         let timeWorkedColor' = timeWorkedColor themeSettings
@@ -279,11 +294,7 @@ jSingleItem themeSettings item = H.div ! applyStyles sectionContainerStyles $ do
     Nothing -> pure ()
     Just urlStr -> do
       H.div ! applyStyles urlRowStyles $
-        H.small ! applyStyles [("color", greyedColor), ("font-size", "0.8em")] $
-          a ! A.href (fromString ("https://" ++ urlStr))
-            ! A.target "_blank"
-            ! applyStyles [("color", greyedColor)] $
-            toHtml urlStr
+        jUrlSmallLink greyedColor "0.8em" urlStr
   where
     sectionContainerStyles =
       [ ("display", "flex"),

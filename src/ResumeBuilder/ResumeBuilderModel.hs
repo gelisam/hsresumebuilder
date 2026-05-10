@@ -103,7 +103,8 @@ data GenericItem = GenericItem
   { middleText :: String,
     paragraphs :: [String],
     leftText :: String,
-    rightText :: String
+    rightText :: String,
+    rightUrl :: Maybe String
   }
   deriving (Generic, Show, ToJSON, FromJSON)
 

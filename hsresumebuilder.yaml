@@ -171,6 +171,7 @@ hsResumeBuilder:
           - "\"Hire this guy.\""
         leftText: "Edward Kmett"
         rightText: ""
+        rightUrl: "x.com/kmett/status/1534710285281513475"
       - middleText: "Staff System Engineer at SimSpace"
         paragraphs:
           - "\"Sam is not only a next-level developer but he is also an incredibly kind and compassionate human. I would work with him again in a second. If you are looking for a skilled functional-programming specialist Sam is the best candidate you will find.\""
