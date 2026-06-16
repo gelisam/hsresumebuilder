@@ -176,6 +176,11 @@ hsResumeBuilder:
         leftText: "Edward Kmett"
         rightText: ""
         rightUrl: "x.com/kmett/status/1534710285281513475"
+      - middleText: "host of Montreal's AI Safety meetup, AI Safety Papers We Love, and Guaranteed Safe AI Seminars"
+        paragraphs:
+          - "\"I am pleased to recommend Samuel Gélineau. [...] He identifies problems worth solving, ships working demonstrations, and defends them in front of peers. [...] In my interactions with him he has been thoughtful, intellectually honest, and easy to collaborate with, careful in his claims and genuinely motivated by reducing AI risk.\""
+        leftText: "Orpheus Lummis"
+        rightText: ""
       - middleText: "Staff System Engineer at SimSpace"
         paragraphs:
           - "\"Sam is not only a next-level developer but he is also an incredibly kind and compassionate human. I would work with him again in a second. If you are looking for a skilled functional-programming specialist Sam is the best candidate you will find.\""
