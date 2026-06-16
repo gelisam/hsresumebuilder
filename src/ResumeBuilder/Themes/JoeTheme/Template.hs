@@ -177,7 +177,7 @@ renderResume config = docTypeHtml $ do
 
       -- Education section
       renderLongSection (educationTitle documentTitles')
-        (fmap (jParagraphGenericItem theme' " " "from ") (education config))
+        (fmap (jParagraphGenericItem theme' " " "") (education config))
 
       -- AI Safety Exposure section
       shortLineHeight $

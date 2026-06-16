@@ -39,12 +39,16 @@ hsResumeBuilder:
 
     driverLicense: []
     education:
-      - middleText: "McGill University"
+      - middleText: "AI Safety bootcamp"
+        paragraphs: []
+        leftText: "ML4GOOD"
+        rightText: "June 2026"
+      - middleText: "from McGill University"
         paragraphs:
           - "Master's thesis about proving lack of conflicts in Aspect-Oriented programs."
         leftText: "M.Sc. in Computer Science"
         rightText: "2010"
-      - middleText: "McGill University"
+      - middleText: "from McGill University"
         paragraphs: []
         leftText: "B.Sc., major in Computer Science"
         rightText: "2006"
