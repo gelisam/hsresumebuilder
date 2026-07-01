@@ -77,8 +77,8 @@ hsResumeBuilder:
       jobTitles:
         - "Principal Software Engineer,"
         - "Programming Language Researcher"
-      locations: []
-        #- "Montreal, Canada"
+      locations:
+        - "Montreal, Canada"
       languages:
         - "English, French"
       shortIntro:
