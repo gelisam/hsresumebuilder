@@ -14,6 +14,7 @@ hsResumeBuilder:
         aiSafetyExposureTitle: "AI SAFETY PROJECTS"
         aiProjectsTitle: "AI PROJECTS"
         programmingLanguageProjectsTitle: "PROGRAMMING LANGUAGE PROJECTS"
+        theoremProverProjectsTitle: "THEOREM PROVER PROJECTS"
         technologiesTitle: "TECHNOLOGIES"
         responsibilitiesTitle: "RESPONSIBILITIES"
         technologicalContextsTitle: "TECHNOLOGICAL CONTEXTS"
@@ -256,6 +257,10 @@ hsResumeBuilder:
         description: "Implemented the equations from the NLP researchers, sometimes improving their algorithmic complexity."
       - year: "McGill, 2005"
         description: "AI class, final project was a shallow neural network playing a board game."
+    theoremProverProjects:
+      - description: "Proficient at writing proofs using the Agda proof assistant."
+        year: "2009 – present"
+        url: "youtu.be/G_Z78S_5vno"
     technologies:
       - techEntityName: "Well.co"
         techTechnologies: "Haskell, Postgres, PureScript, Python, Bash, Nix, Docker, AWS (Cognito), Terraform, GitHub Copilot."

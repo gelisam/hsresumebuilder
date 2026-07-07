@@ -189,6 +189,11 @@ renderResume config = docTypeHtml $ do
         renderLongSection (aiProjectsTitle documentTitles')
           (fmap (jSingleItem theme') (aiProjects config))
 
+      -- Theorem Prover Projects section
+      shortLineHeight $
+        renderLongSection (theoremProverProjectsTitle documentTitles')
+          (fmap (jSingleItem theme') (theoremProverProjects config))
+
       ---- Programming Language Projects section
       --shortLineHeight $
       --  renderLongSection (programmingLanguageProjectsTitle documentTitles')
@@ -210,10 +215,10 @@ renderResume config = docTypeHtml $ do
       renderLongSection (extraCurricularTitle documentTitles')
         (fmap (jExtraCurricularItem theme') (extraCurricular config))
 
-      -- Hobbies section
-      shortLineHeight $
-        renderLongSection (interestsHobbiesTitle documentTitles')
-          (fmap (jSingleItem theme') (interestsHobbies config))
+      ---- Hobbies section
+      --shortLineHeight $
+      --  renderLongSection (interestsHobbiesTitle documentTitles')
+      --    (fmap (jSingleItem theme') (interestsHobbies config))
 
       -- Praise section
       renderLongSection (praiseTitle documentTitles')
