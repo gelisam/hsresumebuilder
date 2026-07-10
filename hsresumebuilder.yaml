@@ -301,8 +301,8 @@ hsResumeBuilder:
         expertiseText: "Web app, microservices, machine learning (NLP)."
       - expertiseEntityName: "Spiria"
         expertiseText: "Desktop app, embedded systems, graphics programming, mobile app, web app."
-      - expertiseEntityName: "Environment Canada"
-        expertiseText: "Desktop app."
+      #- expertiseEntityName: "Environment Canada"
+      #  expertiseText: "Desktop app."
     extraCurricular:
       - extraEntityName: "Well.co"
         extraCurricularText: "Tech talks, teaching AI-assisted coding, writing an MCP server, comparing AI offerings."
@@ -312,5 +312,5 @@ hsResumeBuilder:
         extraCurricularText: "Tech talks, teaching Elm, presenting at a Scala conference."
       - extraEntityName: "Spiria"
         extraCurricularText: "Tech talks, teaching Git, going to Agile conferences."
-      - extraEntityName: "Environment Canada"
-        extraCurricularText: "Tech talks, teaching SVN."
+      #- extraEntityName: "Environment Canada"
+      #  extraCurricularText: "Tech talks, teaching SVN."
